@@ -34,6 +34,8 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 echo "5. install powerline"
 pip3 install powerline-status
 
+echo "6. install prompt with nvm"
+npm install -g prompt
 
 echo "4. Change default shell"
 sudo chsh
