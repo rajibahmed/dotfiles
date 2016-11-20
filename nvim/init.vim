@@ -36,6 +36,7 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'taglist.vim'
 Plug 'mattn/emmet-vim'
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
