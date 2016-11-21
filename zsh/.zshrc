@@ -22,7 +22,7 @@ alias gl='git log --oneline --graph'
 alias gco='git checkout'
 
 alias python='python3'
-alias e='nvim'
+alias vim='nvim'
 alias _='sudo'
 alias be='bundle exec'
 
@@ -39,3 +39,7 @@ alias zz='fasd_cd -d -i' # cd with interactive selection
 
 
 source ~/.zsh_profile
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8

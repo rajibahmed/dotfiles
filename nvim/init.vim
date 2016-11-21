@@ -1,5 +1,4 @@
 call plug#begin()
-
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
 
@@ -9,9 +8,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'tpope/vim-sensible'
 Plug 'airblade/vim-gitgutter'
-
 
 
 " Plugin outside ~/.vim/plugged with post-update hook
@@ -32,6 +29,14 @@ Plug 'nsf/gocode'
 
 "JAVASCRIPT
 Plug 'pangloss/vim-javascript'
+Plug 'posva/vim-vue'
+Plug 'moll/vim-node'
+
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-surround'
+Plug 'taglist.vim'
+Plug 'mattn/emmet-vim'
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
@@ -79,7 +84,6 @@ let g:UltiSnipsEditSplit="vertical"
 "NERDTree
 
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
