@@ -4,6 +4,7 @@ Plug 'junegunn/vim-easy-align'
 
 " Group dependencies, vim-snippets depends on ultisnips
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'Valloric/YouCompleteMe'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -16,7 +17,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'tpope/vim-fugitive'
 
-"PHP LANG
+"PHP
 Plug 'stanangeloff/php.vim'
 
 "RUBY
@@ -37,6 +38,8 @@ Plug 'tpope/vim-surround'
 Plug 'taglist.vim'
 Plug 'mattn/emmet-vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'mxw/vim-jsx'
+Plug 'ayu-theme/ayu-vim' " or other package manager
 
 call plug#end()
 
@@ -68,11 +71,12 @@ filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype php setlocal ts=4 sts=4 sw=4
 autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-t>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
@@ -80,6 +84,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 
+let g:jsx_ext_required = 0
 
 "NERDTree
 
@@ -94,6 +99,13 @@ nnoremap <silent> ,\ :NERDTreeToggle<CR>
 set relativenumber
 set number
 set nowrap
+
+"...
+set termguicolors     " enable true colors support
+"let ayucolor="light"  " for light version of theme
+"let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
 
 "FZF
 nnoremap <silent> <Leader>t :FZF<CR>

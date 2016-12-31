@@ -1,3 +1,7 @@
+HISTSIZE=5000               #How many lines of history to keep in memory
+HISTFILE=~/.zsh_history     #Where to save history to disk
+SAVEHIST=5000               #Number of history entries to save to disk
+
 autoload -Uz compinit && compinit 
 
 fpath=(/usr/local/share/zsh-completions $fpath)
@@ -21,7 +25,7 @@ alias ga='git add'
 alias gl='git log --oneline --graph'
 alias gco='git checkout'
 
-alias python='python3'
+#alias python='python3'
 alias vim='nvim'
 alias _='sudo'
 alias be='bundle exec'
