@@ -25,7 +25,7 @@ alias ga='git add'
 alias gl='git log --oneline --graph'
 alias gco='git checkout'
 
-#alias python='python3'
+alias python='python3'
 alias vim='nvim'
 alias _='sudo'
 alias be='bundle exec'
@@ -39,6 +39,8 @@ alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 
+alias gz='tar -zcvf'     #tar a folder
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
@@ -47,3 +49,4 @@ source ~/.zsh_profile
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
+

@@ -10,7 +10,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'airblade/vim-gitgutter'
-
+Plug 'itchyny/lightline.vim'
 
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -101,11 +101,12 @@ set number
 set nowrap
 
 "...
-set termguicolors     " enable true colors support
+"set termguicolors     " enable true colors support
 "let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+"let ayucolor="dark"   " for dark version of theme
+"colorscheme ayu
 
 "FZF
 nnoremap <silent> <Leader>t :FZF<CR>
+nnoremap <silent> <Leader><space> :noh<CR>
