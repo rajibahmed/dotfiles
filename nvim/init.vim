@@ -14,32 +14,31 @@ Plug 'itchyny/lightline.vim'
 
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
 Plug 'tpope/vim-fugitive'
 
 "PHP
-Plug 'stanangeloff/php.vim'
+Plug 'stanangeloff/php.vim', { 'for': 'php' }
 
 "RUBY
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'tpope/vim-rails',   { 'for': 'ruby' }
 
 "GOLANG
-Plug 'fatih/vim-go'
-Plug 'nsf/gocode'
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'nsf/gocode', { 'for': 'go' }
 
 "JAVASCRIPT
 Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
 Plug 'moll/vim-node'
+Plug 'mxw/vim-jsx'
 
+"COMMON
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'taglist.vim'
 Plug 'mattn/emmet-vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'mxw/vim-jsx'
-Plug 'ayu-theme/ayu-vim' " or other package manager
 
 call plug#end()
 
