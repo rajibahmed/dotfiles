@@ -85,13 +85,8 @@ let g:UltiSnipsEditSplit="vertical"
 
 let g:jsx_ext_required = 0
 
-"NERDTree
 
 autocmd StdinReadPre * let s:std_in=1
-
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-let g:NERDTreeWinSize = 30
 
 nnoremap <silent> ,\ :NERDTreeToggle<CR>
 
@@ -99,13 +94,47 @@ set relativenumber
 set number
 set nowrap
 
-"...
-"set termguicolors     " enable true colors support
-"let ayucolor="light"  " for light version of theme
-"let ayucolor="mirage" " for mirage version of theme
-"let ayucolor="dark"   " for dark version of theme
-"colorscheme ayu
-
 "FZF
 nnoremap <silent> <Leader>t :FZF<CR>
 nnoremap <silent> <Leader><space> :noh<CR>
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'LightlineFugitive',
+      \   'readonly': 'LightlineReadonly',
+      \   'modified': 'LightlineModified'
+      \ },
+      \ 'separator': { 'left': '⮀', 'right': '⮂' },
+      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ }
+
+function! LightlineModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! LightlineReadonly()
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return "⭤"
+  else
+    return ""
+  endif
+endfunction
+
+function! LightlineFugitive()
+  return exists('*fugitive#head') ? fugitive#head() : ''
+endfunction

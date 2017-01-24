@@ -1,7 +1,5 @@
 echo "1. Setting Up homebrew"
-
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
 
 echo "2. Installing some useful things using brew"
 brew install rbenv 
@@ -24,18 +22,12 @@ brew install tree
 brew tap caskroom/cask
 brew install Caskroom/cask/iterm2
 
-
 echo "3. Installing vim-plug for neovim"
-
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-
-echo "5. install powerline"
-pip3 install powerline-status
-
-echo "6. install prompt with nvm"
+echo "4. install prompt with nvm"
 npm install -g pure-prompt
 
-echo "4. Change default shell"
+echo "5. Change default shell"
 sudo chsh
