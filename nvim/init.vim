@@ -88,6 +88,7 @@ let g:jsx_ext_required = 0
 
 autocmd StdinReadPre * let s:std_in=1
 
+let g:NERDTreeWinPos = "right"
 nnoremap <silent> ,\ :NERDTreeToggle<CR>
 
 set relativenumber
@@ -99,7 +100,7 @@ nnoremap <silent> <Leader>t :FZF<CR>
 nnoremap <silent> <Leader><space> :noh<CR>
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
