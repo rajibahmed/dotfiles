@@ -29,6 +29,8 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 echo "4. install prompt with nvm"
 npm install -g pure-prompt
 npm install -g eslint
+npm install -g yarn
 
 echo "5. Change default shell"
 sudo chsh
+
