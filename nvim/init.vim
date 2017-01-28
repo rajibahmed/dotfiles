@@ -34,7 +34,7 @@ Plug 'moll/vim-node'
 Plug 'mxw/vim-jsx'
 
 "COMMON
-Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake'
 Plug 'tpope/vim-surround'
 Plug 'taglist.vim'
 Plug 'mattn/emmet-vim'
@@ -42,26 +42,9 @@ Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
-
-function! s:buflist()
-  redir => ls
-  silent ls
-  redir END
-  return split(ls, '\n')
-endfunction
-
-function! s:bufopen(e)
-  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
-endfunction
-
-let mapleader=","
-
-nnoremap <silent> <Leader>b :call fzf#run({
-\   'source':  reverse(<sid>buflist()),
-\   'sink':    function('<sid>bufopen'),
-\   'options': '+m',
-\   'down':    len(<sid>buflist()) + 2
-\ })<CR>
+source ~/dotfiles/nvim/neomake_settings.vim
+source ~/dotfiles/nvim/lightline_settings.vim
+source ~/dotfiles/nvim/fzf_settings.vim
 
 
 syntax on             " Enable syntax highlighting
@@ -75,19 +58,17 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype php setlocal ts=4 sts=4 sw=4
 autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 
+"ultiSnips settings
 let g:UltiSnipsExpandTrigger="<c-t>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
 
+"jsx setting
 let g:jsx_ext_required = 0
 
-
-autocmd StdinReadPre * let s:std_in=1
-
+"NerdTree
 let g:NERDTreeWinPos = "right"
 nnoremap <silent> ,\ :NERDTreeToggle<CR>
 
@@ -95,47 +76,4 @@ set relativenumber
 set number
 set nowrap
 
-"FZF
-nnoremap <silent> <Leader>t :FZF<CR>
 nnoremap <silent> <Leader><space> :noh<CR>
-
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'fugitive': 'LightlineFugitive',
-      \   'readonly': 'LightlineReadonly',
-      \   'modified': 'LightlineModified'
-      \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
-      \ }
-
-function! LightlineModified()
-  if &filetype == "help"
-    return ""
-  elseif &modified
-    return "+"
-  elseif &modifiable
-    return ""
-  else
-    return ""
-  endif
-endfunction
-
-function! LightlineReadonly()
-  if &filetype == "help"
-    return ""
-  elseif &readonly
-    return "⭤"
-  else
-    return ""
-  endif
-endfunction
-
-function! LightlineFugitive()
-  return exists('*fugitive#head') ? fugitive#head() : ''
-endfunction
