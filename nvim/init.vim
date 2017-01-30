@@ -46,7 +46,6 @@ source ~/dotfiles/nvim/neomake_settings.vim
 source ~/dotfiles/nvim/lightline_settings.vim
 source ~/dotfiles/nvim/fzf_settings.vim
 
-
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
@@ -75,5 +74,6 @@ nnoremap <silent> ,\ :NERDTreeToggle<CR>
 set relativenumber
 set number
 set nowrap
+let mapleader=","
 
 nnoremap <silent> <Leader><space> :noh<CR>

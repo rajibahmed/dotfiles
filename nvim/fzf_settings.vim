@@ -9,8 +9,6 @@ function! s:bufopen(e)
   execute 'buffer' matchstr(a:e, '^[ 0-9]*')
 endfunction
 
-let mapleader=","
-
 nnoremap <silent> <Leader>b :call fzf#run({
 \   'source':  reverse(<sid>buflist()),
 \   'sink':    function('<sid>bufopen'),
@@ -18,6 +16,6 @@ nnoremap <silent> <Leader>b :call fzf#run({
 \   'down':    len(<sid>buflist()) + 2
 \ })<CR>
 
-
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 "FZF
 nnoremap <silent> <Leader>t :FZF<CR>
