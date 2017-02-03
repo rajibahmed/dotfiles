@@ -1,6 +1,10 @@
-HISTSIZE=5000               #How many lines of history to keep in memory
-HISTFILE=~/.zsh_history     #Where to save history to disk
-SAVEHIST=5000               #Number of history entries to save to disk
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+export HISTSIZE=5000               #How many lines of history to keep in memory
+export HISTFILE=~/.zsh_history     #Where to save history to disk
+export SAVEHIST=5000               #Number of history entries to save to disk
 
 autoload -Uz compinit && compinit 
 
@@ -18,18 +22,26 @@ eval "$(rbenv init -)"
 autoload -U promptinit && promptinit
 prompt pure
 
-
+#GIT
 alias gs='git status'
 alias gcm='git commit -m'
 alias ga='git add'
 alias gl='git log --oneline --graph'
 alias gco='git checkout'
+alias glc='git shortlog -s -n'
 
+#SYSTEM
 alias python='python3'
 alias vim='nvim'
 alias _='sudo'
-alias be='bundle exec'
+alias gz='tar -zcvf'     #tar a folder
 
+#RAILS
+alias be='bundle exec'
+alias rake='bundle exec rake'
+alias rails='bundle exec rails'
+
+#FASD
 alias a='fasd -a'        # any
 alias s='fasd -si'       # show / search / select
 alias d='fasd -d'        # directory
@@ -39,14 +51,6 @@ alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 
-alias gz='tar -zcvf'     #tar a folder
-
+#IMPORT FILES
+[ -f ~/.zsh_profile] && source ~/.zsh_profile
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-
-source ~/.zsh_profile
-
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
-

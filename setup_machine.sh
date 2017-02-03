@@ -32,5 +32,5 @@ npm install -g eslint
 npm install -g yarn
 
 echo "5. Change default shell"
-sudo chsh
+chsh
 
