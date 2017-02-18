@@ -9,13 +9,10 @@ aliasing to python3
 Installation
 =============
 
-  ``sh
-  $ cd ~ && git clone https://github.com/rajibahmed/dotfiles.git
-  
-  $ sh dotfiles/setup_machine.sh
-  ``
-
-
+```sh
+$ cd ~ && git clone https://github.com/rajibahmed/dotfiles.git
+$ sh dotfiles/setup_machine.sh  
+```
 
 
 Vim plugins used
