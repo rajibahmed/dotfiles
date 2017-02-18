@@ -1,20 +1,22 @@
 My Zsh and Vim configs
 ======================
 
+I am using zsh and neovim pure prompt 
+
+aliasing to python3
 
 
 Installation
 =============
 
-``sh
-cd ~ && git clone https://github.com/rajibahmed/dotfiles.git
-sh dotfiles/setup_machine.sh
-``
+  ``sh
+  $ cd ~ && git clone https://github.com/rajibahmed/dotfiles.git
+  
+  $ sh dotfiles/setup_machine.sh
+  ``
 
 
-I am using zsh and neovim
 
-pure prompt 
 
 Vim plugins used
 ================
