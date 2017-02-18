@@ -2,25 +2,24 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
+autoload -Uz compinit && compinit 
+autoload -U promptinit && promptinit
+prompt pure
+
 export HISTSIZE=5000               #How many lines of history to keep in memory
 export HISTFILE=~/.zsh_history     #Where to save history to disk
 export SAVEHIST=5000               #Number of history entries to save to disk
 
-autoload -Uz compinit && compinit 
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 . $(brew --prefix)/share/zsh/site-functions
 
-export NVM_DIR="$HOME/.nvm"
-. "$(brew --prefix nvm)/nvm.sh"
 
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
 
 eval "$(fasd --init auto )"
 eval "$(rbenv init -)"
-
-
-autoload -U promptinit && promptinit
-prompt pure
 
 #GIT
 alias gs='git status'
@@ -35,11 +34,10 @@ alias python='python3'
 alias vim='nvim'
 alias _='sudo'
 alias gz='tar -zcvf'     #tar a folder
+alias ll='ls -la'
 
 #RAILS
 alias be='bundle exec'
-alias rake='bundle exec rake'
-alias rails='bundle exec rails'
 
 #FASD
 alias a='fasd -a'        # any
@@ -52,5 +50,5 @@ alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 
 #IMPORT FILES
-[ -f ~/.zsh_profile] && source ~/.zsh_profile
+[ -f ~/.zsh_profile ] && source ~/.zsh_profile
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
