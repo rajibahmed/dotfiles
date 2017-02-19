@@ -38,10 +38,7 @@ ln -s ~/dotfiles/irbrc .irbrc
 ln -s  ~/dotfiles/ctags/ctags .ctags
 
 cd .config/nvim && \
-	ln -s ~/dotfiles/nvim/init.vim  init.vim && \
-	ln -s ~/dotfiles/nvim/fzf_settings.vim  fzf_settings.vim && \
-	ln -s ~/dotfiles/nvim/neomake_settings.vim neomake_settings.vim  && \
-	ln -s ~/dotfiles/nvim/lightline_settings.vim lightline_settings.vim 
+	ln -s ~/dotfiles/nvim/init.vim  init.vim
 
 nvim +PlugInstall +qall
 
@@ -58,12 +55,11 @@ touch ~/.zsh_history
 echo "5. Change default shell"
 chsh
 
-
 echo "Install rubies" 
 
 rbenv install 2.3.1
 rbenv install 2.4.0
 
-rbenv local 2.3.1 && gem install bundler neovim
-rbenv local 2.4.0 && gem install bundler neovim
+rbenv local 2.3.1 && gem install bundler neovim rubocop --no-ri --no-rdoc
+rbenv local 2.4.0 && gem install bundler neovim rubocop --no-ri --no-rdoc 
 rbenv global 2.4.0

@@ -4,7 +4,7 @@ Plug 'junegunn/vim-easy-align'
 
 " Group dependencies, vim-snippets depends on ultisnips
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install --all' }
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -32,6 +32,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
 Plug 'moll/vim-node'
 Plug 'mxw/vim-jsx'
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+
 
 "COMMON
 Plug 'neomake/neomake'
@@ -78,3 +80,10 @@ nnoremap <silent> <Leader><space> :noh<CR>
 source ~/dotfiles/nvim/neomake_settings.vim
 source ~/dotfiles/nvim/lightline_settings.vim
 source ~/dotfiles/nvim/fzf_settings.vim
+
+
+if !isdirectory($HOME."/.config/nvim/undo-dir")
+    call mkdir($HOME."/.config/nvim/undo-dir", "", 0700)
+endif
+set undodir=~/.config/nvim/undo-dir
+set undofile
