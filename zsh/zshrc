@@ -34,7 +34,7 @@ alias python='python3'
 alias vim='nvim'
 alias _='sudo'
 alias gz='tar -zcvf'     #tar a folder
-alias ll='ls -la'
+alias ll='ls -lah'
 
 #RAILS
 alias be='bundle exec'
