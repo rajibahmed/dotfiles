@@ -1,3 +1,7 @@
+set encoding=utf-8
+let emmetFiles = ["html","xhtml","xml","xaml","xsd","xsl","css","less","scss","sass","styl","svg"]
+
+
 call plug#begin('~/.config/nvim/plugged')
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
@@ -39,7 +43,7 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'neomake/neomake'
 Plug 'tpope/vim-surround'
 Plug 'taglist.vim'
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': emmetFiles }
 Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
@@ -69,7 +73,7 @@ let g:jsx_ext_required = 0
 
 "NerdTree
 let g:NERDTreeWinPos = "right"
-nnoremap <silent> ,\ :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
 
 set relativenumber
 set number
