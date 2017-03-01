@@ -1,9 +1,11 @@
 My Zsh and Vim configs
 ======================
 
-I am using zsh and neovim pure prompt 
+I am using zsh and neovim pure prompt, tmux
 
 aliasing to python3
+
+google for Monaco Nerd font and use it on iTerm text preferece. 
 
 
 Installation

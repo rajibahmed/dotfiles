@@ -45,6 +45,7 @@ Plug 'tpope/vim-surround'
 Plug 'taglist.vim'
 Plug 'mattn/emmet-vim', { 'for': emmetFiles }
 Plug 'editorconfig/editorconfig-vim'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -91,3 +92,5 @@ if !isdirectory($HOME."/.config/nvim/undo-dir")
 endif
 set undodir=~/.config/nvim/undo-dir
 set undofile
+
+let g:webdevicons_enable_nerdtree = 1

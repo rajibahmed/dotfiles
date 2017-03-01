@@ -2,7 +2,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
-autoload -Uz compinit && compinit 
+autoload -Uz compinit && compinit
 autoload -U promptinit && promptinit
 prompt pure
 
@@ -34,7 +34,8 @@ alias python='python3'
 alias vim='nvim'
 alias _='sudo'
 alias gz='tar -zcvf'     #tar a folder
-alias ll='ls -lah'
+alias ll='ls -lahGF'
+alias ls='ls -hGF'
 
 #RAILS
 alias be='bundle exec'
