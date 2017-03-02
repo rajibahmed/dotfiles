@@ -1,6 +1,7 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
+export CLICOLOR=1
 
 autoload -Uz compinit && compinit
 autoload -U promptinit && promptinit
@@ -35,7 +36,6 @@ alias vim='nvim'
 alias _='sudo'
 alias gz='tar -zcvf'     #tar a folder
 alias ll='ls -lahGF'
-alias ls='ls -hGF'
 
 #RAILS
 alias be='bundle exec'
