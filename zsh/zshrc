@@ -32,7 +32,7 @@ alias glc='git shortlog -s -n'
 
 #SYSTEM
 alias python='python3'
-alias vim='nvim'
+alias vim='/usr/local/bin/vim'
 alias _='sudo'
 alias gz='tar -zcvf'     #tar a folder
 alias ll='ls -lahGF'

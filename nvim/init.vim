@@ -3,7 +3,6 @@ let emmetFiles = ["html","xhtml","xml","xaml","xsd","xsl","css","less","scss","s
 
 
 call plug#begin('~/.config/nvim/plugged')
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
 
 " Group dependencies, vim-snippets depends on ultisnips
@@ -42,7 +41,7 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 "COMMON
 Plug 'neomake/neomake'
 Plug 'tpope/vim-surround'
-Plug 'taglist.vim'
+Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim', { 'for': emmetFiles }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ryanoasis/vim-devicons'
@@ -81,6 +80,7 @@ set number
 set nowrap
 
 nnoremap <silent> <Leader><space> :noh<CR>
+nmap ; :
 
 source ~/dotfiles/nvim/neomake_settings.vim
 source ~/dotfiles/nvim/lightline_settings.vim
