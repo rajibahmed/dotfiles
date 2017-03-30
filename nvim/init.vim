@@ -7,7 +7,7 @@ Plug 'junegunn/vim-easy-align'
 
 " Group dependencies, vim-snippets depends on ultisnips
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -44,8 +44,6 @@ Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim', { 'for': emmetFiles }
 Plug 'editorconfig/editorconfig-vim'
-Plug 'ryanoasis/vim-devicons'
-
 call plug#end()
 
 let mapleader=","
@@ -85,6 +83,7 @@ nmap ; :
 source ~/dotfiles/nvim/neomake_settings.vim
 source ~/dotfiles/nvim/lightline_settings.vim
 source ~/dotfiles/nvim/fzf_settings.vim
+source ~/dotfiles/nvim/search_settings.vim
 
 highlight ColorColumn ctermbg=Blue
 

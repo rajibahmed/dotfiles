@@ -4,3 +4,5 @@
 [core]
 	editor = vim
 	excludesfile = /Users/rajib.ahmed/.gitignore
+[push]
+	default = current

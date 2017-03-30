@@ -36,6 +36,8 @@ ln -s  ~/dotfiles/zsh/.zshrc .zshrc
 ln -s ~/dotfiles/tmux.config .tmux.config
 ln -s ~/dotfiles/irbrc .irbrc
 ln -s  ~/dotfiles/ctags/ctags .ctags
+ln -s  ~/dotfiles/gitconfig .gitconfig
+ln -s  ~/dotfiles/gitignore .gitignore
 
 cd .config/nvim && \
 	ln -s ~/dotfiles/nvim/init.vim  init.vim
@@ -61,6 +63,7 @@ echo "Install rubies"
 rbenv install 2.3.1
 rbenv install 2.4.0
 
-rbenv local 2.3.1 && gem install bundler neovim rubocop --no-ri --no-rdoc
-rbenv local 2.4.0 && gem install bundler neovim rubocop --no-ri --no-rdoc
+rbenv local 2.3.1 && gem install bundler neovim rubocop map_by_method what_methods --no-ri --no-rdoc
+rbenv local 2.4.0 && gem install bundler neovim rubocop map_by_method what_methods --no-ri --no-rdoc
 rbenv global 2.4.0
+
