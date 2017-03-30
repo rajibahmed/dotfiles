@@ -7,7 +7,7 @@ Plug 'junegunn/vim-easy-align'
 
 " Group dependencies, vim-snippets depends on ultisnips
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe', { 'do': './install --all' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -86,6 +86,7 @@ source ~/dotfiles/nvim/neomake_settings.vim
 source ~/dotfiles/nvim/lightline_settings.vim
 source ~/dotfiles/nvim/fzf_settings.vim
 
+highlight ColorColumn ctermbg=Blue
 
 if !isdirectory($HOME."/.config/nvim/undo-dir")
     call mkdir($HOME."/.config/nvim/undo-dir", "", 0700)

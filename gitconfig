@@ -1,0 +1,6 @@
+[user]
+	name = Rajib Ahmed
+	email = rajib.ahmed@valtech.se
+[core]
+	editor = vim
+	excludesfile = /Users/rajib.ahmed/.gitignore
