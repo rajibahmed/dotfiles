@@ -9,7 +9,8 @@ let g:lightline = {
       \   'readonly': 'LightlineReadonly',
       \   'modified': 'LightlineModified'
       \ },
-      \ 'separator': { 'left': '', 'right': '' }
+      \ 'separator': { 'left': '⮀', 'right': '⮂' },
+      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
       \ }
 
 function! LightlineModified()
