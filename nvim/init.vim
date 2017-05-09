@@ -83,6 +83,7 @@ nmap ; :
 source ~/dotfiles/nvim/neomake_settings.vim
 source ~/dotfiles/nvim/lightline_settings.vim
 source ~/dotfiles/nvim/fzf_settings.vim
+source ~/dotfiles/nvim/search_settings.vim
 
 highlight ColorColumn ctermbg=Blue
 
