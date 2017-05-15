@@ -14,8 +14,8 @@ if [ -z "$HISTFILE" ]; then
   HISTFILE=$HOME/.zsh_history
 fi
 
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=5000
+SAVEHIST=5000
 
 setopt append_history
 setopt extended_history
@@ -28,7 +28,6 @@ setopt share_history # share command history data
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 . $(brew --prefix)/share/zsh/site-functions
-
 
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
@@ -63,7 +62,6 @@ alias sd='fasd -sid'     # interactive directory selection
 alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
-
 
 #IMPORT FILES
 [ -f ~/.zsh_profile ] && source ~/.zsh_profile
