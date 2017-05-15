@@ -5,3 +5,7 @@ gcf() {
   git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
+
+gtag(){
+  ctags -R . $(bundle show --paths)
+}
