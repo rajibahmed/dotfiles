@@ -64,7 +64,7 @@ alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 
 #IMPORT FILES
-[ -f $HOME/.zsh_profile ] && source ~/.zsh_profile
-[ -f $HOME/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f $HOME/.zsh_profile ] && source $HOME/.zsh_profile
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 source $HOME/dotfiles/zsh/functions
