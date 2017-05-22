@@ -51,7 +51,7 @@ npm install -g yarn
 npm install -g typescript
 npm install -g lighthouse
 
-. ~/config/nvim/plugged/YouCompleteMe/install.py --clang-completer --tern-completer --gocode-completer
+. ~/.config/nvim/plugged/YouCompleteMe/install.py --clang-completer --tern-completer --gocode-completer
 
 touch ~/.zsh_history
 

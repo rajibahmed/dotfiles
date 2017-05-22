@@ -25,6 +25,7 @@ Plug 'stanangeloff/php.vim', { 'for': 'php' }
 "RUBY
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rails'
+Plug 'rdolgushin/groovy.vim'
 
 "GOLANG
 Plug 'fatih/vim-go', { 'for': 'go' }
