@@ -4,10 +4,11 @@ let emmetFiles = ["html","xhtml","xml","xaml","xsd","xsl","css","less","scss","s
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/vim-easy-align'
+Plug 'nono/vim-handlebars'
 
 " Group dependencies, vim-snippets depends on ultisnips
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --clang-completer --gocode-completer --tern-completer' }
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -93,5 +94,8 @@ if !isdirectory($HOME."/.config/nvim/undo-dir")
 endif
 set undodir=~/.config/nvim/undo-dir
 set undofile
+
+set backupdir=~/.config/nvim/backup
+set directory=~/.config/nvim/temp
 
 let g:webdevicons_enable_nerdtree = 1

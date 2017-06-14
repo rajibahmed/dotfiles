@@ -41,6 +41,8 @@ alias gcm='git commit -m'
 alias ga='git add'
 alias gl='git log --oneline --graph'
 alias gco='git checkout'
+alias gp='git pull --rebase'
+alias gpp='git push'
 alias glc='git shortlog -s -n'
 
 #SYSTEM
