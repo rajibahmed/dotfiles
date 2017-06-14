@@ -51,6 +51,7 @@ alias vim='/usr/local/bin/vim'
 alias _='sudo'
 alias gz='tar -zcvf' #tar a folder
 alias ll='ls -lahGF'
+alias zsh_load='source ~/.zshrc'
 
 #RAILS
 alias be='bundle exec'
@@ -64,6 +65,9 @@ alias sd='fasd -sid'     # interactive directory selection
 alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
+
+#OFFICE
+alias jira='git ls-remote | cut -d/ -f 3,4 | fzf | xargs git checkout'
 
 #IMPORT FILES
 [ -f $HOME/.zsh_profile ] && source $HOME/.zsh_profile
