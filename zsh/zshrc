@@ -77,5 +77,3 @@ alias jira='git fetch && git branch -r | cut -d/ -f 2-  | fzf | xargs git checko
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 source $HOME/dotfiles/zsh/functions
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
