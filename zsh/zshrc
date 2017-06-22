@@ -41,9 +41,10 @@ alias gcm='git commit -m'
 alias ga='git add'
 alias gl='git log --oneline --graph'
 alias gco='git checkout'
-alias gp='git pull --rebase'
-alias gpp='git push'
 alias glc='git shortlog -s -n'
+
+alias pull='git pull --rebase'
+alias push='git push'
 
 #SYSTEM
 alias python='python3'
@@ -51,7 +52,9 @@ alias vim='/usr/local/bin/vim'
 alias _='sudo'
 alias gz='tar -zcvf' #tar a folder
 alias ll='ls -lahGF'
-alias zsh_load='source ~/.zshrc'
+
+alias zl='source ~/.zshrc'
+alias ze='vim ~/.zshrc'
 
 #RAILS
 alias be='bundle exec'
@@ -67,10 +70,12 @@ alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 
 #OFFICE
-alias jira='git branch -r | cut -d/ -f 2-  | fzf | xargs git checkout'
+alias jira='git fetch && git branch -r | cut -d/ -f 2-  | fzf | xargs git checkout'
 
 #IMPORT FILES
 [ -f $HOME/.zsh_profile ] && source $HOME/.zsh_profile
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 source $HOME/dotfiles/zsh/functions
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
