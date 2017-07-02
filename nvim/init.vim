@@ -39,6 +39,8 @@ Plug 'moll/vim-node'
 Plug 'mxw/vim-jsx'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 
+"RUST
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 "COMMON
 Plug 'neomake/neomake'
@@ -99,3 +101,4 @@ set backupdir=~/.config/nvim/backup
 set directory=~/.config/nvim/temp
 
 let g:webdevicons_enable_nerdtree = 1
+let g:rubycomplete_rails = 1
