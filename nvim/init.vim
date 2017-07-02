@@ -18,6 +18,7 @@ Plug 'itchyny/lightline.vim'
 
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 
 "PHP
@@ -87,7 +88,7 @@ nmap ; :
 source ~/dotfiles/nvim/neomake_settings.vim
 source ~/dotfiles/nvim/lightline_settings.vim
 source ~/dotfiles/nvim/fzf_settings.vim
-source ~/dotfiles/nvim/search_settings.vim
+"source ~/dotfiles/nvim/search_settings.vim
 
 highlight ColorColumn ctermbg=Blue
 
