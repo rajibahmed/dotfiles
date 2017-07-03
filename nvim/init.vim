@@ -53,6 +53,8 @@ call plug#end()
 
 let mapleader=","
 
+let g:solarized_termcolors=256
+
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting

@@ -48,7 +48,7 @@ alias push='git push'
 
 #SYSTEM
 alias python='python3'
-alias vim='/usr/local/bin/vim'
+alias vim='/usr/local/bin/nvim'
 alias _='sudo'
 alias gz='tar -zcvf' #tar a folder
 alias ll='ls -lahGF'
