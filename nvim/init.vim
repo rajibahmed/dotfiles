@@ -5,6 +5,7 @@ let emmetFiles = ["html","xhtml","xml","xaml","xsd","xsl","css","less","scss","s
 call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/vim-easy-align'
 Plug 'nono/vim-handlebars'
+Plug 'machakann/vim-highlightedyank'
 
 " Group dependencies, vim-snippets depends on ultisnips
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -90,7 +91,7 @@ nmap ; :
 source ~/dotfiles/nvim/neomake_settings.vim
 source ~/dotfiles/nvim/lightline_settings.vim
 source ~/dotfiles/nvim/fzf_settings.vim
-"source ~/dotfiles/nvim/search_settings.vim
+source ~/dotfiles/nvim/search_settings.vim
 
 highlight ColorColumn ctermbg=Blue
 
@@ -102,6 +103,7 @@ set undofile
 
 set backupdir=~/.config/nvim/backup
 set directory=~/.config/nvim/temp
+set inccommand=nosplit
 
 let g:webdevicons_enable_nerdtree = 1
 let g:rubycomplete_rails = 1
