@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/vim-easy-align'
 Plug 'nono/vim-handlebars'
 Plug 'machakann/vim-highlightedyank'
+Plug 'janko-m/vim-test'
 
 " Group dependencies, vim-snippets depends on ultisnips
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -54,7 +55,6 @@ call plug#end()
 
 let mapleader=","
 
-let g:solarized_termcolors=256
 
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
@@ -87,17 +87,18 @@ set nowrap
 
 nnoremap <silent> <Leader><space> :noh<CR>
 nmap ; :
+nmap ss :sp<CR>
+nmap vv :vs<CR>
 
 source ~/dotfiles/nvim/neomake_settings.vim
 source ~/dotfiles/nvim/lightline_settings.vim
 source ~/dotfiles/nvim/fzf_settings.vim
 source ~/dotfiles/nvim/search_settings.vim
 
-highlight ColorColumn ctermbg=Blue
-
 if !isdirectory($HOME."/.config/nvim/undo-dir")
-    call mkdir($HOME."/.config/nvim/undo-dir", "", 0700)
+  call mkdir($HOME."/.config/nvim/undo-dir", "", 0700)
 endif
+
 set undodir=~/.config/nvim/undo-dir
 set undofile
 
@@ -107,3 +108,11 @@ set inccommand=nosplit
 
 let g:webdevicons_enable_nerdtree = 1
 let g:rubycomplete_rails = 1
+" make test commands execute using dispatch.vim
+let test#strategy = "neomake"
+
+nmap <silent> <leader>x :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
