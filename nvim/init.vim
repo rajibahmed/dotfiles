@@ -123,3 +123,18 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+
+if has('nvim')
+  tnoremap <Esc> <C-\><C-n>
+  tnoremap <a-h> <c-\><c-n><c-w>h
+  tnoremap <a-j> <c-\><c-n><c-w>j
+  tnoremap <a-k> <c-\><c-n><c-w>k
+  tnoremap <a-l> <c-\><c-n><c-w>l
+
+  nnoremap <a-h> <c-w>h
+  nnoremap <a-j> <c-w>j
+  nnoremap <a-k> <c-w>k
+  nnoremap <a-l> <c-w>l
+endif
+
+colorscheme solarized8_dark
