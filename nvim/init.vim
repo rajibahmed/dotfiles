@@ -88,8 +88,8 @@ set nowrap
 
 nnoremap <silent> <Leader><space> :noh<CR>
 nmap ; :
-nmap ss :sp<CR>
-nmap vv :vs<CR>
+nmap <silent> ss :sp<CR>
+nmap <silent> vv :vs<CR>
 
 source ~/dotfiles/nvim/neomake_settings.vim
 source ~/dotfiles/nvim/lightline_settings.vim
@@ -109,6 +109,8 @@ set inccommand=nosplit
 
 let g:webdevicons_enable_nerdtree = 1
 let g:rubycomplete_rails = 1
+
+"vim-test options
 " make test commands execute using dispatch.vim
 let test#strategy = "neomake"
 
@@ -118,6 +120,7 @@ nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 
+"Ctrl HJKL navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -136,5 +139,3 @@ if has('nvim')
   nnoremap <a-k> <c-w>k
   nnoremap <a-l> <c-w>l
 endif
-
-colorscheme solarized8_dark
