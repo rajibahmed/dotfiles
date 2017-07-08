@@ -17,5 +17,6 @@ nnoremap <silent> <Leader>b :call fzf#run({
 \ })<CR>
 
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
 "FZF
 nnoremap <silent> <Leader>t :FZF<CR>
