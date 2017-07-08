@@ -10,7 +10,14 @@ Plug 'janko-m/vim-test'
 
 " Group dependencies, vim-snippets depends on ultisnips
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --clang-completer --gocode-completer --tern-completer' }
+Plug 'Valloric/YouCompleteMe'
+
+"COMMON
+Plug 'neomake/neomake'
+Plug 'tpope/vim-surround'
+Plug 'mattn/emmet-vim', { 'for': emmetFiles }
+Plug 'editorconfig/editorconfig-vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -43,14 +50,8 @@ Plug 'mxw/vim-jsx'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 
 "RUST
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'rust-lang/rust.vim'
 
-"COMMON
-Plug 'neomake/neomake'
-Plug 'tpope/vim-surround'
-Plug 'majutsushi/tagbar'
-Plug 'mattn/emmet-vim', { 'for': emmetFiles }
-Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 let mapleader=","
@@ -111,8 +112,14 @@ let g:rubycomplete_rails = 1
 " make test commands execute using dispatch.vim
 let test#strategy = "neomake"
 
-nmap <silent> <leader>x :TestNearest<CR>
+nmap <silent> <leader>p :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
