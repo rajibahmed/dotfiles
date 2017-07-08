@@ -9,6 +9,8 @@ call minpac#add('junegunn/vim-easy-align')
 call minpac#add('nono/vim-handlebars')
 call minpac#add('machakann/vim-highlightedyank')
 call minpac#add('janko-m/vim-test')
+call minpac#add('kana/vim-textobj-user')
+call minpac#add('nelstrom/vim-textobj-rubyblock')
 
 " Group dependencies, vim-snippets depends on ultisnips
 call minpac#add('SirVer/ultisnips')
