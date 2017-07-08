@@ -56,95 +56,11 @@ call minpac#add('ternjs/tern_for_vim')
 "RUST
 call minpac#add('rust-lang/rust.vim')
 
-
-let mapleader=","
-
-
-syntax on             " Enable syntax highlighting
-filetype on           " Enable filetype detection
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins
-
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype php setlocal ts=4 sts=4 sw=4
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
-
-"ultiSnips settings
-let g:UltiSnipsExpandTrigger="<c-t>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
-
-
-"jsx setting
-let g:jsx_ext_required = 0
-
-"NerdTree
-let g:NERDTreeWinPos = "right"
-nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
-
-set relativenumber
-set number
-set nowrap
-
-nnoremap <silent> <Leader><space> :noh<CR>
-nmap ; :
-nmap <silent> ss :sp<CR>
-nmap <silent> vv :vs<CR>
-
+source ~/dotfiles/nvim/base_settings.vim
 source ~/dotfiles/nvim/neomake_settings.vim
 source ~/dotfiles/nvim/lightline_settings.vim
 source ~/dotfiles/nvim/fzf_settings.vim
 source ~/dotfiles/nvim/search_settings.vim
-
-if !isdirectory($HOME."/.config/nvim/undo-dir")
-  call mkdir($HOME."/.config/nvim/undo-dir", "", 0700)
-endif
-
-set undodir=~/.config/nvim/undo-dir
-set undofile
-
-set backupdir=~/.config/nvim/backup
-set directory=~/.config/nvim/temp
-
-let g:webdevicons_enable_nerdtree = 1
-let g:rubycomplete_rails = 1
-
-"vim-test options
-" make test commands execute using dispatch.vim
-let test#strategy = "neomake"
-
-nmap <silent> <leader>p :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
-
-"Ctrl HJKL navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-
-if has('nvim')
-
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  set inccommand=nosplit
-
-  tnoremap <Esc> <C-\><C-n>
-  tnoremap <a-h> <c-\><c-n><c-w>h
-  tnoremap <a-j> <c-\><c-n><c-w>j
-  tnoremap <a-k> <c-\><c-n><c-w>k
-  tnoremap <a-l> <c-\><c-n><c-w>l
-
-  nnoremap <a-h> <c-w>h
-  nnoremap <a-j> <c-w>j
-  nnoremap <a-k> <c-w>k
-  nnoremap <a-l> <c-w>l
-endif
 
 "match it with methods
 runtime macros/matchit.vim
@@ -153,6 +69,3 @@ runtime macros/matchit.vim
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 
-"color
-set background=dark
-colorscheme gruvbox
