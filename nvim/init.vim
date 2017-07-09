@@ -12,7 +12,7 @@ call minpac#add('janko-m/vim-test')
 call minpac#add('kana/vim-textobj-user')
 call minpac#add('nelstrom/vim-textobj-rubyblock')
 
-" Group dependencies, vim-snippets depends on ultisnips
+"Group dependencies, vim-snippets depends on ultisnips
 call minpac#add('SirVer/ultisnips')
 call minpac#add('honza/vim-snippets')
 call minpac#add('Valloric/YouCompleteMe')
@@ -31,8 +31,8 @@ call minpac#add('tpope/vim-fireplace')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('itchyny/lightline.vim')
 
-" call minpac#ad(in outside ~/.vim/plugged with post-update hook
-call minpac#add('junegunn/fzf')
+"call minpac#ad(in outside ~/.vim/plugged with post-update hook
+call minpac#add('junegunn/fzf',{ 'dir': '~/.fzf', 'do': './install --all' })
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('tpope/vim-fugitive')
 
@@ -55,7 +55,7 @@ call minpac#add('pangloss/vim-javascript')
 call minpac#add('posva/vim-vue')
 call minpac#add('moll/vim-node')
 call minpac#add('mxw/vim-jsx')
-call minpac#add('ternjs/tern_for_vim')
+call minpac#add('ternjs/tern_for_vim', {'do': 'npm install'})
 
 "RUST
 call minpac#add('rust-lang/rust.vim')
@@ -70,5 +70,5 @@ source ~/dotfiles/nvim/fzf_settings.vim
 source ~/dotfiles/nvim/search_settings.vim
 
 " minpac commands:
-command! PackUpdate call minpac#update()
-command! PackClean call minpac#clean()
+command! PlugUpdate call minpac#update()
+command! PlugClean call minpac#clean()
