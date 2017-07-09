@@ -43,6 +43,12 @@ nnoremap <C-H> <C-W><C-H>
 set background=dark
 colorscheme gruvbox
 
+set fcs=fold:-      " verticle split is just bg color
+set foldcolumn=0    " visual representation of folds
+set foldmethod=syntax
+set foldnestmax=1
+set nofoldenable
+
 if !isdirectory($HOME."/.config/nvim/undo-dir")
   call mkdir($HOME."/.config/nvim/undo-dir", "", 0700)
 endif

@@ -42,7 +42,9 @@ call minpac#add('stanangeloff/php.vim')
 "RUBY
 call minpac#add('vim-ruby/vim-ruby')
 call minpac#add('tpope/vim-rails')
+call minpac#add('tpope/vim-rbenv')
 call minpac#add('rdolgushin/groovy.vim')
+call minpac#add('tpope/vim-bundler')
 
 "GOLANG
 call minpac#add('fatih/vim-go')
@@ -58,16 +60,15 @@ call minpac#add('ternjs/tern_for_vim')
 "RUST
 call minpac#add('rust-lang/rust.vim')
 
+"match it with methods
+runtime macros/matchit.vim
+
 source ~/dotfiles/nvim/base_settings.vim
 source ~/dotfiles/nvim/neomake_settings.vim
 source ~/dotfiles/nvim/lightline_settings.vim
 source ~/dotfiles/nvim/fzf_settings.vim
 source ~/dotfiles/nvim/search_settings.vim
 
-"match it with methods
-runtime macros/matchit.vim
-
 " minpac commands:
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
-
