@@ -57,7 +57,9 @@ alias zl='source ~/.zshrc'
 alias ze='vim ~/.zshrc'
 
 #RAILS
-alias be='bundle exec'
+alias b='bundle'
+alias be='b exec'
+alias c='clear'
 
 #FASD
 alias a='fasd -a'        # any
