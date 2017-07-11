@@ -59,7 +59,10 @@ alias ze='vim ~/.zshrc'
 #RAILS
 alias b='bundle'
 alias be='b exec'
+alias rs='rails s'
+alias rc='rails c'
 alias c='clear'
+alias :q='exit'
 
 #FASD
 alias a='fasd -a'        # any
