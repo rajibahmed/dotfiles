@@ -1,6 +1,12 @@
 #Enable vi mode
 bindkey -v
 
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# Vi style:
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
@@ -82,5 +88,6 @@ alias jira='git fetch && git branch -r | cut -d/ -f 2-  | fzf | xargs git checko
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 source $HOME/dotfiles/zsh/functions
-export PATH=$PATH:~/dotfiles/bin
-export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+
+export EDITOR=nvim
+export PATH=$HOME/dotfiles/bin:$(brew --prefix qt@5.5)/bin:$PATH

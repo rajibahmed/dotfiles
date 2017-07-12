@@ -11,6 +11,7 @@ call minpac#add('machakann/vim-highlightedyank')
 call minpac#add('janko-m/vim-test')
 call minpac#add('kana/vim-textobj-user')
 call minpac#add('nelstrom/vim-textobj-rubyblock')
+call minpac#add('skwp/greplace.vim')
 
 "Group dependencies, vim-snippets depends on ultisnips
 call minpac#add('SirVer/ultisnips')
