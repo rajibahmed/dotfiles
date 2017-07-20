@@ -86,7 +86,6 @@ if has('nvim')
   nnoremap <a-l> <c-w>l
 
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1              " Set an environment variable to use the t_SI/t_EI hack
   let g:loaded_python_provider=1                   " Disable python 2 interface
   let g:python_host_skip_check=1                   " Skip python 2 host check
   let g:python3_host_prog='/usr/local/bin/python3' " Set python 3 host program
