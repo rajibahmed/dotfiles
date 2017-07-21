@@ -45,7 +45,7 @@ eval "$(rbenv init -)"
 alias gs='git status'
 alias gcm='git commit -m'
 alias ga='git add'
-alias gl='git log --oneline --graph'
+alias gl='git log --graph --abbrev-commit --decorate --date=relative --all'
 alias gco='git checkout'
 alias glc='git shortlog -s -n'
 
