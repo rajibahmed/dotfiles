@@ -12,6 +12,7 @@ call minpac#add('janko-m/vim-test')
 call minpac#add('kana/vim-textobj-user')
 call minpac#add('nelstrom/vim-textobj-rubyblock')
 call minpac#add('skwp/greplace.vim')
+call minpac#add('smorhetz/gruvbox')
 
 "Group dependencies, vim-snippets depends on ultisnips
 call minpac#add('SirVer/ultisnips')
@@ -26,7 +27,7 @@ call minpac#add('mattn/emmet-vim')
 call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('christoomey/vim-tmux-navigator')
 
-" On-demand loadig
+"On-demand loading
 call minpac#add('scrooloose/nerdtree')
 call minpac#add('tpope/vim-fireplace')
 call minpac#add('airblade/vim-gitgutter')

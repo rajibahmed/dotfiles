@@ -1,12 +1,16 @@
 [user]
-	name = Rajib Ahmed
-	email = rajib.ahmed@valtech.se
+name = Rajib Ahmed
+email = rajib.ahmed@klarna.se
+
 [core]
-	editor = vim
-	excludesfile = /Users/rajib.ahmed/.gitignore
+editor = vim
+excludesfile = /Users/rajib.ahmed/.gitignore
+
 [push]
-	default = current
+default = current
+
 [log]
-	date = relative
+date = relative
+
 [format]
-	pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cred%d %Creset%s %Cgreen%<(7)[%aN]
+pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cred%d %Creset%s %Cgreen%<(7)[%aN]

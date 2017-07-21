@@ -40,8 +40,9 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 "color
-"set background=dark
+"set background=light
 "colorscheme gruvbox
+"let g:gruvbox_contrast_light=soft
 
 set fcs=fold:-      " verticle split is just bg color
 set foldcolumn=0    " visual representation of folds
