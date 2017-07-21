@@ -1,6 +1,6 @@
 [user]
 	name = Rajib Ahmed
-	email = rajib.ahmed@klarna.se
+	email = rajib.ahmed@valtech.se
 [core]
 	editor = vim
 	excludesfile = /Users/rajib.ahmed/.gitignore
@@ -9,4 +9,4 @@
 [log]
 	date = relative
 [format]
-	pretty = format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(7,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D
+	pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cred%d %Creset%s %Cgreen%<(7)[%aN]
