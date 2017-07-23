@@ -40,9 +40,8 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 "color
-"set background=light
-"colorscheme gruvbox
-"let g:gruvbox_contrast_light=soft
+set background=dark
+colorscheme gruvbox
 
 set fcs=fold:-      " verticle split is just bg color
 set foldcolumn=0    " visual representation of folds
@@ -68,11 +67,13 @@ nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
 " make test commands execute using dispatch.vim
 let test#strategy = "neomake"
 
-nmap <silent> <leader>p :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
+nmap <silent> <Leader>p :TestNearest<CR>
+nmap <silent> <Leader>T :TestFile<CR>
+nmap <silent> <Leader>a :TestSuite<CR>
+nmap <silent> <Leader>l :TestLast<CR>
+nmap <silent> <Leader>g :TestVisit<CR>
+
+nmap <silent> <Leader><Leader> :Gstatus<CR>
 
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>
