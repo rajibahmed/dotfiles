@@ -84,12 +84,13 @@ alias jj='fasd_cd -d -i' # cd with interactive selection
 
 #OFFICE
 alias jira='git fetch && git branch -r | cut -d/ -f 2-  | fzf | xargs git checkout'
-
-#IMPORT FILES
-[ -f $HOME/.zsh_profile ] && source $HOME/.zsh_profile
-[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+alias vconf='vim ~/dotfiles/nvim/base_settings.vim'
 
 source $HOME/dotfiles/zsh/functions
 
 export EDITOR=nvim
 export PATH=$HOME/dotfiles/bin:$(brew --prefix qt@5.5)/bin:$PATH
+
+#IMPORT FILES
+[ -f ~/.zsh_profile ] && source ~/.zsh_profile
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

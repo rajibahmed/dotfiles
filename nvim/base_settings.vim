@@ -4,6 +4,7 @@ let mapleader=","
 set relativenumber
 set number
 set nowrap
+inoremap jj <Esc>
 
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
@@ -21,7 +22,6 @@ nmap ; :
 nmap <silent> ss :sp<CR>
 nmap <silent> vv :vs<CR>
 
-let g:webdevicons_enable_nerdtree = 1
 let g:rubycomplete_rails = 1
 
 "ultiSnips settings
@@ -29,6 +29,7 @@ let g:UltiSnipsExpandTrigger="<c-t>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsUsePythonVersion = 3
 
 "jsx setting
 let g:jsx_ext_required = 0
@@ -38,16 +39,14 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
+nnoremap <C-H> <C-W><C-H>
 "color
 set background=dark
 colorscheme gruvbox
 
-set fcs=fold:-      " verticle split is just bg color
-set foldcolumn=0    " visual representation of folds
-set foldmethod=syntax
-set foldnestmax=1
-set nofoldenable
+"visual block indent
+vnoremap < <gv
+vnoremap > >gv
 
 if !isdirectory($HOME."/.config/nvim/undo-dir")
   call mkdir($HOME."/.config/nvim/undo-dir", "", 0700)
@@ -74,6 +73,7 @@ nmap <silent> <Leader>l :TestLast<CR>
 nmap <silent> <Leader>g :TestVisit<CR>
 
 nmap <silent> <Leader><Leader> :Gstatus<CR>
+nmap <silent> <Leader>c :Gw<CR>
 
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>

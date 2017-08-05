@@ -33,8 +33,8 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 echo "setting up symlinks"
 cd ~
 ln -s  ~/dotfiles/zsh/.zshrc .zshrc
-ln -s ~/dotfiles/tmux.config .tmux.config
-ln -s ~/dotfiles/irbrc .irbrc
+ln -s  ~/dotfiles/tmux.config .tmux.config
+ln -s  ~/dotfiles/irbrc .irbrc
 ln -s  ~/dotfiles/ctags/ctags .ctags
 ln -s  ~/dotfiles/gitconfig .gitconfig
 ln -s  ~/dotfiles/gitignore .gitignore
@@ -63,7 +63,6 @@ echo "Install rubies"
 rbenv install 2.3.1
 rbenv install 2.4.0
 
-rbenv local 2.3.1 && gem install bundler neovim rubocop map_by_method what_methods --no-ri --no-rdoc
-rbenv local 2.4.0 && gem install bundler neovim rubocop map_by_method what_methods --no-ri --no-rdoc
+rbenv local 2.3.1 && gem install bundler pry neovim rubocop map_by_method what_methods --no-ri --no-rdoc
+rbenv local 2.4.0 && gem install bundler pry neovim rubocop map_by_method what_methods --no-ri --no-rdoc
 rbenv global 2.4.0
-
