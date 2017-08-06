@@ -58,9 +58,14 @@ set undofile
 set backupdir=~/.config/nvim/backup
 set directory=~/.config/nvim/temp
 
-"NerdTree
-let g:NERDTreeWinPos = "right"
-nnoremap <silent> <Leader>\ :NERDTreeToggle<CR>
+
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_alto = 1
+let g:netrw_winsize = 25
+let g:netrw_preview = 1
+nnoremap <silent> <Leader>\ :Vexplore<CR>
 
 "vim-test options
 " make test commands execute using dispatch.vim
