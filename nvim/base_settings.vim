@@ -40,6 +40,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-H> <C-W><C-H>
+
 "color
 set background=dark
 colorscheme gruvbox
@@ -57,7 +58,6 @@ set undofile
 
 set backupdir=~/.config/nvim/backup
 set directory=~/.config/nvim/temp
-
 
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3

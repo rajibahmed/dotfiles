@@ -11,4 +11,4 @@ endif
 "command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 "nnoremap \ :Kg<SPACE>
 "
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
