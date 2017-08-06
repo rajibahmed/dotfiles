@@ -72,7 +72,7 @@ nmap <silent> <Leader>a :TestSuite<CR>
 nmap <silent> <Leader>l :TestLast<CR>
 nmap <silent> <Leader>g :TestVisit<CR>
 
-nmap <silent> <Leader><Leader> :Gstatus<CR>
+nmap <silent> <Leader>s :Gstatus<CR>
 nmap <silent> <Leader>c :Gw<CR>
 
 if has('nvim')

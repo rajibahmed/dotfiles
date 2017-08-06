@@ -26,7 +26,7 @@ call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('christoomey/vim-tmux-navigator')
 
 "On-demand loading
-call minpac#add('scrooloose/nerdtree')
+"call minpac#add('scrooloose/nerdtree')
 call minpac#add('tpope/vim-fireplace')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('itchyny/lightline.vim')
@@ -55,9 +55,9 @@ call minpac#add('rust-lang/rust.vim', {'type': 'opt'})
 "JAVASCRIPT
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('moll/vim-node')
+call minpac#add('ternjs/tern_for_vim')
 call minpac#add('posva/vim-vue', {'type': 'opt'})
 call minpac#add('mxw/vim-jsx', {'type': 'opt'})
-call minpac#add('ternjs/tern_for_vim')
 
 "RUST
 call minpac#add('elixir-lang/vim-elixir', {'type': 'opt'})
