@@ -89,6 +89,7 @@ alias vconf='vim ~/dotfiles/nvim/base_settings.vim'
 source $HOME/dotfiles/zsh/functions
 
 export EDITOR=nvim
+export GREP_OPTIONS='--color=always' 
 export PATH=$HOME/dotfiles/bin:$(brew --prefix qt@5.5)/bin:$PATH
 
 #IMPORT FILES

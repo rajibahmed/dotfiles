@@ -26,7 +26,7 @@ call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('christoomey/vim-tmux-navigator')
 
 "On-demand loading
-"call minpac#add('scrooloose/nerdtree')
+call minpac#add('scrooloose/nerdtree', {'type': 'opt'})
 call minpac#add('tpope/vim-fireplace')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('itchyny/lightline.vim')
