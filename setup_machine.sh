@@ -25,9 +25,10 @@ brew install Caskroom/cask/iterm2
 
 mkdir ~/.nvm
 
-echo "3. Installing vim-plug for neovim"
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+echo "3. Install minpack"
+mkdir -p ~/.config/nvim/pack/minpac/opt/
+mkdir -p ~/.config/nvim/pack/minpac/start/
+cd ~/.config/nvim/pack/opt && git clone https://github.com/k-takata/minpac.git
 
 
 echo "setting up symlinks"
