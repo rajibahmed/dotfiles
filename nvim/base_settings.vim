@@ -1,7 +1,6 @@
 "vim basic settings
 let mapleader=","
 
-set relativenumber
 set number
 set nowrap
 inoremap jj <Esc>
@@ -59,13 +58,12 @@ set undofile
 set backupdir=~/.config/nvim/backup
 set directory=~/.config/nvim/temp
 
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
+let g:netrw_altv         = 1
+let g:netrw_banner       = 0
 let g:netrw_browse_split = 4
-let g:netrw_v = 1
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-let g:netrw_preview = 1
+let g:netrw_liststyle    = 3
+let g:netrw_preview      = 1
+let g:netrw_winsize      = 25
 nnoremap <silent> <Leader>\ :Vexplore<CR>
 
 let g:NERDTreeWinPos = "right"
@@ -74,6 +72,7 @@ nnoremap <silent> <Leader><Tab> :NERDTreeToggle<CR>
 "vim-test options
 " make test commands execute using dispatch.vim
 let test#strategy = "neomake"
+
 
 nmap <silent> <Leader>p :TestNearest<CR>
 nmap <silent> <Leader>T :TestFile<CR>
@@ -102,3 +101,30 @@ if has('nvim')
   let g:python3_host_prog='/usr/local/bin/python3' " Set python 3 host program
   set inccommand=nosplit
 endif
+
+set foldlevelstart=1
+nnoremap zO zczO
+nnoremap <Space> za
+
+function! MyFoldText() " {{{
+  let line = getline(v:foldstart)
+
+  let nucolwidth = &fdc + &number * &numberwidth
+  let windowwidth = winwidth(0) - nucolwidth - 3
+  let foldedlinecount = v:foldend - v:foldstart
+
+  " expand tabs into spaces
+  let onetab = strpart('          ', 0, &tabstop)
+  let line = substitute(line, '\t', onetab, 'g')
+
+  let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+  let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
+  return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
+endfunction " }}}
+set foldtext=MyFoldText()
+
+augroup ft_ruby
+  au!
+  au Filetype ruby setlocal foldmethod=syntax
+  au BufRead,BufNewFile Capfile setlocal filetype=ruby
+augroup END
