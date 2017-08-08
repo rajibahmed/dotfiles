@@ -19,18 +19,17 @@ $ sh dotfiles/setup_machine.sh
 Vim Important Mapping
 =================
 
-|--------|-------------------------------------
-| keys   |  Informations
-|--------|-------------------------------------
-| ,      | leader key
-| <Space>| to toggle fold
-| K      | to Ag / :Find on a word in normal mode
-| \      | mapps to :Find
-| ,s     | :GitStatus
-| ,c     | :Gw
-| ,r     | :%s live search on word
-| >      | indent on visual mode
-
+|-----------|-------------------------------------------|
+| keys      |  Informations                             |
+|-----------|:-----------------------------------------:|
+| ,         | leader key                                |  
+| <Space>   | to toggle fold                            |
+| K         | to Ag / :Find on a word in normal mode    |  
+| \         | mapps to :Find                            |  
+| ,s        | :GitStatus                                |  
+| ,c        | :Gw                                       |
+| ,r        | :%s live search on word                   |
+| >         | indent on visual mode                     |
 
 
 Vim plugins used
