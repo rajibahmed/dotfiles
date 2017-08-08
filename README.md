@@ -16,6 +16,16 @@ $ cd ~ && git clone https://github.com/rajibahmed/dotfiles.git
 $ sh dotfiles/setup_machine.sh  
 ```
 
+Vim Important Mapping
+=================
+,       leader key
+<Space> to toggle fold
+K       to Ag / :Find on a word in normal mode
+\       mapps to :Find
+,s      :GitStatus
+,c      :Gw
+,r      :%s live search on word
+
 
 Vim plugins used
 ================
@@ -26,5 +36,5 @@ Vim plugins used
    * NERDTree
    * editorconfig
    * lightline
-
+   * Few more
 
