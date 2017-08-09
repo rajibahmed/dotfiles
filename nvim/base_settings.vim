@@ -11,13 +11,17 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
+set completeopt=longest,menu
+set complete=.,w,b,u,t
+set wildmode=longest,list:longest
+
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype php setlocal ts=4 sts=4 sw=4
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
-nnoremap <silent> <Leader><space> :noh<CR>
+nnoremap <silent> <esc> :noh<CR>
 nmap ; :
 nmap <silent> ss :sp<CR>
 nmap <silent> vv :vs<CR>
