@@ -15,8 +15,8 @@ call minpac#add('skwp/greplace.vim')
 
 "Group dependencies, vim-snippets depends on ultisnips
 call minpac#add('Valloric/YouCompleteMe')
-call minpac#add('SirVer/ultisnips')
-call minpac#add('honza/vim-snippets')
+call minpac#add('SirVer/ultisnips', {'type': 'opt'})
+call minpac#add('honza/vim-snippets',{'type': 'opt'})
 
 "COMMON
 call minpac#add('neomake/neomake')
@@ -29,6 +29,9 @@ call minpac#add('christoomey/vim-tmux-navigator')
 "On-demand loading
 call minpac#add('scrooloose/nerdtree', {'type': 'opt'})
 call minpac#add('tpope/vim-fireplace')
+call minpac#add('tpope/vim-dispatch')
+call minpac#add('tpope/vim-unimpaired')
+call minpac#add('tpope/vim-endwise')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('itchyny/lightline.vim')
 
