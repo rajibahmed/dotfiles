@@ -79,17 +79,16 @@ alias d='fasd -d'        # directory
 alias f='fasd -f'        # file
 alias sd='fasd -sid'     # interactive directory selection
 alias sf='fasd -sif'     # interactive file selection
-alias j='fasd_cd -d'     # cd, same functionality as j in autojump
-alias jj='fasd_cd -d -i' # cd with interactive selection
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
 
 #OFFICE
 alias jira='git fetch && git branch -r | cut -d/ -f 2-  | fzf | xargs git checkout'
-alias vconf='vim ~/dotfiles/nvim/base_settings.vim'
 
 source $HOME/dotfiles/zsh/functions
 
 export EDITOR=nvim
-export GREP_OPTIONS='--color=always' 
+export GREP_OPTIONS='--color=always'
 export PATH=$HOME/dotfiles/bin:$(brew --prefix qt@5.5)/bin:$PATH
 
 #IMPORT FILES

@@ -19,7 +19,8 @@ call minpac#add('SirVer/ultisnips')
 call minpac#add('honza/vim-snippets')
 
 "COMMON
-call minpac#add('neomake/neomake')
+"call minpac#add('neomake/neomake')
+call minpac#add('w0rp/ale')
 call minpac#add('tpope/vim-surround')
 call minpac#add('mattn/emmet-vim', {'type': 'opt'})
 call minpac#add('editorconfig/editorconfig-vim')
@@ -66,7 +67,8 @@ call minpac#add('elixir-lang/vim-elixir', {'type': 'opt'})
 runtime macros/matchit.vim
 
 source ~/dotfiles/nvim/base_settings.vim
-source ~/dotfiles/nvim/neomake_settings.vim
+"source ~/dotfiles/nvim/neomake_settings.vim
+source ~/dotfiles/nvim/ale_settings.vim
 source ~/dotfiles/nvim/lightline_settings.vim
 source ~/dotfiles/nvim/fzf_settings.vim
 source ~/dotfiles/nvim/search_settings.vim

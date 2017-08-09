@@ -2,6 +2,7 @@
 let mapleader=","
 
 set number
+set relativenumber
 set nowrap
 inoremap jj <Esc>
 
