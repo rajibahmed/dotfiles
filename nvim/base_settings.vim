@@ -78,7 +78,6 @@ nnoremap <silent> <Leader><Tab> :NERDTreeToggle<CR>
 " make test commands execute using dispatch.vim
 let test#strategy = "neomake"
 
-
 nmap <silent> <Leader>p :TestNearest<CR>
 nmap <silent> <Leader>T :TestFile<CR>
 nmap <silent> <Leader>a :TestSuite<CR>
@@ -133,3 +132,13 @@ augroup ft_ruby
   au Filetype ruby setlocal foldmethod=syntax
   au BufRead,BufNewFile Capfile setlocal filetype=ruby
 augroup END
+
+
+let g:surround_45 = "<% \r %>"
+let g:surround_61 = "<%= \r %>"
+let g:surround_{char2nr("d")} = "<div\1id: \r..*\r id=\"&\"\1>\r</div>"
+
+nnoremap <S-Up> :m-2<CR>
+nnoremap <S-Down> :m+<CR>
+inoremap <S-Up> <Esc>:m-2<CR>
+inoremap <S-Down> <Esc>:m+<CR>
