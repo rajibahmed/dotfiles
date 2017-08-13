@@ -5,15 +5,17 @@ set number
 set relativenumber
 set nowrap
 inoremap jj <Esc>
+inoremap <C-[> <Esc>
+inoremap <Esc> <Nop>
 
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
-set completeopt=longest,menu
-set complete=.,w,b,u,t
-set wildmode=longest,list:longest
+"set completeopt=longest,menu
+"set complete=.,w,b,u,t
+"set wildmode=longest,list:longest
 
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
