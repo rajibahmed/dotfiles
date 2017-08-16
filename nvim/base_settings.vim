@@ -4,8 +4,7 @@ let mapleader=","
 set number
 set relativenumber
 set nowrap
-inoremap jj <Esc>
-inoremap <C-[> <Esc>
+inoremap jk <Esc>
 inoremap <Esc> <Nop>
 
 syntax on             " Enable syntax highlighting
@@ -48,8 +47,8 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-H> <C-W><C-H>
 
 "color
-set background=dark
-colorscheme gruvbox
+"set background=dark
+"colorscheme gruvbox
 
 "visual block indent
 vnoremap < <gv
@@ -144,3 +143,5 @@ nnoremap <S-Up> :m-2<CR>
 nnoremap <S-Down> :m+<CR>
 inoremap <S-Up> <Esc>:m-2<CR>
 inoremap <S-Down> <Esc>:m+<CR>
+
+hi Visual term=reverse cterm=reverse guibg=Grey

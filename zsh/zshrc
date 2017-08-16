@@ -73,6 +73,9 @@ alias rmf='rm -rf'
 alias tailf='tail -f'
 
 #FASD
+unalias z
+unalias zz
+
 alias a='fasd -a'        # any
 alias s='fasd -si'       # show / search / select
 alias d='fasd -d'        # directory
@@ -83,7 +86,8 @@ alias j='fasd_cd -d'     # cd, same functionality as j in autojump
 alias jj='fasd_cd -d -i' # cd with interactive selection
 
 #OFFICE
-alias jira='git fetch && git branch -r | cut -d/ -f 2-  | fzf | xargs git checkout'
+#alias jira='git fetch && git branch -r | cut -d/ -f 2-  | fzf | xargs git checkout'
+alias jira='git fetch && git checkout --track $(git branch -r | fzf)'
 
 #IMPORT FILES
 [ -f $HOME/.zsh_profile ] && source $HOME/.zsh_profile
