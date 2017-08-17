@@ -64,14 +64,7 @@ set undofile
 set backupdir=~/.config/nvim/backup
 set directory=~/.config/nvim/temp
 
-let g:netrw_altv         = 1
-let g:netrw_banner       = 0
-let g:netrw_browse_split = 4
-let g:netrw_liststyle    = 3
-let g:netrw_preview      = 1
-let g:netrw_winsize      = 25
-nnoremap <silent> <Leader>\ :Vexplore<CR>
-
+"NerdTree is back
 let g:NERDTreeWinPos = "right"
 nnoremap <silent> <Leader><Tab> :NERDTreeToggle<CR>
 
@@ -86,7 +79,7 @@ nmap <silent> <Leader>l :TestLast<CR>
 nmap <silent> <Leader>g :TestVisit<CR>
 
 nmap <silent> <Leader>s :Gstatus<CR>
-nmap <silent> <Leader>c :Gw<CR>
+nmap <silent> <Leader>w :Gw<CR>
 
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>
