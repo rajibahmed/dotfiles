@@ -27,7 +27,7 @@ call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('christoomey/vim-tmux-navigator')
 
 "On-demand loading
-call minpac#add('scrooloose/nerdtree', {'type': 'opt'})
+call minpac#add('scrooloose/nerdtree')
 call minpac#add('tpope/vim-fireplace')
 call minpac#add('tpope/vim-dispatch')
 call minpac#add('tpope/vim-unimpaired')
@@ -51,11 +51,6 @@ call minpac#add('tpope/vim-rbenv')
 call minpac#add('rdolgushin/groovy.vim', {'type': 'opt'})
 call minpac#add('tpope/vim-bundler')
 
-"GOLANG
-call minpac#add('fatih/vim-go', {'type': 'opt'})
-call minpac#add('nsf/gocode', {'type': 'opt'})
-call minpac#add('rust-lang/rust.vim', {'type': 'opt'})
-
 "JAVASCRIPT
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('moll/vim-node')
@@ -63,8 +58,13 @@ call minpac#add('ternjs/tern_for_vim')
 call minpac#add('posva/vim-vue', {'type': 'opt'})
 call minpac#add('mxw/vim-jsx', {'type': 'opt'})
 
-"RUST
+"COMPILED
+call minpac#add('rust-lang/rust.vim', {'type': 'opt'})
 call minpac#add('elixir-lang/vim-elixir', {'type': 'opt'})
+
+"GOLANG
+call minpac#add('fatih/vim-go', {'type': 'opt'})
+call minpac#add('nsf/gocode', {'type': 'opt'})
 
 "match it with methods
 runtime macros/matchit.vim
