@@ -7,6 +7,7 @@ Installation
 $ cd ~ && git clone https://github.com/rajibahmed/dotfiles.git
 $ sh dotfiles/setup_machine.sh  
 ```
+
 Vim plugins used
 ================
 
