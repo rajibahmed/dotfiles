@@ -17,6 +17,7 @@ call minpac#add('skwp/greplace.vim')
 call minpac#add('Valloric/YouCompleteMe')
 call minpac#add('SirVer/ultisnips', {'type': 'opt'})
 call minpac#add('honza/vim-snippets',{'type': 'opt'})
+call minpac#add('epilande/vim-react-snippets',{'type': 'opt'})
 
 "COMMON
 call minpac#add('neomake/neomake')
@@ -60,8 +61,8 @@ call minpac#add('rust-lang/rust.vim', {'type': 'opt'})
 call minpac#add('elixir-lang/vim-elixir', {'type': 'opt'})
 
 "GOLANG
-call minpac#add('fatih/vim-go', {'type': 'opt'})
-call minpac#add('nsf/gocode', {'type': 'opt'})
+call minpac#add('nsf/gocode')
+call minpac#add('fatih/vim-go')
 
 "match it with methods
 runtime macros/matchit.vim

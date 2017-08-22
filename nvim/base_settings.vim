@@ -16,11 +16,6 @@ filetype plugin on    " Enable filetype-specific plugins
 "set complete=.,w,b,u,t
 "set wildmode=longest,list:longest
 
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype php setlocal ts=4 sts=4 sw=4
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 nnoremap <silent> <esc> :noh<CR>
 nmap ; :
@@ -138,3 +133,31 @@ inoremap <S-Up> <Esc>:m-2<CR>
 inoremap <S-Down> <Esc>:m+<CR>
 
 hi Visual term=reverse cterm=reverse guibg=Grey
+
+command! Json silent! :%!python -m json.tool
+
+augroup ft_php
+  au!
+  au FileType php packadd php.vim
+  au FileType php echom "hello"
+  au Filetype php setlocal ts=4 sts=4 sw=4
+augroup END
+
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
+
+function! LoadSnippets()
+  packadd ultisnips
+  packadd vim-snippets
+  packadd vim-react-snippets
+  echo "loaded"
+endfunction
+
+autocmd BufNewFile *.txt :call LoadSnippets()
