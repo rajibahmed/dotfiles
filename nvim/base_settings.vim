@@ -161,3 +161,22 @@ function! LoadSnippets()
 endfunction
 
 autocmd BufNewFile *.txt :call LoadSnippets()
+
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+
+let g:pymode = 1
+let g:pymode_python = 'python3'
+let g:pymode_warnings = 1

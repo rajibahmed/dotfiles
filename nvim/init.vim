@@ -3,7 +3,6 @@ set encoding=utf-8
 packadd minpac
 
 call minpac#init()
-call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('morhetz/gruvbox')
 call minpac#add('junegunn/vim-easy-align', {'type': 'opt'})
 call minpac#add('easymotion/vim-easymotion')
@@ -12,6 +11,7 @@ call minpac#add('machakann/vim-highlightedyank')
 call minpac#add('kana/vim-textobj-user')
 call minpac#add('nelstrom/vim-textobj-rubyblock')
 call minpac#add('skwp/greplace.vim')
+call minpac#add('klen/python-mode')
 
 "Group dependencies, vim-snippets depends on ultisnips
 call minpac#add('Valloric/YouCompleteMe')
@@ -21,7 +21,6 @@ call minpac#add('epilande/vim-react-snippets',{'type': 'opt'})
 
 "COMMON
 call minpac#add('neomake/neomake')
-call minpac#add('w0rp/ale', {'type': 'opt'})
 call minpac#add('tpope/vim-surround')
 call minpac#add('mattn/emmet-vim', {'type': 'opt'})
 call minpac#add('editorconfig/editorconfig-vim')
