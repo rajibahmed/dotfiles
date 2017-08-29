@@ -16,13 +16,10 @@ set completeopt=longest,menu
 set complete=.,w,b,u,t
 set wildmode=longest,list:longest
 
-
 nnoremap <silent> <esc> :noh<CR>
 nmap ; :
 nmap <silent> ss :sp<CR>
 nmap <silent> vv :vs<CR>
-
-let g:rubycomplete_rails = 1
 
 "ultiSnips settings
 let g:UltiSnipsExpandTrigger="<c-t>"
@@ -67,14 +64,16 @@ nnoremap <silent> <Leader><Tab> :NERDTreeToggle<CR>
 " make test commands execute using dispatch.vim
 let test#strategy = "neomake"
 
-nmap <silent> <Leader>p :TestNearest<CR>
-nmap <silent> <Leader>T :TestFile<CR>
-nmap <silent> <Leader>a :TestSuite<CR>
-nmap <silent> <Leader>l :TestLast<CR>
-nmap <silent> <Leader>g :TestVisit<CR>
+nmap <Leader>p :TestNearest<CR>
+nmap <Leader>T :TestFile<CR>
+nmap <Leader>a :TestSuite<CR>
+nmap <Leader>l :TestLast<CR>
+nmap <Leader>g :TestVisit<CR>
 
-nmap <silent> <Leader>s :Gstatus<CR>
-nmap <silent> <Leader>w :Gw<CR>
+nmap <Leader>s :Gstatus<CR>
+nmap <Leader>w :Gw<CR>
+nmap <Leader>m :bprev<CR>
+nmap <Leader>n :bnext<CR>
 
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>
@@ -162,6 +161,7 @@ endfunction
 
 command! LoadSnippets call LoadSnippets()
 
+"PYTHON 3 settings
 au BufNewFile,BufRead *.py
     \ set tabstop=4
     \ set softtabstop=4
@@ -170,7 +170,6 @@ au BufNewFile,BufRead *.py
     \ set expandtab
     \ set autoindent
     \ set fileformat=unix
-
 
 let g:pymode = 1
 let g:pymode_python = 'python3'
