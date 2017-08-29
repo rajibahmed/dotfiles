@@ -68,7 +68,6 @@ runtime macros/matchit.vim
 
 source ~/dotfiles/nvim/base_settings.vim
 source ~/dotfiles/nvim/neomake_settings.vim
-source ~/dotfiles/nvim/ale_settings.vim
 source ~/dotfiles/nvim/lightline_settings.vim
 source ~/dotfiles/nvim/fzf_settings.vim
 source ~/dotfiles/nvim/search_settings.vim

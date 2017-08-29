@@ -12,9 +12,9 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
-"set completeopt=longest,menu
-"set complete=.,w,b,u,t
-"set wildmode=longest,list:longest
+set completeopt=longest,menu
+set complete=.,w,b,u,t
+set wildmode=longest,list:longest
 
 
 nnoremap <silent> <esc> :noh<CR>
@@ -42,8 +42,8 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-H> <C-W><C-H>
 
 "color
-"set background=dark
-"colorscheme gruvbox
+set background=dark
+colorscheme gruvbox
 
 "visual block indent
 vnoremap < <gv
@@ -157,15 +157,10 @@ function! LoadSnippets()
   packadd ultisnips
   packadd vim-snippets
   packadd vim-react-snippets
-  echo "loaded"
+  echom "snippets loaded"
 endfunction
 
-autocmd BufNewFile *.txt :call LoadSnippets()
-
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+command! LoadSnippets call LoadSnippets()
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4
@@ -180,3 +175,4 @@ au BufNewFile,BufRead *.py
 let g:pymode = 1
 let g:pymode_python = 'python3'
 let g:pymode_warnings = 1
+let g:ycm_global_ycm_extra_conf = '~/.config/nvim/pack/minpac/start/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
