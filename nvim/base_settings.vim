@@ -4,6 +4,10 @@ let mapleader=","
 set number
 set relativenumber
 set nowrap
+set autoread
+set lazyredraw
+set ttyfast
+
 inoremap jk <Esc>
 inoremap <Esc> <Nop>
 
@@ -12,17 +16,26 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
-set completeopt=longest,menu
-set complete=.,w,b,u,t
-set wildmode=longest,list:longest
+"set completeopt=longest,menu
+"set complete=.,w,b,u,t
+"set wildmode=longest,list:longest
+
 set spell spelllang=en_us
 
+"
 nnoremap <silent> <esc> :noh<CR>
 nmap ; :
+
+"Splitting windows
 nmap <silent> ss :sp<CR>
 nmap <silent> vv :vs<CR>
 
-"ultiSnips settings
+"Easy copy-paste from clipboard
+nnoremap <silent> ,p "+p
+nnoremap <silent> ,P "+P
+nnoremap <silent> ,y "+yy
+
+"UltiSnips settings
 let g:UltiSnipsExpandTrigger="<c-t>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
@@ -39,11 +52,11 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-H> <C-W><C-H>
 
-"color
+"Color
 set background=dark
 colorscheme gruvbox
 
-"visual block indent
+"Visual block indent
 vnoremap < <gv
 vnoremap > >gv
 
@@ -65,7 +78,7 @@ nnoremap <silent> <Leader><Tab> :NERDTreeToggle<CR>
 " make test commands execute using dispatch.vim
 let test#strategy = "neomake"
 
-nmap <Leader>p :TestNearest<CR>
+nmap <Leader>x :TestNearest<CR>
 nmap <Leader>T :TestFile<CR>
 nmap <Leader>a :TestSuite<CR>
 nmap <Leader>l :TestLast<CR>
