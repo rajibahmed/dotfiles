@@ -5,7 +5,7 @@ Installation
 
 ```sh
 $ cd ~ && git clone https://github.com/rajibahmed/dotfiles.git
-$ sh dotfiles/setup_machine.sh  
+$ sh dotfiles/setup_machine.sh
 ```
 
 Vim plugins used
@@ -36,7 +36,7 @@ Vim Important Mapping
   | ,b        | :Buffers                                  |
   | ,s        | :GitStatus                                |
   | ,w        | :Gw                                       |
-  | ,ww       | :Gcommit           												|
+  | ,ww       | :Gcommit												          |
   | ,r        | :%s live search on word                   |
   | ,m        | :bprev                                    |
   | ,n        | :bnext                                    |
@@ -48,6 +48,6 @@ Tmux Mapping
 
   | keys      |  Informations                             |
   |-----------|:------------------------------------------|
-  | jk        | esc key                                   |  
-  | ;         | : in insert mode                          |  
-  | ,         | leader key                                |  
+  | jk        | esc key                                   |
+  | ;         | : in insert mode                          |
+  | ,         | leader key                                |

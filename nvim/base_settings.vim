@@ -8,6 +8,7 @@ set autoread
 set lazyredraw
 set ttyfast
 
+
 inoremap jk <Esc>
 inoremap <Esc> <Nop>
 
@@ -22,6 +23,7 @@ filetype plugin on    " Enable filetype-specific plugins
 
 set spell spelllang=en_us
 
+map <Leader><space> :TrimSpaces<CR>
 "
 nnoremap <silent> <esc> :noh<CR>
 nmap ; :
