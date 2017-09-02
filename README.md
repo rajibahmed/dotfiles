@@ -25,21 +25,29 @@ Vim Important Mapping
 
   | keys      |  Informations                             |
   |-----------|:------------------------------------------|
-  | jk        | esc key                                   |  
-  | ;         | : in insert mode                          |  
-  | ,         | leader key                                |  
+  | jk        | esc key                                   |
+  | ;         | : in insert mode                          |
+  | ,         | leader key                                |
   | Space     | to toggle fold                            |
-  | K         | to Ag / :Find on a word in normal mode    |  
-  | \         | maps to :Find                             |  
-  | ,t        | :FZF                                      |  
-  | ,b        | :Buffers                                  |  
-  | ,s        | :GitStatus                                |  
+  | K         | to Ag / :Find on a word in normal mode    |
+  | \         | maps to :Find                             |
+  | ,TAB      | :NerdTreeToggle														|
+  | ,t        | :FZF                                      |
+  | ,b        | :Buffers                                  |
+  | ,s        | :GitStatus                                |
   | ,w        | :Gw                                       |
+  | ,ww       | :Gcommit           												|
   | ,r        | :%s live search on word                   |
-  | >         | indent on visual mode                     |
+  | ,m        | :bprev                                    |
+  | ,n        | :bnext                                    |
+  | > / <     | indent on visual mode                     |
 
 
 Tmux Mapping
 ======================
 
-#TODO
+  | keys      |  Informations                             |
+  |-----------|:------------------------------------------|
+  | jk        | esc key                                   |  
+  | ;         | : in insert mode                          |  
+  | ,         | leader key                                |  

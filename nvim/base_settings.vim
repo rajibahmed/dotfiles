@@ -15,6 +15,7 @@ filetype plugin on    " Enable filetype-specific plugins
 set completeopt=longest,menu
 set complete=.,w,b,u,t
 set wildmode=longest,list:longest
+set spell spelllang=en_us
 
 nnoremap <silent> <esc> :noh<CR>
 nmap ; :
@@ -72,8 +73,9 @@ nmap <Leader>g :TestVisit<CR>
 
 nmap <Leader>s :Gstatus<CR>
 nmap <Leader>w :Gw<CR>
-nmap <Leader>m :bprev<CR>
-nmap <Leader>n :bnext<CR>
+nmap <Leader>ww :Gcommit<CR>
+nmap <Leader>n :bprev<CR>
+nmap <Leader>m :bnext<CR>
 
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>
