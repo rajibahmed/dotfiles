@@ -3,7 +3,7 @@ name = Rajib Ahmed
 email = rajib.ahmed@klarna.com
 
 [core]
-editor = vim
+editor = nvim
 excludesfile = /Users/rajib.ahmed/.gitignore
 
 [push]
@@ -13,4 +13,4 @@ default = current
 date = relative
 
 [format]
-pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cred%d %Creset%s %Cgreen%<(7)[%aN]
+  pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cred%d %Creset%s %Cgreen%<(7)[%aN]

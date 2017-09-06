@@ -32,9 +32,6 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history # share command history data
 
-fpath=(/usr/local/share/zsh-completions $fpath)
-. $(brew --prefix)/share/zsh/site-functions
-
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
@@ -53,9 +50,10 @@ alias pull='git pull --rebase'
 alias push='git push'
 
 #SYSTEM
-alias python='python3'
-alias vim='/usr/local/bin/nvim'
-alias _='sudo'
+alias python=python3
+alias pip=pip3
+alias vim=/usr/local/bin/nvim
+alias _=sudo
 alias gz='tar -zcvf' #tar a folder
 alias ll='ls -lahGF'
 
@@ -86,13 +84,20 @@ alias j='fasd_cd -d'     # cd, same functionality as j in autojump
 alias jj='fasd_cd -d -i' # cd with interactive selection
 
 #OFFICE
-#alias jira='git fetch && git branch -r | cut -d/ -f 2-  | fzf | xargs git checkout'
 alias jira='git fetch && git checkout --track $(git branch -r | fzf)'
 
 export EDITOR=nvim
 export PATH=$HOME/dotfiles/bin:$(brew --prefix qt@5.5)/bin:$PATH
 
+
+fpath=(~/.zsh/completion $fpath)
+fpath=(/usr/local/share/zsh-completions $fpath)
+. $(brew --prefix)/share/zsh/site-functions
+
 #IMPORT FILES
 source $HOME/dotfiles/zsh/functions
 [ -f $HOME/.zsh_profile ] && source $HOME/.zsh_profile
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
