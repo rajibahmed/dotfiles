@@ -1,4 +1,4 @@
-echo "1. Setting Up homebrew"
+echo "2. Setting Up homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 echo "2. Installing some useful things using brew"
@@ -23,6 +23,9 @@ brew install the_silver_searcher
 brew install tree
 brew tap caskroom/cask
 brew install Caskroom/cask/iterm2
+brew install zsh-autosuggestions
+brew install zsh-completions
+brew install zsh-syntax-highlighting
 
 mkdir ~/.nvm
 
