@@ -17,16 +17,14 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
-"set completeopt=longest,menu
-"set complete=.,w,b,u,t
+set completeopt=longest,menu
+set complete=.,w,b,u,t
 "set wildmode=longest,list:longest
 
 set spell spelllang=en_us
 
 map <Leader><space> :TrimSpaces<CR>
-"
 nnoremap <silent> <esc> :noh<CR>
-nmap ; :
 
 "Splitting windows
 nmap <silent> ss :sp<CR>
@@ -111,7 +109,7 @@ if has('nvim')
   set inccommand=nosplit
 endif
 
-set foldlevelstart=1
+set foldlevelstart=99
 nnoremap zO zczO
 nnoremap <Space> za
 
@@ -155,7 +153,6 @@ command! Json silent! :%!python -m json.tool
 augroup ft_php
   au!
   au FileType php packadd php.vim
-  au FileType php echom "hello"
   au Filetype php setlocal ts=4 sts=4 sw=4
 augroup END
 
@@ -178,17 +175,8 @@ endfunction
 
 command! LoadSnippets call LoadSnippets()
 
-"PYTHON 3 settings
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
-
 let g:pymode = 1
 let g:pymode_python = 'python3'
 let g:pymode_warnings = 1
 let g:ycm_global_ycm_extra_conf = '~/.config/nvim/pack/minpac/start/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:rustfmt_autosave = 1
