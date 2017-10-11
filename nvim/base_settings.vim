@@ -31,9 +31,9 @@ nmap <silent> ss :sp<CR>
 nmap <silent> vv :vs<CR>
 
 "Easy copy-paste from clipboard
-nnoremap <silent> ,p "+p
-nnoremap <silent> ,P "+P
-nnoremap <silent> ,y "+yy
+nnoremap <silent> <Leader>p "+p
+nnoremap <silent> <Leader>P "+P
+nnoremap <silent> <Leader>y "+yy
 
 "UltiSnips settings
 let g:UltiSnipsExpandTrigger="<c-t>"

@@ -85,6 +85,9 @@ alias jj='fasd_cd -d -i' # cd with interactive selection
 
 #OFFICE
 alias jira='git fetch && git checkout --track $(git branch -r | fzf)'
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
 
 export EDITOR=nvim
 export PATH=$HOME/dotfiles/bin:$(brew --prefix qt@5.5)/bin:$PATH
