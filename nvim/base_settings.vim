@@ -2,7 +2,6 @@
 let mapleader=","
 
 set number
-set relativenumber
 set nowrap
 set autoread
 set lazyredraw
@@ -53,8 +52,8 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-H> <C-W><C-H>
 
 "Color
-set background=dark
-colorscheme gruvbox
+set background=light
+"colorscheme gruvbox
 
 "Visual block indent
 vnoremap < <gv
@@ -76,13 +75,14 @@ nnoremap <silent> <Leader><Tab> :NERDTreeToggle<CR>
 
 "vim-test options
 " make test commands execute using dispatch.vim
-let test#strategy = "neomake"
-
-nmap <Leader>x :TestNearest<CR>
-nmap <Leader>T :TestFile<CR>
-nmap <Leader>a :TestSuite<CR>
-nmap <Leader>l :TestLast<CR>
-nmap <Leader>g :TestVisit<CR>
+"call minpac#add('janko-m/vim-test')
+"let test#strategy = "neomake"
+"
+"nmap <Leader>x :TestNearest<CR>
+"nmap <Leader>T :TestFile<CR>
+"nmap <Leader>a :TestSuite<CR>
+"nmap <Leader>l :TestLast<CR>
+"nmap <Leader>g :TestVisit<CR>
 
 nmap <Leader>s :Gstatus<CR>
 nmap <Leader>w :Gw<CR>

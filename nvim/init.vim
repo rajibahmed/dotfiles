@@ -3,10 +3,6 @@ set encoding=utf-8
 packadd minpac
 
 call minpac#init()
-call minpac#add('morhetz/gruvbox')
-call minpac#add('junegunn/vim-easy-align', {'type': 'opt'})
-call minpac#add('easymotion/vim-easymotion')
-call minpac#add('nono/vim-handlebars')
 call minpac#add('machakann/vim-highlightedyank')
 call minpac#add('kana/vim-textobj-user')
 call minpac#add('nelstrom/vim-textobj-rubyblock')
@@ -15,14 +11,14 @@ call minpac#add('klen/python-mode')
 
 "Group dependencies, vim-snippets depends on ultisnips
 call minpac#add('Valloric/YouCompleteMe')
-call minpac#add('SirVer/ultisnips', {'type': 'opt'})
-call minpac#add('honza/vim-snippets',{'type': 'opt'})
+call minpac#add('SirVer/ultisnips')
+call minpac#add('honza/vim-snippets')
 call minpac#add('epilande/vim-react-snippets',{'type': 'opt'})
 
 "COMMON
 call minpac#add('neomake/neomake')
 call minpac#add('tpope/vim-surround')
-call minpac#add('mattn/emmet-vim', {'type': 'opt'})
+call minpac#add('mattn/emmet-vim')
 call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('christoomey/vim-tmux-navigator')
 
@@ -41,12 +37,11 @@ call minpac#add('tpope/vim-fugitive')
 call minpac#add('stanangeloff/php.vim', {'type': 'opt'})
 
 "RUBY
-call minpac#add('janko-m/vim-test')
 call minpac#add('vim-ruby/vim-ruby')
 call minpac#add('tpope/vim-rails')
 call minpac#add('tpope/vim-rbenv')
-call minpac#add('rdolgushin/groovy.vim', {'type': 'opt'})
 call minpac#add('tpope/vim-bundler')
+call minpac#add('rdolgushin/groovy.vim', {'type': 'opt'})
 
 "JAVASCRIPT
 call minpac#add('pangloss/vim-javascript')
@@ -56,7 +51,7 @@ call minpac#add('posva/vim-vue', {'type': 'opt'})
 call minpac#add('mxw/vim-jsx', {'type': 'opt'})
 
 "COMPILED
-call minpac#add('rust-lang/rust.vim', {'type': 'opt'})
+call minpac#add('rust-lang/rust.vim')
 call minpac#add('elixir-lang/vim-elixir', {'type': 'opt'})
 
 "GOLANG
