@@ -3,6 +3,7 @@ set encoding=utf-8
 packadd minpac
 
 call minpac#init()
+call minpac#add('rizzatti/dash.vim')
 call minpac#add('machakann/vim-highlightedyank')
 call minpac#add('kana/vim-textobj-user')
 call minpac#add('nelstrom/vim-textobj-rubyblock')
@@ -22,8 +23,9 @@ call minpac#add('mattn/emmet-vim')
 call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('christoomey/vim-tmux-navigator')
 
-"On-demand loading
+"System plug
 call minpac#add('scrooloose/nerdtree')
+call minpac#add('scrooloose/nerdcommenter')
 call minpac#add('tpope/vim-endwise')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('itchyny/lightline.vim')

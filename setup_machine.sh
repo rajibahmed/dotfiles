@@ -1,29 +1,27 @@
 echo "1. Setting Up homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+echo "setting up symlinks"
+cd ~
+ln -fs  ~/dotfiles/Brewfile
+ln -fs  ~/dotfiles/zsh/.zshrc .zshrc
+ln -fs  ~/dotfiles/tmux.config .tmux.config
+ln -fs  ~/dotfiles/irbrc .irbrc
+ln -fs  ~/dotfiles/ctags/ctags .ctags
+ln -fs  ~/dotfiles/gitconfig .gitconfig
+ln -fs  ~/dotfiles/gitignore .gitignore
+
 echo "2. Installing some useful things using brew"
 brew bundle
 
 mkdir ~/.nvm
 
-echo "3. Install minpack"
+echo "3. setup neovim"
 mkdir -p ~/.config/nvim/pack/minpac/opt/
 mkdir -p ~/.config/nvim/pack/minpac/start/
 cd ~/.config/nvim/pack/opt && git clone https://github.com/k-takata/minpac.git
-
-
-echo "setting up symlinks"
-cd ~
-ln -s  ~/dotfiles/zsh/.zshrc .zshrc
-ln -s  ~/dotfiles/tmux.config .tmux.config
-ln -s  ~/dotfiles/irbrc .irbrc
-ln -s  ~/dotfiles/ctags/ctags .ctags
-ln -s  ~/dotfiles/gitconfig .gitconfig
-ln -s  ~/dotfiles/gitignore .gitignore
-
 cd .config/nvim && \
 	ln -s ~/dotfiles/nvim/init.vim  init.vim
-
 nvim +PlugInstall +qall
 
 echo "4. install prompt with nvm"
@@ -41,10 +39,6 @@ echo "5. Change default shell"
 chsh
 
 echo "Install rubies"
-
-rbenv install 2.3.1
 rbenv install 2.4.0
-
-rbenv local 2.3.1 && gem install bundler pry neovim rubocop map_by_method what_methods --no-ri --no-rdoc
 rbenv local 2.4.0 && gem install bundler pry neovim rubocop map_by_method what_methods --no-ri --no-rdoc
 rbenv global 2.4.0
