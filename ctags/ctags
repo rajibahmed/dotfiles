@@ -4,6 +4,12 @@
 --exclude=node_modules/*
 --exclude=db/*
 --exclude=log/*
+--exclude=log
+--exclude=bundle
+--exclude=*.min.js
+--exclude=jquery.*.js
+--exclude=jquery-*.js
+--languages=-html,sql
 
 --langdef=js
 --langmap=js:.js
