@@ -9,6 +9,7 @@ call minpac#add('kana/vim-textobj-user')
 call minpac#add('nelstrom/vim-textobj-rubyblock')
 call minpac#add('skwp/greplace.vim')
 call minpac#add('klen/python-mode')
+call minpac#add('gorodinskiy/vim-coloresque')
 
 "Group dependencies, vim-snippets depends on ultisnips
 call minpac#add('Valloric/YouCompleteMe')
