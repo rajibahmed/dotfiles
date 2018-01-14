@@ -73,3 +73,5 @@ source ~/dotfiles/nvim/search_settings.vim
 "minpac commands:
 command! PlugUpdate call minpac#update()
 command! PlugClean call minpac#clean()
+
+let g:neomake_rust_cargo_command = ['test', '--no-run']
