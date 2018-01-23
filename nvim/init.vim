@@ -45,6 +45,7 @@ call minpac#add('tpope/vim-rails')
 call minpac#add('tpope/vim-rbenv')
 call minpac#add('tpope/vim-bundler')
 call minpac#add('rdolgushin/groovy.vim', {'type': 'opt'})
+call minpac#add('dansomething/vim-eclim')
 
 "JAVASCRIPT
 call minpac#add('pangloss/vim-javascript')

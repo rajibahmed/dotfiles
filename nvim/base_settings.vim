@@ -5,7 +5,6 @@ set number
 set nowrap
 set autoread
 set lazyredraw
-set ttyfast
 
 
 inoremap jk <Esc>
@@ -20,19 +19,13 @@ set completeopt=longest,menu
 set complete=.,w,b,u,t
 "set wildmode=longest,list:longest
 
-set spell spelllang=en_us
+"set spell spelllang=en_us
 
-map <Leader><space> :TrimSpaces<CR>
 nnoremap <silent> <esc> :noh<CR>
 
 "Splitting windows
 nmap <silent> ss :sp<CR>
 nmap <silent> vv :vs<CR>
-
-"Easy copy-paste from clipboard
-nnoremap <silent> <Leader>p "+p
-nnoremap <silent> <Leader>P "+P
-nnoremap <silent> <Leader>y "+yy
 
 "UltiSnips settings
 let g:UltiSnipsExpandTrigger="<c-t>"
@@ -52,7 +45,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-H> <C-W><C-H>
 
 "Color
-set background=light
+"set background=light
 "colorscheme gruvbox
 
 "Visual block indent
@@ -86,7 +79,6 @@ nnoremap <silent> <Leader><Tab> :NERDTreeToggle<CR>
 
 nmap <Leader>s :Gstatus<CR>
 nmap <Leader>w :Gw<CR>
-nmap <Leader>ww :Gcommit<CR>
 nmap <Leader>n :bprev<CR>
 nmap <Leader>m :bnext<CR>
 
@@ -175,6 +167,7 @@ endfunction
 
 command! LoadSnippets call LoadSnippets()
 
+let g:EclimCompletionMethod = 'omnifunc'
 let g:pymode = 1
 let g:pymode_python = 'python3'
 let g:pymode_warnings = 1

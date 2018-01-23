@@ -1,16 +1,27 @@
 [user]
-name = Rajib Ahmed
-email = rajib.ahmed@klarna.com
+  name = Rajib Ahmed
+  email = rajib.ahmed@klarna.com
 
 [core]
-editor = nvim
-excludesfile = /Users/rajib.ahmed/.gitignore
+  editor = nvim
+  excludesfile = /Users/rajib.ahmed/.gitignore
 
 [push]
-default = current
+  default = current
+
+[pull]
+  rebase = true
 
 [log]
-date = relative
+  date = relative
 
 [format]
   pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cred%d %Creset%s %Cgreen%<(7)[%aN]
+
+
+[merge]
+  tool = vimdiff
+[mergetool]
+  prompt = true
+[mergetool "vimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
