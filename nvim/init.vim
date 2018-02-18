@@ -3,13 +3,12 @@ set encoding=utf-8
 packadd minpac
 
 call minpac#init()
-call minpac#add('rizzatti/dash.vim')
+"call minpac#add('rizzatti/dash.vim')
 call minpac#add('machakann/vim-highlightedyank')
 call minpac#add('kana/vim-textobj-user')
 call minpac#add('nelstrom/vim-textobj-rubyblock')
 call minpac#add('skwp/greplace.vim')
 call minpac#add('klen/python-mode')
-call minpac#add('gorodinskiy/vim-coloresque')
 
 "Group dependencies, vim-snippets depends on ultisnips
 call minpac#add('Valloric/YouCompleteMe')
@@ -62,6 +61,12 @@ call minpac#add('elixir-lang/vim-elixir', {'type': 'opt'})
 call minpac#add('nsf/gocode')
 call minpac#add('fatih/vim-go')
 
+"Colors
+call minpac#add('ayu-theme/ayu-vim')
+call minpac#add('morhetz/gruvbox')
+call minpac#add('endel/vim-github-colorscheme')
+call minpac#add('gorodinskiy/vim-coloresque')
+
 "match it with methods
 runtime macros/matchit.vim
 
@@ -75,4 +80,7 @@ source ~/dotfiles/nvim/search_settings.vim
 command! PlugUpdate call minpac#update()
 command! PlugClean call minpac#clean()
 
-let g:neomake_rust_cargo_command = ['test', '--no-run']
+autocmd BufWritePost * if &diff == 1 | colorscheme github | endif
+
+let g:ycm_rust_src_path="~/Developer/rust-master/src/"
+set mouse=a

@@ -14,12 +14,11 @@ ln -fs  ~/dotfiles/gitignore .gitignore
 echo "2. Installing some useful things using brew"
 brew bundle
 
-mkdir ~/.nvm
 
 echo "3. setup neovim"
-mkdir -p ~/.config/nvim/pack/minpac/opt/
-mkdir -p ~/.config/nvim/pack/minpac/start/
+mkdir -p ~/.config/nvim/pack/minpac/{opt,start}
 cd ~/.config/nvim/pack/opt && git clone https://github.com/k-takata/minpac.git
+
 cd .config/nvim && \
 	ln -s ~/dotfiles/nvim/init.vim  init.vim
 nvim +PlugInstall +qall

@@ -36,7 +36,7 @@ endfunction
 function! LightlineFugitive()
   if &filetype !~? 'help' && exists("*fugitive#head")
     let branch = fugitive#head()
-    return branch !=# '' ? ''.branch : ''
+    return branch !=# '' ? branch : ''
   endif
   return ''
 endfunction

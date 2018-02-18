@@ -1,5 +1,5 @@
-ruby_tag(){
-  ctags -R . $(bundle show --paths)
+ruby_tags(){
+  ctags -R $1 $(bundle show --paths)
 }
 
 man() {

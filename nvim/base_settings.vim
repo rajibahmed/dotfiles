@@ -101,7 +101,7 @@ if has('nvim')
   set inccommand=nosplit
 endif
 
-set foldlevelstart=99
+set foldlevelstart=4
 nnoremap zO zczO
 nnoremap <Space> za
 
@@ -174,3 +174,5 @@ let g:pymode_warnings = 1
 let g:ycm_global_ycm_extra_conf = '~/.config/nvim/pack/minpac/start/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:rustfmt_autosave = 1
 let g:ycm_rust_src_path ='/usr/local/rust/rust/src'
+let g:neomake_rust_cargo_command = ['test', '--no-run']
+
