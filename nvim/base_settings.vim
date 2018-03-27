@@ -45,7 +45,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-H> <C-W><C-H>
 
 "Color
-"set background=light
+set background=light
 "colorscheme gruvbox
 
 "Visual block indent
@@ -55,11 +55,17 @@ vnoremap > >gv
 if !isdirectory($HOME."/.config/nvim/undo-dir")
   call mkdir($HOME."/.config/nvim/undo-dir", "", 0700)
 endif
-
 set undodir=~/.config/nvim/undo-dir
 set undofile
 
+if !isdirectory($HOME."/.config/nvim/backup")
+  call mkdir($HOME."/.config/nvim/backup", "", 0700)
+endif
 set backupdir=~/.config/nvim/backup
+
+if !isdirectory($HOME."/.config/nvim/temp")
+  call mkdir($HOME."/.config/nvim/temp", "", 0700)
+endif
 set directory=~/.config/nvim/temp
 
 "NerdTree is back
