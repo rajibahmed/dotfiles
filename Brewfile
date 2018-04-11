@@ -1,7 +1,6 @@
 #vi:ft=ruby:
 tap 'homebrew/services'
 
-brew 'ag'
 brew 'bash-completion'
 brew 'ctags'
 brew 'curl'
@@ -49,3 +48,4 @@ cask 'visual-studio-code'
 cask 'vlc'
 cask 'keka'
 cask 'opera'
+cask 'libreoffice'

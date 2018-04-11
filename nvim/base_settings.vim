@@ -8,7 +8,6 @@ set lazyredraw
 
 
 inoremap jk <Esc>
-inoremap <Esc> <Nop>
 
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
@@ -179,6 +178,7 @@ let g:pymode_python = 'python3'
 let g:pymode_warnings = 1
 let g:ycm_global_ycm_extra_conf = '~/.config/nvim/pack/minpac/start/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:rustfmt_autosave = 1
-let g:ycm_rust_src_path ='/usr/local/rust/rust/src'
+"echo `rustc --print sysroot`/lib/rustlib/src/rust/src
+let g:ycm_rust_src_path ='~/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 let g:neomake_rust_cargo_command = ['test', '--no-run']
 
