@@ -66,6 +66,7 @@ call minpac#add('ayu-theme/ayu-vim')
 call minpac#add('morhetz/gruvbox')
 call minpac#add('endel/vim-github-colorscheme')
 call minpac#add('gorodinskiy/vim-coloresque')
+call minpac#add('tpope/vim-repeat')
 
 "match it with methods
 runtime macros/matchit.vim
@@ -82,5 +83,4 @@ command! PlugClean call minpac#clean()
 
 autocmd BufWritePost * if &diff == 1 | colorscheme github | endif
 
-let g:ycm_rust_src_path="~/Developer/rust-master/src/"
 set mouse=a

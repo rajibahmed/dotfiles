@@ -16,9 +16,8 @@ filetype plugin on    " Enable filetype-specific plugins
 
 set completeopt=longest,menu
 set complete=.,w,b,u,t
-"set wildmode=longest,list:longest
 
-"set spell spelllang=en_us
+set spell spelllang=en_us
 
 nnoremap <silent> <esc> :noh<CR>
 
@@ -172,7 +171,6 @@ endfunction
 
 command! LoadSnippets call LoadSnippets()
 
-let g:EclimCompletionMethod = 'omnifunc'
 let g:pymode = 1
 let g:pymode_python = 'python3'
 let g:pymode_warnings = 1
