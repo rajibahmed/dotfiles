@@ -17,7 +17,7 @@ filetype plugin on    " Enable filetype-specific plugins
 set completeopt=longest,menu
 set complete=.,w,b,u,t
 
-set spell spelllang=en_us
+"set spell spelllang=en_us
 
 nnoremap <silent> <esc> :noh<CR>
 

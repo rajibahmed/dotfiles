@@ -102,3 +102,5 @@ export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 source $HOME/.cargo/env
+export ANDROID_HOME=/usr/local/share/android-sdk
+eval "$(direnv hook $SHELL)"
