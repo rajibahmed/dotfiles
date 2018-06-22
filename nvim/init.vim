@@ -67,6 +67,7 @@ call minpac#add('morhetz/gruvbox')
 call minpac#add('endel/vim-github-colorscheme')
 call minpac#add('gorodinskiy/vim-coloresque')
 call minpac#add('tpope/vim-repeat')
+call minpac#add('herrbischoff/cobalt2.vim')
 
 "match it with methods
 runtime macros/matchit.vim

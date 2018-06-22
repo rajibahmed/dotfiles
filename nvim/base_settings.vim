@@ -6,7 +6,6 @@ set nowrap
 set autoread
 set lazyredraw
 
-
 inoremap jk <Esc>
 
 syntax on             " Enable syntax highlighting
@@ -43,8 +42,8 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-H> <C-W><C-H>
 
 "Color
-set background=light
-"colorscheme gruvbox
+set background=dark
+colorscheme gruvbox
 
 "Visual block indent
 vnoremap < <gv
@@ -142,8 +141,6 @@ nnoremap <S-Down> :m+<CR>
 inoremap <S-Up> <Esc>:m-2<CR>
 inoremap <S-Down> <Esc>:m+<CR>
 
-hi Visual term=reverse cterm=reverse guibg=Grey
-
 command! Json silent! :%!python -m json.tool
 
 augroup ft_php
@@ -162,15 +159,6 @@ augroup phpSyntaxOverride
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
 
-function! LoadSnippets()
-  packadd ultisnips
-  packadd vim-snippets
-  packadd vim-react-snippets
-  echom "snippets loaded"
-endfunction
-
-command! LoadSnippets call LoadSnippets()
-
 let g:pymode = 1
 let g:pymode_python = 'python3'
 let g:pymode_warnings = 1
@@ -180,3 +168,6 @@ let g:rustfmt_autosave = 1
 let g:ycm_rust_src_path ='~/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 let g:neomake_rust_cargo_command = ['test', '--no-run']
 
+highlight Visual term=reverse cterm=reverse guibg=Grey
+highlight ColorColumn ctermfg=252
+set colorcolumn=81
