@@ -68,6 +68,11 @@ call minpac#add('endel/vim-github-colorscheme')
 call minpac#add('gorodinskiy/vim-coloresque')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('herrbischoff/cobalt2.vim')
+call minpac#add('junegunn/goyo.vim')
+call minpac#add('junegunn/limelight.vim')
+call minpac#add('HerringtonDarkholme/yats.vim')
+call minpac#add('Quramy/tsuquyomi')
+"call minpac#add('mhartington/nvim-typescript', {'build': './install.sh'})
 
 "match it with methods
 runtime macros/matchit.vim

@@ -171,3 +171,14 @@ let g:neomake_rust_cargo_command = ['test', '--no-run']
 highlight Visual term=reverse cterm=reverse guibg=Grey
 highlight ColorColumn ctermfg=252
 set colorcolumn=81
+
+nmap <Leader>l <Plug>(Limelight)
+xmap <Leader>l <Plug>(Limelight)
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+if !exists("g:ycm_semantic_triggers")
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
