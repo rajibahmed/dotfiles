@@ -5,6 +5,7 @@ set number
 set nowrap
 set autoread
 set lazyredraw
+set mouse=a
 
 inoremap jk <Esc>
 
@@ -13,9 +14,6 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
-set completeopt=longest,menu
-set complete=.,w,b,u,t
-
 "set spell spelllang=en_us
 
 nnoremap <silent> <esc> :noh<CR>
@@ -23,13 +21,6 @@ nnoremap <silent> <esc> :noh<CR>
 "Splitting windows
 nmap <silent> ss :sp<CR>
 nmap <silent> vv :vs<CR>
-
-"UltiSnips settings
-let g:UltiSnipsExpandTrigger="<c-t>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsUsePythonVersion = 3
 
 "jsx setting
 let g:jsx_ext_required = 0
@@ -68,17 +59,6 @@ set directory=~/.config/nvim/temp
 "NerdTree is back
 let g:NERDTreeWinPos = "right"
 nnoremap <silent> <Leader><Tab> :NERDTreeToggle<CR>
-
-"vim-test options
-" make test commands execute using dispatch.vim
-"call minpac#add('janko-m/vim-test')
-"let test#strategy = "neomake"
-"
-"nmap <Leader>x :TestNearest<CR>
-"nmap <Leader>T :TestFile<CR>
-"nmap <Leader>a :TestSuite<CR>
-"nmap <Leader>l :TestLast<CR>
-"nmap <Leader>g :TestVisit<CR>
 
 nmap <Leader>s :Gstatus<CR>
 nmap <Leader>w :Gw<CR>
@@ -162,10 +142,7 @@ augroup END
 let g:pymode = 1
 let g:pymode_python = 'python3'
 let g:pymode_warnings = 1
-let g:ycm_global_ycm_extra_conf = '~/.config/nvim/pack/minpac/start/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:rustfmt_autosave = 1
-"echo `rustc --print sysroot`/lib/rustlib/src/rust/src
-let g:ycm_rust_src_path ='~/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 let g:neomake_rust_cargo_command = ['test', '--no-run']
 
 highlight Visual term=reverse cterm=reverse guibg=Grey
@@ -178,7 +155,23 @@ xmap <Leader>l <Plug>(Limelight)
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
-if !exists("g:ycm_semantic_triggers")
-  let g:ycm_semantic_triggers = {}
+let g:deoplete#enable_at_startup = 1
+
+nnoremap n nzzzv
+nnoremap N Nzzzv
+" Visual Mode */# from Scrooloose {{{
+function! s:VSetSearch()
+  let temp = @@
+  norm! gvy
+  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+  let @@ = temp
+endfunction
+
+vnoremap * :<c-u>call <sid>VSetSearch()<cr>//<cr><c-o>
+vnoremap # :<c-u>call <sid>VSetSearch()<cr>??<cr><c-o>
+
+
+" gitgutter
+if executable('rg')
+  let g:gitgutter_grep = 'rg'
 endif
-let g:ycm_semantic_triggers['typescript'] = ['.']

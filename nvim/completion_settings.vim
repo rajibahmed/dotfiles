@@ -1,65 +1,46 @@
-"let g:asyncomplete_log_file = expand('~/asyncomplete.log')
-"let g:lsp_log_verbose = 1
-"let g:lsp_log_file = expand('~/vim-lsp.log')
+set hidden
+set signcolumn=yes
+let g:LanguageClient_serverCommands = {
+            \ 'c': [ 'clangd' ],
+            \ 'cpp': [ 'clangd' ],
+            \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+            \ 'python': [ 'pyls' ],
+            \ 'ruby': [ 'solargraph',  'stdio' ],
+            \ 'html': ['html-languageserver', '--stdio'],
+            \ 'css':  ['css-languageserver', '--stdio'],
+            \ 'less': ['less-languageserver', '--stdio'],
+            \ 'json': ['json-languageserver', '--stdio'],
+            \ 'javascript': [ 'javascript-typescript-stdio' ],
+            \ 'javascript.jsx': ['javascript-typescript-stdio'],
+            \ 'typescript': ['javascript-typescript-stdio'],
+            \ }
 
-set completeopt=menuone,menu,longest,preview
-let g:asyncomplete_remove_duplicates = 1
+let g:LanguageClient_autoStop = 0
+let g:LanguageClient_selectionUI = 'fzf'
+let g:deoplete#sources = {}
+let g:deoplete#sources.php = ['ultisnips', 'tags', 'buffer']
+let g:deoplete#sources.ruby = ['solargraph', 'ultisnips', 'tags', 'buffer']
 
 
-if executable('pyls')
-  " pip install python-language-server
-  au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'whitelist': ['python'],
-        \ })
-endif
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
-" Php
-au User lsp_setup call lsp#register_server({
-      \ 'name': 'php-language-server',
-      \ 'cmd': {server_info->['php', expand('~/.config/nvim/pack/minpac/start/php-language-server/bin/php-language-server.php')]},
-      \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'composer.json'))},
-      \ 'whitelist': ['php'],
-      \ })
-
-" Snippets
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
-      \ 'name': 'ultisnips',
-      \ 'whitelist': ['*'],
-      \ 'priority': 1,
-      \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
-      \ }))
-
-" Buffer
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
-      \ 'name': 'buffer',
-      \ 'whitelist': ['*'],
-      \ 'blacklist': ['go'],
-      \ 'priority': 2,
-      \ 'completor': function('asyncomplete#sources#buffer#completor'),
-      \ }))
-
-" File
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
-      \ 'name': 'file',
-      \ 'whitelist': ['*'],
-      \ 'priority': 10,
-      \ 'completor': function('asyncomplete#sources#file#completor')
-      \ }))
-
-" Ctags
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#tags#get_source_options({
-    \ 'name': 'tags',
-    \ 'whitelist': ['c'],
-    \ 'completor': function('asyncomplete#sources#tags#completor'),
-    \ 'config': {
-    \    'max_file_size': 50000000,
-    \  },
-    \ }))
-
-" Use Tab to navigate
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
-
+augroup LanguageClientConfig
+  autocmd!
+  " <leader>ld to go to definition
+  autocmd FileType javascript,python,typescript,json,css,less,html,ruby nnoremap <buffer> <leader>d :call LanguageClient_textDocument_definition()<cr>
+  " <leader>lf to autoformat document
+  autocmd FileType javascript,python,typescript,json,css,less,html,ruby nnoremap <buffer> <leader>f :call LanguageClient_textDocument_formatting()<cr>
+  " <leader>lh for type info under cursor
+  autocmd FileType javascript,python,typescript,json,css,less,html,ruby nnoremap <buffer> <leader>h :call LanguageClient_textDocument_hover()<cr>
+  " <leader>lr to rename variable under cursor
+  autocmd FileType javascript,python,typescript,json,css,less,html,ruby nnoremap <buffer> <leader>R :call LanguageClient_textDocument_rename()<cr>
+  " <leader>lc to switch omnifunc to LanguageClient
+  autocmd FileType javascript,python,typescript,json,css,less,html,ruby nnoremap <buffer> <leader>c :setlocal omnifunc=LanguageClient#complete<cr>
+  " <leader>ls to fuzzy find the symbols in the current document
+  autocmd FileType javascript,python,typescript,json,css,less,html,ruby nnoremap <buffer> <leader>S :call LanguageClient_textDocument_documentSymbol()<cr>
+  " Use as omnifunc by default
+  autocmd FileType javascript,python,typescript,json,css,less,html,ruby setlocal omnifunc=LanguageClient#complete
+augroup END

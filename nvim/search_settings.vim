@@ -1,15 +1,7 @@
-" The Silver Searcher
 if executable('rg')
-  " Use ag over grep
-  "set grepprg=ag\ --nogroup\ --nocolor
   set grepprg=rg\ --vimgrep
 endif
 
-"" bind K to grep word under cursor
-"nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-" bind \ (backward slash) to grep shortcut
-"command -nargs=+ -complete=file -bar Find silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Rg<SPACE>
 
 command! -bang -nargs=* Rg
@@ -21,7 +13,6 @@ command! -bang -nargs=* Rg
 
 
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
-
 
 function ShowSpaces(...)
   let @/='\v(\s+$)|( +\ze\t)'
