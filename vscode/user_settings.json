@@ -1,6 +1,6 @@
 {
     "workbench.sideBar.location": "right",
-    "window.zoomLevel": 3,
+    "window.zoomLevel": 2,
     "telemetry.enableTelemetry": false,
     "workbench.colorTheme": "Gruvbox Dark (Soft)",
     "vim.leader": ",",
@@ -30,7 +30,7 @@
             "after": [],
             "commands": [
                 {
-                    "command": "editor.unfold"
+                    "command": "editor.unfold",
                 }
             ]
         },
@@ -39,7 +39,7 @@
             "after": [],
             "commands": [
                 {
-                    "command": "editor.unfoldRecursively"
+                    "command": "editor.unfoldRecursively",
                 }
             ]
         },
@@ -71,7 +71,7 @@
                 {
                     "command": ":wq",
                     "args": []
-                }
+                },
             ]
         },
         {
@@ -84,7 +84,7 @@
                     "command": "workbench.action.splitEditor",
                     "args": []
                 }
-            ]
+            ],
         }
     ],
     "vim.handleKeys": {
@@ -97,5 +97,12 @@
     "workbench.activityBar.visible": true,
     "vim.foldfix": true,
     "git.autofetch": true,
-    "editor.renderIndentGuides": false
+    "editor.renderIndentGuides": false,
+    "editor.fontSize": 14,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "pomodoro.workTime": 15,
+    "searchRipgrep.enable": true,
+    "ruby.rubocop.executePath": "/Users/rajib.ahmed/.rbenv/shims/",
 }
