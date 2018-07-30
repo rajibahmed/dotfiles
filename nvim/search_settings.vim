@@ -1,5 +1,6 @@
 if executable('rg')
   set grepprg=rg\ --vimgrep
+  let g:gitgutter_grep = 'rg'
 endif
 
 nnoremap \ :Rg<SPACE>

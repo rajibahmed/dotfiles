@@ -77,7 +77,6 @@ if has('nvim')
   nnoremap <a-k> <c-w>k
   nnoremap <a-l> <c-w>l
 
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   let g:loaded_python_provider=1                   " Disable python 2 interface
   let g:python_host_skip_check=1                   " Skip python 2 host check
   let g:python3_host_prog='/usr/local/bin/python3' " Set python 3 host program
@@ -149,11 +148,16 @@ highlight Visual term=reverse cterm=reverse guibg=Grey
 highlight ColorColumn ctermfg=252
 set colorcolumn=81
 
-nmap <Leader>l <Plug>(Limelight)
-xmap <Leader>l <Plug>(Limelight)
+function! MyGoyoConfig()
+  set nonumber
+  set signcolumn=no
+endfunction
 
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+augroup GoyoOverrides
+  au!
+  autocmd User GoyoEnter call MyGoyoConfig()
+  autocmd User GoyoLeave set number
+augroup END
 
 let g:deoplete#enable_at_startup = 1
 
@@ -170,8 +174,3 @@ endfunction
 vnoremap * :<c-u>call <sid>VSetSearch()<cr>//<cr><c-o>
 vnoremap # :<c-u>call <sid>VSetSearch()<cr>??<cr><c-o>
 
-
-" gitgutter
-if executable('rg')
-  let g:gitgutter_grep = 'rg'
-endif
