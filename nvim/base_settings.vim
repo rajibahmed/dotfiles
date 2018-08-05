@@ -15,7 +15,6 @@ filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
 "set spell spelllang=en_us
-
 nnoremap <silent> <esc> :noh<CR>
 
 "Splitting windows
@@ -62,8 +61,8 @@ nnoremap <silent> <Leader><Tab> :NERDTreeToggle<CR>
 
 nmap <Leader>s :Gstatus<CR>
 nmap <Leader>w :Gw<CR>
-nmap <Leader>n :bprev<CR>
-nmap <Leader>m :bnext<CR>
+nmap <Leader>[ :bprev<CR>
+nmap <Leader>] :bnext<CR>
 
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>
@@ -142,7 +141,6 @@ let g:pymode = 1
 let g:pymode_python = 'python3'
 let g:pymode_warnings = 1
 let g:rustfmt_autosave = 1
-let g:neomake_rust_cargo_command = ['test', '--no-run']
 
 highlight Visual term=reverse cterm=reverse guibg=Grey
 highlight ColorColumn ctermfg=252
@@ -151,6 +149,7 @@ set colorcolumn=81
 function! MyGoyoConfig()
   set nonumber
   set signcolumn=no
+  set colorcolumn=""
 endfunction
 
 augroup GoyoOverrides
@@ -173,4 +172,3 @@ endfunction
 
 vnoremap * :<c-u>call <sid>VSetSearch()<cr>//<cr><c-o>
 vnoremap # :<c-u>call <sid>VSetSearch()<cr>??<cr><c-o>
-

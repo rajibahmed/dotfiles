@@ -1,5 +1,4 @@
 set hidden
-set signcolumn=yes
 let g:LanguageClient_serverCommands = {
             \ 'c': [ 'clangd' ],
             \ 'cpp': [ 'clangd' ],
