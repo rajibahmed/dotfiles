@@ -27,6 +27,7 @@ brew 'zsh-autosuggestions'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 brew 'git-crypt'
+brew 'pipenv'
 
 tap 'caskroom/cask'
 cask '1password'
