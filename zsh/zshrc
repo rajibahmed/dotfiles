@@ -1,4 +1,6 @@
 #defaults
+bindkey -e
+export KEYTIMEOUT=1
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
@@ -32,6 +34,7 @@ alias gs='git status'
 alias gcm='git commit -m'
 alias ga='git add'
 alias gl='git log --graph --abbrev-commit --decorate --date=relative --all'
+alias gcof='git checkout $(git branch | fzf)'
 alias gco='git checkout'
 alias glc='git shortlog -s -n'
 
@@ -73,7 +76,7 @@ alias j='fasd_cd -d'     # cd, same functionality as j in autojump
 alias jj='fasd_cd -d -i' # cd with interactive selection
 
 #OFFICE
-alias jira='git fetch && git checkout --track $(git branch -r | fzf)'
+alias jira='git fetch && git checkout -tB $(git branch -r | fzf)'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
@@ -102,5 +105,17 @@ export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 source $HOME/.cargo/env
+
+### Klarna stuff
 export ANDROID_HOME=/usr/local/share/android-sdk
 eval "$(direnv hook $SHELL)"
+export NPM_TOKEN='6af25f87-571e-45d2-9a64-3a3e43a1ce59'
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/rajib.ahmed/.sdkman"
+[[ -s "/Users/rajib.ahmed/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/rajib.ahmed/.sdkman/bin/sdkman-init.sh"
+export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
+
+alias ls=exa
+alias cat=bat

@@ -10,6 +10,7 @@ call minpac#add('kana/vim-textobj-user')
 call minpac#add('nelstrom/vim-textobj-rubyblock')
 call minpac#add('skwp/greplace.vim')
 call minpac#add('klen/python-mode')
+call minpac#add('easymotion/vim-easymotion')
 
 "Group dependencies, vim-snippets depends on ultisnips
 call minpac#add('SirVer/ultisnips')
@@ -50,7 +51,7 @@ call minpac#add('rdolgushin/groovy.vim', {'type': 'opt'})
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('moll/vim-node')
 call minpac#add('posva/vim-vue', {'type': 'opt'})
-call minpac#add('mxw/vim-jsx', {'type': 'opt'})
+call minpac#add('mxw/vim-jsx')
 
 "COMPILED
 call minpac#add('rust-lang/rust.vim')
@@ -66,8 +67,8 @@ call minpac#add('endel/vim-github-colorscheme')
 call minpac#add('gorodinskiy/vim-coloresque')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('junegunn/goyo.vim')
-call minpac#add('HerringtonDarkholme/yats.vim')
-call minpac#add('mhartington/nvim-typescript')
+call minpac#add('reedes/vim-colors-pencil')
+call minpac#add('mhartington/nvim-typescript', {'do': './install.sh'})
 
 "match it with methods
 runtime macros/matchit.vim
