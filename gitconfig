@@ -3,7 +3,7 @@
   email = rajib.ahmed@klarna.com
 
 [core]
-  editor = nvim
+	editor = code --wait
   excludesfile = /Users/rajib.ahmed/.gitignore
 
 [push]
@@ -25,8 +25,19 @@
   prompt = true
 [mergetool "vimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge --skip -- %f
 	process = git-lfs filter-process --skip
 	required = true
+[http "https://stash.int.klarna.net/"]
+	sslCAInfo = /Users/rajib.ahmed/Klarna/klarna-app/klarna_ca.crt
+  sslVerify = false
+[lfs]
+	locksverify = false

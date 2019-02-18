@@ -1,6 +1,6 @@
 {
     "workbench.sideBar.location": "right",
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 0,
     "telemetry.enableTelemetry": false,
     "workbench.colorTheme": "Gruvbox Dark (Soft)",
     "vim.leader": ",",
@@ -91,18 +91,32 @@
         "<C-a>": false,
         "<C-f>": false
     },
-    "extensions.ignoreRecommendations": true,
+    "extensions.ignoreRecommendations": false,
     "extensions.showRecommendationsOnlyOnDemand": true,
     "update.enableWindowsBackgroundUpdates": false,
-    "workbench.activityBar.visible": true,
+    "workbench.activityBar.visible": false,
     "vim.foldfix": true,
     "git.autofetch": true,
     "editor.renderIndentGuides": false,
-    "editor.fontSize": 14,
+    "editor.fontSize": 15,
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
     "pomodoro.workTime": 15,
     "searchRipgrep.enable": true,
     "ruby.rubocop.executePath": "/Users/rajib.ahmed/.rbenv/shims/",
+    "workbench.colorCustomizations": {
+        "statusBar.background" : "#303030",
+        "statusBar.noFolderBackground" : "#222225",
+        "statusBar.debuggingBackground": "#511f1f"
+    },
+    "workbench.statusBar.feedback.visible": false,
+    "liveshare.showInStatusBar": "never",
+    "workbench.iconTheme": "vscode-icons",
+    "zenMode.centerLayout": false,
+    "telemetry.enableCrashReporter": false,
+    "search.showLineNumbers": true,
+    "vim.easymotion": true,
+    "vim.easymotionKeys": "hklyuiopnmqwertzxcvbasdgjf;",
+    "editor.formatOnSave": true,
 }

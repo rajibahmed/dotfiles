@@ -68,6 +68,7 @@ call minpac#add('gorodinskiy/vim-coloresque')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('junegunn/goyo.vim')
 call minpac#add('reedes/vim-colors-pencil')
+call minpac#add('HerringtonDarkholme/yats.vim')
 call minpac#add('mhartington/nvim-typescript', {'do': './install.sh'})
 
 "match it with methods
@@ -85,3 +86,5 @@ command! PlugUpdate call minpac#update()
 command! PlugClean call minpac#clean()
 
 autocmd BufWritePost * if &diff == 1 | colorscheme github | endif
+
+let g:ale_fix_on_save=1
