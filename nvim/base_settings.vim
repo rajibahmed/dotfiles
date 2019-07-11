@@ -58,6 +58,7 @@ set directory=~/.config/nvim/temp
 "NerdTree is back
 let g:NERDTreeWinPos = "right"
 nnoremap <silent> <Leader><Tab> :NERDTreeToggle<CR>
+nmap <silent> <Leader>f :NERDTreeFind<CR>
 
 nmap <Leader>s :Gstatus<CR>
 nmap <Leader>w :Gw<CR>
@@ -144,12 +145,13 @@ let g:rustfmt_autosave = 1
 
 highlight Visual term=reverse cterm=reverse guibg=Grey
 highlight ColorColumn ctermfg=252
-set colorcolumn=81
+"set colorcolumn=81
 
 function! MyGoyoConfig()
   set nonumber
   set signcolumn=no
   set colorcolumn=""
+  let g:gruvbox_contrast_dark='soft'
 endfunction
 
 augroup GoyoOverrides
@@ -172,3 +174,9 @@ endfunction
 
 vnoremap * :<c-u>call <sid>VSetSearch()<cr>//<cr><c-o>
 vnoremap # :<c-u>call <sid>VSetSearch()<cr>??<cr><c-o>
+
+autocmd BufEnter *.tsx set filetype=typescript
+
+
+command! W  write
+
