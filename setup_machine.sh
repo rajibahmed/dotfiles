@@ -17,7 +17,7 @@ brew bundle
 
 echo "3. setup neovim"
 mkdir -p ~/.config/nvim/pack/minpac/{opt,start}
-cd ~/.config/nvim/pack/opt && git clone https://github.com/k-takata/minpac.git
+cd ~/.config/nvim/pack/minpac/opt && git clone https://github.com/k-takata/minpac.git
 
 cd .config/nvim && \
 	ln -s ~/dotfiles/nvim/init.vim  init.vim
