@@ -4,7 +4,7 @@ echo "1. Setting Up homebrew"
 echo "setting up symlinks"
 cd ~
 ln -fs  ~/dotfiles/Brewfile
-ln -fs  ~/dotfiles/zsh/.zshrc .zshrc
+ln -fs  ~/dotfiles/zsh/zshrc .zshrc
 ln -fs  ~/dotfiles/tmux.config .tmux.config
 ln -fs  ~/dotfiles/irbrc .irbrc
 ln -fs  ~/dotfiles/ctags/ctags .ctags
