@@ -47,7 +47,7 @@ alias pip=pip3
 alias vim=/usr/local/bin/nvim
 alias _=sudo
 alias gz='tar -zcvf' #tar a folder
-alias ll='ls -lahGF'
+alias ll='exa -lah'
 
 alias zl='source ~/.zshrc'
 alias ze='vim ~/.zshrc'
