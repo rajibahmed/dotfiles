@@ -6,9 +6,9 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export CLICOLOR=1
 
-autoload -Uz compinit && compinit
-autoload -U promptinit && promptinit
-prompt pure
+#autoload -Uz compinit && compinit
+#autoload -U promptinit && promptinit
+#prompt pure
 
 if [ -z "$HISTFILE" ]; then
   HISTFILE=$HOME/.zsh_history
@@ -37,6 +37,7 @@ alias gl='git log --graph --abbrev-commit --decorate --date=relative --all'
 alias gcof='git checkout $(git branch | fzf)'
 alias gco='git checkout'
 alias glc='git shortlog -s -n'
+alias gconflicts='git diff --name-only --diff-filter=U'
 
 alias pull='git pull --rebase'
 alias push='git push'
@@ -97,8 +98,8 @@ source $HOME/dotfiles/zsh/functions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export PATH=$PATH:$(go env GOPATH)/bin
-export GOPATH=$(go env GOPATH)
+#export PATH=$PATH:$(go env GOPATH)/bin
+#export GOPATH=$(go env GOPATH)
 export HOMEBREW_NO_ANALYTICS=1
 
 export NVM_DIR="$HOME/.nvm"
@@ -119,3 +120,17 @@ export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
 
 alias ls=exa
 alias cat=bat
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+#eval "$(pipenv --completion)"
+
+#### JAVA SHIT
+export PATH="/usr/local/sbin:$PATH"
+export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
+
+#java version
+alias java8='export JAVA_HOME=$JAVA_8_HOME'
+alias java11='export JAVA_HOME=$JAVA_11_HOME'
+java8
+eval "$(starship init zsh)"
+
