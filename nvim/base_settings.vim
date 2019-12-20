@@ -177,6 +177,11 @@ vnoremap # :<c-u>call <sid>VSetSearch()<cr>??<cr><c-o>
 
 autocmd BufEnter *.tsx set filetype=typescript
 
+" Clipboard
+vmap <space>y "+y
+nmap <space>yy "+yy
+nmap <space>p "+p
+nmap <space>P "+P
 
 command! W  write
 

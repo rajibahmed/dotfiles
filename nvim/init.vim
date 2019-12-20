@@ -19,7 +19,7 @@ call minpac#add('epilande/vim-react-snippets',{'type': 'opt'})
 
 "COMMON
 "call minpac#add('neomake/neomake')
-call minpac#add('w0rp/ale')
+call minpac#add('dense-analysis/ale')
 call minpac#add('tpope/vim-surround')
 call minpac#add('mattn/emmet-vim')
 call minpac#add('editorconfig/editorconfig-vim')

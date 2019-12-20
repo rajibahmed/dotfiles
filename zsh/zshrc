@@ -6,10 +6,6 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export CLICOLOR=1
 
-#autoload -Uz compinit && compinit
-#autoload -U promptinit && promptinit
-#prompt pure
-
 if [ -z "$HISTFILE" ]; then
   HISTFILE=$HOME/.zsh_history
 fi
@@ -98,8 +94,6 @@ source $HOME/dotfiles/zsh/functions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#export PATH=$PATH:$(go env GOPATH)/bin
-#export GOPATH=$(go env GOPATH)
 export HOMEBREW_NO_ANALYTICS=1
 
 export NVM_DIR="$HOME/.nvm"
@@ -107,21 +101,18 @@ export NVM_DIR="$HOME/.nvm"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 source $HOME/.cargo/env
 
+
 ### Klarna stuff
 export ANDROID_HOME=/usr/local/share/android-sdk
 eval "$(direnv hook $SHELL)"
-export NPM_TOKEN='6af25f87-571e-45d2-9a64-3a3e43a1ce59'
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/rajib.ahmed/.sdkman"
-[[ -s "/Users/rajib.ahmed/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/rajib.ahmed/.sdkman/bin/sdkman-init.sh"
-export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
 
 alias ls=exa
 alias cat=bat
 export PATH="/usr/local/opt/ruby/bin:$PATH"
-#eval "$(pipenv --completion)"
+eval "$(pipenv --completion)"
+
+### Klapp stuff
+export DISABLE_AUTO_LOGIN=1
 
 #### JAVA SHIT
 export PATH="/usr/local/sbin:$PATH"
@@ -133,4 +124,10 @@ alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
 java8
 eval "$(starship init zsh)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/rajib.ahmed/.sdkman"
+[[ -s "/Users/rajib.ahmed/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/rajib.ahmed/.sdkman/bin/sdkman-init.sh"
+export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
 
