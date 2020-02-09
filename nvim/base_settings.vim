@@ -55,15 +55,6 @@ if !isdirectory($HOME."/.config/nvim/temp")
 endif
 set directory=~/.config/nvim/temp
 
-"NerdTree is back
-let g:NERDTreeWinPos = "right"
-nnoremap <silent> <Leader><Tab> :NERDTreeToggle<CR>
-nnoremap <silent> <Leader>f :NERDTreeFind<CR>
-
-nmap <Leader>s  :Gstatus<CR>
-nmap <Leader>w  :Gw<CR>
-nmap <Leader>z :bprev<CR>
-nmap <Leader>x :bnext<CR>
 
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>
@@ -192,3 +183,25 @@ augroup CursorLine
   au WinLeave * setlocal nocursorline
 augroup END
 
+"NerdTree is back
+let g:NERDTreeWinPos = "right"
+nnoremap <silent> <Leader><Tab> :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>f :NERDTreeFind<CR>
+
+nmap <Leader>z :bprev<CR>
+nmap <Leader>x :bnext<CR>
+
+nmap <Leader>s :Gstatus<CR>
+nmap <Leader>w :Gwrite<CR>
+
+noremap <Leader>gss :Gpush<CR>
+noremap <Leader>gll :Gpull<CR>
+noremap <Leader>gb :Gblame<CR>
+noremap <Leader>gd :Gvdiff<CR>
+noremap <Leader>gr :Gremove<CR>
+
+" session management
+nnoremap <leader>so :OpenSession<Space>
+nnoremap <leader>ss :SaveSession<Space>
+nnoremap <leader>sd :DeleteSession<CR>
+nnoremap <leader>sc :CloseSession<CR>

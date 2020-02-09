@@ -18,7 +18,6 @@ call minpac#add('honza/vim-snippets')
 call minpac#add('epilande/vim-react-snippets',{'type': 'opt'})
 
 "COMMON
-"call minpac#add('neomake/neomake')
 call minpac#add('dense-analysis/ale')
 call minpac#add('tpope/vim-surround')
 call minpac#add('mattn/emmet-vim')
@@ -37,6 +36,7 @@ call minpac#add('itchyny/lightline.vim')
 call minpac#add('junegunn/fzf')
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('tpope/vim-fugitive')
+call minpac#add('tpope/vim-rhubarb')  "required by fugitive to :Gbrowse
 
 "PHP
 call minpac#add('stanangeloff/php.vim', {'type': 'opt'})
@@ -86,6 +86,6 @@ source ~/dotfiles/nvim/search_settings.vim
 command! PlugUpdate call minpac#update()
 command! PlugClean call minpac#clean()
 
-autocmd BufWritePost * if &diff == 1 | colorscheme github | endif
+"autocmd BufWritePost * if &diff == 1 | colorscheme github | endif
 
 let g:ale_fix_on_save=1
