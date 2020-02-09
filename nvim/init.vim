@@ -89,3 +89,4 @@ command! PlugClean call minpac#clean()
 "autocmd BufWritePost * if &diff == 1 | colorscheme github | endif
 
 let g:ale_fix_on_save=1
+let g:surround_no_mappings=1

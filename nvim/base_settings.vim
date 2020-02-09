@@ -74,9 +74,6 @@ if has('nvim')
   set inccommand=nosplit
 endif
 
-set foldlevelstart=4
-nnoremap zO zczO
-nnoremap <Space> za
 
 function! MyFoldText() " {{{
   let line = getline(v:foldstart)
@@ -100,6 +97,14 @@ augroup ft_ruby
   au Filetype ruby setlocal foldmethod=syntax
   au BufRead,BufNewFile Capfile setlocal filetype=ruby
 augroup END
+
+
+"-- FOLDING --
+set foldmethod=syntax "syntax highlighting items specify folds
+let javaScript_fold=1 "activate folding by JS syntax
+set foldlevelstart=3 "start file with all folds opened
+nnoremap zO zczO
+nnoremap <Space> za
 
 
 let g:surround_45 = "<% \r %>"
@@ -205,3 +210,9 @@ nnoremap <leader>so :OpenSession<Space>
 nnoremap <leader>ss :SaveSession<Space>
 nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
+
+" GitGutter
+let g:gitgutter_sign_added = '∙'
+let g:gitgutter_sign_modified = '∙'
+let g:gitgutter_sign_removed = '∙'
+let g:gitgutter_sign_modified_removed = '∙'
