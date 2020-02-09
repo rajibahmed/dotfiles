@@ -25,6 +25,7 @@ call minpac#add('mattn/emmet-vim')
 call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('christoomey/vim-tmux-navigator')
 
+
 "System plug
 call minpac#add('scrooloose/nerdtree')
 call minpac#add('scrooloose/nerdcommenter')
@@ -69,7 +70,7 @@ call minpac#add('tpope/vim-repeat')
 call minpac#add('junegunn/goyo.vim')
 call minpac#add('reedes/vim-colors-pencil')
 call minpac#add('HerringtonDarkholme/yats.vim')
-call minpac#add('mhartington/nvim-typescript', {'do': './install.sh'})
+call minpac#add('itchyny/calendar.vim')
 
 "match it with methods
 runtime macros/matchit.vim
