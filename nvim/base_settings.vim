@@ -1,4 +1,4 @@
-"vim basic settings
+"(vim basic settings
 let mapleader=","
 
 set number
@@ -58,12 +58,12 @@ set directory=~/.config/nvim/temp
 "NerdTree is back
 let g:NERDTreeWinPos = "right"
 nnoremap <silent> <Leader><Tab> :NERDTreeToggle<CR>
-nmap <silent> <Leader>f :NERDTreeFind<CR>
+nnoremap <silent> <Leader>f :NERDTreeFind<CR>
 
-nmap <Leader>s :Gstatus<CR>
-nmap <Leader>w :Gw<CR>
-nmap <Leader>[ :bprev<CR>
-nmap <Leader>] :bnext<CR>
+nmap <Leader>s  :Gstatus<CR>
+nmap <Leader>w  :Gw<CR>
+nmap <Leader>z :bprev<CR>
+nmap <Leader>x :bnext<CR>
 
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>
