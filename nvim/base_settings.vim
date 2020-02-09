@@ -185,3 +185,10 @@ nmap <space>P "+P
 
 command! W  write
 
+
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
+
