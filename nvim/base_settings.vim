@@ -6,6 +6,8 @@ set nowrap
 set autoread
 set lazyredraw
 set mouse=a
+set cmdheight=2
+set updatetime=300
 
 inoremap jk <Esc>
 
@@ -70,7 +72,7 @@ if has('nvim')
 
   let g:loaded_python_provider=1                   " Disable python 2 interface
   let g:python_host_skip_check=1                   " Skip python 2 host check
-  let g:python3_host_prog='/usr/local/bin/python3' " Set python 3 host program
+  let g:python3_host_prog='/usr/bin/python3'
   set inccommand=nosplit
 endif
 
@@ -216,3 +218,4 @@ let g:gitgutter_sign_added = '∙'
 let g:gitgutter_sign_modified = '∙'
 let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
+
