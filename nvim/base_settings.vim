@@ -104,7 +104,7 @@ augroup END
 "-- FOLDING --
 set foldmethod=syntax "syntax highlighting items specify folds
 let javaScript_fold=1 "activate folding by JS syntax
-set foldlevelstart=3 "start file with all folds opened
+set foldlevelstart=7 "start file with all folds opened
 nnoremap zO zczO
 nnoremap <Space> za
 
