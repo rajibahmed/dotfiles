@@ -61,7 +61,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'reedes/vim-colors-pencil'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'LnL7/vim-nix'
-Plug 'mhinz/vim-startify'
+Plug 'sonph/onehalf'
+
 call plug#end()
 
 "match it with methods
