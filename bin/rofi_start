@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-rofi -combi-modi window,drun,ssh -show combi -modi combi -dpi 1 -location 1 -width 100 -matching fuzzy \
+rofi -modi drun -show drun -dpi 1 -location 1 -width 100 -matching fuzzy \
 		 -lines 1 -line-margin 0 -line-padding 1 \
 		 -separator-style none -font "mono 10" -columns 9 -bw 0 \
 		 -disable-history \
