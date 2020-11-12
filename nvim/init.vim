@@ -1,76 +1,78 @@
 set encoding=utf-8
 
-packadd minpac
 
-call minpac#init()
-call minpac#add('Shougo/deoplete.nvim')
-call minpac#add('autozimu/LanguageClient-neovim')
-call minpac#add('machakann/vim-highlightedyank')
-call minpac#add('kana/vim-textobj-user')
-call minpac#add('nelstrom/vim-textobj-rubyblock')
-call minpac#add('skwp/greplace.vim')
-call minpac#add('klen/python-mode')
-call minpac#add('easymotion/vim-easymotion')
+call plug#begin('~/.config/nvim/plugged')
+
+Plug 'Shougo/deoplete.nvim'
+Plug 'autozimu/LanguageClient-neovim'
+Plug 'machakann/vim-highlightedyank'
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'skwp/greplace.vim'
+Plug 'klen/python-mode'
+Plug 'easymotion/vim-easymotion'
 
 "Group dependencies, vim-snippets depends on ultisnips
-call minpac#add('SirVer/ultisnips')
-call minpac#add('honza/vim-snippets')
-call minpac#add('epilande/vim-react-snippets',{'type': 'opt'})
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'epilande/vim-react-snippets',{'type': 'opt'}
 
 "COMMON
-call minpac#add('dense-analysis/ale')
-call minpac#add('tpope/vim-surround')
-call minpac#add('mattn/emmet-vim')
-call minpac#add('editorconfig/editorconfig-vim')
-call minpac#add('christoomey/vim-tmux-navigator')
+Plug 'dense-analysis/ale'
+Plug 'tpope/vim-surround'
+Plug 'mattn/emmet-vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 
 "System plug
-call minpac#add('scrooloose/nerdtree')
-call minpac#add('scrooloose/nerdcommenter')
-call minpac#add('tpope/vim-endwise')
-call minpac#add('airblade/vim-gitgutter')
-call minpac#add('itchyny/lightline.vim')
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-endwise'
+Plug 'airblade/vim-gitgutter'
+Plug 'itchyny/lightline.vim'
 
 "call minpac#ad(in outside ~/.vim/plugged with post-update hook
-call minpac#add('junegunn/fzf')
-call minpac#add('junegunn/fzf.vim')
-call minpac#add('tpope/vim-fugitive')
-call minpac#add('tpope/vim-rhubarb')  "required by fugitive to :Gbrowse
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'  "required by fugitive to :Gbrowse
 
 "PHP
-call minpac#add('stanangeloff/php.vim', {'type': 'opt'})
+Plug 'stanangeloff/php.vim', {'type': 'opt'}
 
 "RUBY
-call minpac#add('vim-ruby/vim-ruby')
-call minpac#add('tpope/vim-rails')
-call minpac#add('tpope/vim-rbenv')
-call minpac#add('tpope/vim-bundler')
-call minpac#add('rdolgushin/groovy.vim', {'type': 'opt'})
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rbenv'
+Plug 'tpope/vim-bundler'
+Plug 'rdolgushin/groovy.vim', {'type': 'opt'}
 
 "JAVASCRIPT
-call minpac#add('pangloss/vim-javascript')
-call minpac#add('moll/vim-node')
-call minpac#add('posva/vim-vue', {'type': 'opt'})
-call minpac#add('mxw/vim-jsx')
+Plug 'pangloss/vim-javascript'
+Plug 'moll/vim-node'
+Plug 'posva/vim-vue', {'type': 'opt'}
+Plug 'mxw/vim-jsx'
 
 "COMPILED
-call minpac#add('rust-lang/rust.vim')
-call minpac#add('elixir-lang/vim-elixir', {'type': 'opt'})
+Plug 'rust-lang/rust.vim'
+Plug 'elixir-lang/vim-elixir', {'type': 'opt'}
 
 "GOLANG
-call minpac#add('nsf/gocode')
-call minpac#add('fatih/vim-go')
+Plug 'nsf/gocode'
+Plug 'fatih/vim-go'
 
 "Colors
-call minpac#add('morhetz/gruvbox')
-call minpac#add('endel/vim-github-colorscheme')
-call minpac#add('gorodinskiy/vim-coloresque')
-call minpac#add('tpope/vim-repeat')
-call minpac#add('junegunn/goyo.vim')
-call minpac#add('reedes/vim-colors-pencil')
-call minpac#add('HerringtonDarkholme/yats.vim')
-call minpac#add('itchyny/calendar.vim')
+Plug 'morhetz/gruvbox'
+Plug 'endel/vim-github-colorscheme'
+Plug 'gorodinskiy/vim-coloresque'
+Plug 'tpope/vim-repeat'
+Plug 'junegunn/goyo.vim'
+Plug 'reedes/vim-colors-pencil'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'itchyny/calendar.vim'
+
+call plug#end()
 
 "match it with methods
 runtime macros/matchit.vim
@@ -82,9 +84,6 @@ source ~/dotfiles/nvim/lightline_settings.vim
 source ~/dotfiles/nvim/fzf_settings.vim
 source ~/dotfiles/nvim/search_settings.vim
 
-"minpac commands:
-command! PlugUpdate call minpac#update()
-command! PlugClean call minpac#clean()
 
 "autocmd BufWritePost * if &diff == 1 | colorscheme github | endif
 
