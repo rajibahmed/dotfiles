@@ -17,12 +17,9 @@ let g:LanguageClient_serverCommands = {
 
 let g:LanguageClient_autoStop = 0
 let g:LanguageClient_selectionUI = 'fzf'
-let g:deoplete#sources = {}
-let g:deoplete#sources.php = ['ultisnips', 'tags', 'buffer']
-let g:deoplete#sources.ruby = ['solargraph', 'ultisnips', 'tags', 'buffer']
 
 
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-
+nmap <silent> K <Plug>(lcn-hover)
+nmap <silent> gd <Plug>(lcn-definition)
+nmap <silent> <F2> <Plug>(lcn-rename)
+set completefunc=LanguageClient#complete
