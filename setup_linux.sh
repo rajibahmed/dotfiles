@@ -1,5 +1,7 @@
 echo "1. Setting Up Nix"
 curl -L https://nixos.org/nix/install | sh
+sudo chown -R $USER /nix  
+echo ". ~/.nix-profile/etc/profile.d/nix.sh" >> ~/.profile
 
 echo "Clone and setup"
 git clone https://github.com/rajibahmed/dotfiles ~/dotfiles
@@ -17,7 +19,7 @@ cd .config/nvim && \
 	ln -s ~/dotfiles/nvim/init.vim  init.vim
   
 nvim +PlugInstall +qall
-
+echo -n '. $HOME/.nix-profile/' >> ~/.profile
 echo -n 'export PATH="$PATH:~/dotfiles/bin/"' >> ~/.profile
 
 
