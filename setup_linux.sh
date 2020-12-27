@@ -2,7 +2,7 @@ echo "1. Setting Up Nix"
 curl -L https://nixos.org/nix/install | sh
 
 echo "Clone and setup"
-git clone git@github.com:rajibahmed/dotfiles ~/dotfiles
+git clone https://github.com/rajibahmed/dotfiles ~/dotfiles
 
 echo "setting up symlinks"
 cd ~
@@ -13,6 +13,10 @@ ln -fs  ~/dotfiles/ctags/ctags .ctags
 
 mkdir -p ~/.config/nvim/
 ln -fs  ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+cd .config/nvim && \
+	ln -s ~/dotfiles/nvim/init.vim  init.vim
+  
+nvim +PlugInstall +qall
 
 echo -n 'export PATH="$PATH:~/dotfiles/bin/"' >> ~/.profile
 
