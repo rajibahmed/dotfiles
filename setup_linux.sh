@@ -31,7 +31,3 @@ nix-channel --add https://github.com/nix-community/home-manager/archive/master.t
 nix-channel --update
 nix-shell '<home-manager>' -A install
 
-
-git clone git@github.com:rajibahmed/nix-config.git ~/home/.config/nixpkgs
-
-home-manager switch
