@@ -196,12 +196,12 @@ nnoremap <silent> <Leader>f :NERDTreeFind<CR>
 nmap <Leader>z :bprev<CR>
 nmap <Leader>x :bnext<CR>
 
-nmap <Leader>s :Git status<CR>
+nmap <Leader>s :Git! <CR>
 nmap <Leader>w :Gwrite<CR>
 
-noremap <Leader>gss :Git push<CR>
-noremap <Leader>gll :Git pull<CR>
-noremap <Leader>gb :Git blame<CR>
+noremap <Leader>gss :Git! push<CR>
+noremap <Leader>gll :Git! pull<CR>
+noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
 
