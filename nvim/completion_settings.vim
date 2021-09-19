@@ -2,7 +2,7 @@ set hidden
 let g:LanguageClient_serverCommands = {
             \ 'c': [ 'clangd' ],
             \ 'cpp': [ 'clangd' ],
-            \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+            \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
             \ 'python': [ 'pyls' ],
             \ 'ruby': [ 'solargraph',  'stdio' ],
             \ 'html': ['html-languageserver', '--stdio'],

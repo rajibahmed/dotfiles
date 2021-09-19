@@ -70,7 +70,7 @@ if has('nvim')
 
   let g:loaded_python_provider=1                   " Disable python 2 interface
   let g:python_host_skip_check=1                   " Skip python 2 host check
-  let g:python3_host_prog='/usr/local/bin/python3' " Set python 3 host program
+  let g:python3_host_prog='/usr/bin/python' " Set python 3 host program
   set inccommand=nosplit
 endif
 
@@ -196,12 +196,12 @@ nnoremap <silent> <Leader>f :NERDTreeFind<CR>
 nmap <Leader>z :bprev<CR>
 nmap <Leader>x :bnext<CR>
 
-nmap <Leader>s :Gstatus<CR>
+nmap <Leader>s :Git status<CR>
 nmap <Leader>w :Gwrite<CR>
 
-noremap <Leader>gss :Gpush<CR>
-noremap <Leader>gll :Gpull<CR>
-noremap <Leader>gb :Gblame<CR>
+noremap <Leader>gss :Git push<CR>
+noremap <Leader>gll :Git pull<CR>
+noremap <Leader>gb :Git blame<CR>
 noremap <Leader>gd :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
 
