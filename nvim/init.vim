@@ -3,7 +3,12 @@ set encoding=utf-8
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/ddc.vim'
+Plug 'vim-denops/denops.vim'
+
+" Install your sources
+"Plug 'Shougo/ddc-around'
+
 Plug 'autozimu/LanguageClient-neovim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'kana/vim-textobj-user'
