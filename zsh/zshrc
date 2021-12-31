@@ -7,7 +7,7 @@ export LANGUAGE=en_US.UTF-8
 export CLICOLOR=1
 
 if [ -z "$HISTFILE" ]; then
-  HISTFILE=$HOME/.zsh_history
+    HISTFILE=$HOME/.zsh_history
 fi
 
 HISTSIZE=5000
@@ -41,7 +41,7 @@ alias push='git push'
 #SYSTEM
 alias python=python3
 alias pip=pip3
-alias vim=/usr/local/bin/nvim
+alias vim=nvim
 alias _=sudo
 alias gz='tar -zcvf' #tar a folder
 alias ll='exa -lah'
@@ -91,30 +91,21 @@ source $HOME/dotfiles/zsh/functions
 [ -f $HOME/.zsh_profile ] && source $HOME/.zsh_profile
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export HOMEBREW_NO_ANALYTICS=1
 
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 source $HOME/.cargo/env
 
 
-### Klarna stuff
-export ANDROID_HOME=/usr/local/share/android-sdk
-eval "$(direnv hook $SHELL)"
-
 alias ls=exa
 alias cat=bat
 export PATH="/usr/local/opt/ruby/bin:$PATH"
-eval "$(pipenv --completion)"
 
 ### Klapp stuff
 export DISABLE_AUTO_LOGIN=1
 
-#### JAVA SHIT
+### JAVA SHIT
 export PATH="/usr/local/sbin:$PATH"
 export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
 export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
@@ -123,11 +114,22 @@ export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Conten
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
 java8
+
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+    
+    autoload -Uz compinit
+    compinit
+fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 eval "$(starship init zsh)"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/rajib.ahmed/.sdkman"
-[[ -s "/Users/rajib.ahmed/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/rajib.ahmed/.sdkman/bin/sdkman-init.sh"
-export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
-
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools

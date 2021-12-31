@@ -77,6 +77,8 @@ Plug 'reedes/vim-colors-pencil'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'itchyny/calendar.vim'
 
+Plug 'jonstoler/werewolf.vim'
+
 call plug#end()
 
 "match it with methods

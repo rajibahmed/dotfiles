@@ -1,10 +1,10 @@
 [user]
   name = Rajib Ahmed
-  email = rajib.ahmed@klarna.com
+  email = l.rajibahmed@gmail.com
 
 [core]
   editor = code --wait
-  excludesfile = /Users/rajib.ahmed/.gitignore
+  excludesfile = /Users/rajib/.gitignore
 
 [push]
   default = current
@@ -30,14 +30,3 @@
   tool = default-difftool
 [difftool "default-difftool"]
   cmd = code --wait --diff $LOCAL $REMOTE
-
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[http "https://stash.int.klarna.net/"]
-	sslCAInfo = /Users/rajib.ahmed/Klarna/klarna-app/klarna_ca.crt
-  sslVerify = false
-[lfs]
-	locksverify = false
