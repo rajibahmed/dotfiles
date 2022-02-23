@@ -2,7 +2,6 @@
   name = Rajib Ahmed
   email = l.rajibahmed@gmail.com
 
-
 [push]
   default = current
 
@@ -35,6 +34,7 @@
 [delta]
   navigate = true  # use n and N to move between diff sections
   side-by-side=true
+  syntax-theme=OneHalfLight
 
 [merge]
   conflictstyle = diff3
