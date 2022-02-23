@@ -25,6 +25,7 @@ brew 'zsh-autosuggestions'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 brew 'git-crypt'
+brew 'git-delta'
 
 cask '1password'
 cask 'alfred'

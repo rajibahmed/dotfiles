@@ -2,9 +2,6 @@
   name = Rajib Ahmed
   email = l.rajibahmed@gmail.com
 
-[core]
-  editor = code --wait
-  excludesfile = /Users/rajib/.gitignore
 
 [push]
   default = current
@@ -18,15 +15,32 @@
 [format]
   pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cred%d %Creset%s %Cgreen%<(7)[%aN]
 
-
 [merge]
   tool = vimdiff
+
 [mergetool]
   prompt = true
+
 [mergetool "vimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 
+[core]
+  editor = nvim
+  excludesfile = /Users/rajib/.gitignore
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true  # use n and N to move between diff sections
+  side-by-side=true
+
+[merge]
+  conflictstyle = diff3
+
 [diff]
-  tool = default-difftool
-[difftool "default-difftool"]
-  cmd = code --wait --diff $LOCAL $REMOTE
+  colorMoved = default
+
+[init]
+	defaultBranch = main
