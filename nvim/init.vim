@@ -5,6 +5,12 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'Shougo/ddc.vim'
 Plug 'vim-denops/denops.vim'
+Plug 'Shougo/ddc-nvim-lsp'
+" Install your sources
+Plug 'Shougo/ddc-around'
+Plug 'Shougo/ddc-matcher_head'
+Plug 'Shougo/ddc-sorter_rank'
+
 
 " Install your sources
 "Plug 'Shougo/ddc-around'
@@ -20,10 +26,9 @@ Plug 'easymotion/vim-easymotion'
 "Group dependencies, vim-snippets depends on ultisnips
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'epilande/vim-react-snippets',{'type': 'opt'}
+Plug 'epilande/vim-react-snippets'
 
 "COMMON
-Plug 'dense-analysis/ale'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -56,16 +61,12 @@ Plug 'rdolgushin/groovy.vim', {'type': 'opt'}
 "JAVASCRIPT
 Plug 'pangloss/vim-javascript'
 Plug 'moll/vim-node'
-Plug 'posva/vim-vue', {'type': 'opt'}
 Plug 'mxw/vim-jsx'
 
 "COMPILED
 Plug 'rust-lang/rust.vim'
 Plug 'elixir-lang/vim-elixir', {'type': 'opt'}
 
-"GOLANG
-Plug 'nsf/gocode'
-Plug 'fatih/vim-go'
 
 "Colors
 Plug 'morhetz/gruvbox'
@@ -85,14 +86,13 @@ call plug#end()
 runtime macros/matchit.vim
 
 source ~/dotfiles/nvim/base_settings.vim
-source ~/dotfiles/nvim/completion_settings.vim
 source ~/dotfiles/nvim/lint_settings.vim
 source ~/dotfiles/nvim/lightline_settings.vim
 source ~/dotfiles/nvim/fzf_settings.vim
 source ~/dotfiles/nvim/search_settings.vim
+source ~/dotfiles/nvim/ddc_settings.vim
 
 
 "autocmd BufWritePost * if &diff == 1 | colorscheme github | endif
 
-let g:ale_fix_on_save=1
 let g:surround_no_mappings=1
