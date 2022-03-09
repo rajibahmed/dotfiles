@@ -40,6 +40,7 @@ Plug('christoomey/vim-tmux-navigator')
 
 -- colors
 Plug('morhetz/gruvbox')
+Plug('rakr/vim-one')
 Plug('endel/vim-github-colorscheme')
 Plug('gorodinskiy/vim-coloresque')
 Plug('tpope/vim-repeat')
@@ -48,6 +49,7 @@ Plug('reedes/vim-colors-pencil')
 -- fuzzy finder
 Plug('junegunn/fzf')
 Plug('junegunn/fzf.vim')
+Plug('stsewd/fzf-checkout.vim')
 
 -- git
 --Plug('tpope/vim-fugitive')
