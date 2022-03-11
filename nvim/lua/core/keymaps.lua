@@ -48,9 +48,8 @@ map('n', '<leader>n', ':NvimTreeFindFile<CR>', default_opts) -- search file
 
 
 -- FZF
-map('n', '<leader>t', ':Files<CR>', default_opts)
-map('n', '<leader>r', ':Tags<CR>', default_opts)
-map('n', ';', ':Buffers<CR>', default_opts)
+map('n', '<leader>t', ':FzfLua files<CR>', default_opts)
+map('n', ';', ':FzfLua buffers<CR>', default_opts)
 
 
 -- Splitting

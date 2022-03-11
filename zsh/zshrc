@@ -93,8 +93,10 @@ source $HOME/dotfiles/zsh/functions
 
 export HOMEBREW_NO_ANALYTICS=1
 
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+#export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore'
 source $HOME/.cargo/env
+
 
 
 alias ls=exa

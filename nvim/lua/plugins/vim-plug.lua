@@ -26,7 +26,7 @@ Plug('glepnir/lspsaga.nvim')
 
 -- laguage support
 Plug('klen/python-mode')
-
+Plug('puremourning/vimspector')
 
 -- snippets
 Plug('L3MON4D3/LuaSnip')
@@ -48,7 +48,8 @@ Plug('reedes/vim-colors-pencil')
 
 -- fuzzy finder
 Plug('junegunn/fzf')
-Plug('junegunn/fzf.vim')
+--Plug('junegunn/fzf.vim')
+Plug('ibhagwan/fzf-lua')
 Plug('stsewd/fzf-checkout.vim')
 
 -- git
@@ -63,5 +64,8 @@ Plug('goolord/alpha-nvim')
 -- file explorer
 Plug('kyazdani42/nvim-web-devicons')
 Plug('kyazdani42/nvim-tree.lua')
+
+-- status line
+Plug('feline-nvim/feline.nvim')
 
 vim.call('plug#end')

@@ -28,3 +28,5 @@ require('plugins/nvim-treesitter')
 require('plugins/nvim-tree')
 require('plugins/luasaga')
 require('plugins/git-signs')
+require('plugins/feline')
+
