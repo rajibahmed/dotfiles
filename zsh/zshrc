@@ -28,10 +28,7 @@ eval "$(rbenv init -)"
 alias gs='git status'
 alias gcm='git commit -m'
 alias ga='git add'
-alias gl='git log --graph --abbrev-commit --decorate --date=relative --all'
-alias gcof='git checkout $(git branch | fzf)'
 alias gco='git checkout'
-alias glc='git shortlog -s -n'
 alias gconflicts='git diff --name-only --diff-filter=U'
 
 alias pull='git pull --rebase'
@@ -88,30 +85,26 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 #IMPORT FILES
 source $HOME/dotfiles/zsh/functions
 [ -f $HOME/.zsh_profile ] && source $HOME/.zsh_profile
+
+# FZF setup
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore'
 
 
 export HOMEBREW_NO_ANALYTICS=1
 
-#export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore'
-source $HOME/.cargo/env
-
-
 
 alias ls=exa
 alias cat=bat
-export PATH="/usr/local/opt/ruby/bin:$PATH"
 
-### Klapp stuff
-export DISABLE_AUTO_LOGIN=1
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 ### JAVA SHIT
 export PATH="/usr/local/sbin:$PATH"
 export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
 export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
 
-#java version
+#Java
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
 java8
@@ -125,13 +118,23 @@ if type brew &>/dev/null; then
     compinit
 fi
 
+# Node version manager
 source nvm_settings.sh
 
 
+# Android Setup
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+# Python3 setup
 export PATH="$HOME/.poetry/bin:$PATH"
+
+# Rust
+source $HOME/.cargo/env
+export PATH="$HOME/.cargo/bin:$PATH"
+
+source ~/.alacritty.sh
+

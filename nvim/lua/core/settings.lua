@@ -33,6 +33,7 @@ opt.splitbelow = true           -- Orizontal split to the bottom
 opt.ignorecase = true           -- Ignore case letters when search
 opt.smartcase = true            -- Ignore lowercase for the whole pattern
 opt.linebreak = true            -- Wrap on word boundary
+opt.wrap = false                -- Wrap lines false
 
 -- Remove whitespace on save
 cmd [[au BufWritePre * :%s/\s\+$//e]]
@@ -77,6 +78,7 @@ cmd [[autocmd FileType text,markdown,html,xhtml,javascript setlocal cc=0]]
 cmd [[
   autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml setlocal shiftwidth=2 tabstop=2
 ]]
+
 
 -----------------------------------------------------------
 -- Autocompletion

@@ -67,5 +67,6 @@ Plug('kyazdani42/nvim-tree.lua')
 
 -- status line
 Plug('feline-nvim/feline.nvim')
+Plug('jeffkreeftmeijer/vim-nightfall')
 
 vim.call('plug#end')

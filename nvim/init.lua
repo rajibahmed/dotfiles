@@ -18,7 +18,7 @@ Website: https://github.com/brainfucksec/neovim-lua
 -----------------------------------------------------------
 -- Import Lua modules
 -----------------------------------------------------------
-require('plugins/vim-plug')
+require('core/vim-plug')
 require('core/settings')
 require('core/keymaps')
 require('plugins/alpha-nvim')
