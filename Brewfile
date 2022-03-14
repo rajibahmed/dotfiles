@@ -2,7 +2,6 @@
 tap 'homebrew/services'
 
 brew 'bash-completion'
-brew 'ctags'
 brew 'curl'
 brew 'fasd'
 brew 'fzf'
@@ -28,6 +27,8 @@ brew 'git-crypt'
 brew 'git-delta'
 brew 'jq'
 brew 'yq'
+brew 'exa'
+brew 'bat'
 
 cask '1password'
 cask 'rectangle'
