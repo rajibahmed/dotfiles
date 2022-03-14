@@ -90,18 +90,24 @@ local servers = { 'bashls', 'pyright', 'clangd', 'html', 'tsserver' }
 
 -- Set settings for language servers:
 
--- tsserver settings
-local ts_settings = function(client)
-  client.resolved_capabilities.document_formatting = false
-  ts_settings(client)
-end
-
 -- Call setup
+
+local null_ls = require("null-ls")
+
+nvim_lsp.tsserver.setup({
+    on_attach = function(client, bufnr)
+        client.resolved_capabilities.document_formatting = false
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
+    end,
+})
+
+nvim_lsp["null-ls"].setup({})
+
+
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities,
-    ts_settings = ts_settings,
     flags = {
       debounce_text_changes = 150,
     }

@@ -89,6 +89,7 @@ source $HOME/dotfiles/zsh/functions
 # FZF setup
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore'
+export FZF_COMPLETION_TRIGGER='~~'
 
 
 export HOMEBREW_NO_ANALYTICS=1

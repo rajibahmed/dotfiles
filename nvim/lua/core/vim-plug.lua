@@ -34,7 +34,6 @@ Plug('honza/vim-snippets')
 Plug('epilande/vim-react-snippets')
 
 -- utils
-Plug('mattn/emmet-vim')
 Plug('editorconfig/editorconfig-vim')
 Plug('christoomey/vim-tmux-navigator')
 
@@ -43,7 +42,6 @@ Plug('morhetz/gruvbox')
 Plug('rakr/vim-one')
 Plug('endel/vim-github-colorscheme')
 Plug('gorodinskiy/vim-coloresque')
-Plug('tpope/vim-repeat')
 Plug('reedes/vim-colors-pencil')
 
 -- fuzzy finder
@@ -53,8 +51,8 @@ Plug('ibhagwan/fzf-lua')
 Plug('stsewd/fzf-checkout.vim')
 
 -- git
---Plug('tpope/vim-fugitive')
---Plug('tpope/vim-rhubarb')
+Plug('tpope/vim-fugitive')
+Plug('tpope/vim-rhubarb')
 Plug('nvim-lua/plenary.nvim')
 Plug('lewis6991/gitsigns.nvim')
 
@@ -68,5 +66,7 @@ Plug('kyazdani42/nvim-tree.lua')
 -- status line
 Plug('feline-nvim/feline.nvim')
 Plug('jeffkreeftmeijer/vim-nightfall')
+
+Plug('jose-elias-alvarez/null-ls.nvim')
 
 vim.call('plug#end')
