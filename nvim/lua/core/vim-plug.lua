@@ -39,7 +39,7 @@ Plug('christoomey/vim-tmux-navigator')
 
 -- colors
 Plug('morhetz/gruvbox')
-Plug('rakr/vim-one')
+Plug('navarasu/onedark.nvim')
 Plug('endel/vim-github-colorscheme')
 Plug('gorodinskiy/vim-coloresque')
 Plug('reedes/vim-colors-pencil')
