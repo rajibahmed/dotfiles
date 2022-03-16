@@ -30,8 +30,7 @@ Plug('puremourning/vimspector')
 
 -- snippets
 Plug('L3MON4D3/LuaSnip')
-Plug('honza/vim-snippets')
-Plug('epilande/vim-react-snippets')
+Plug('rafamadriz/friendly-snippets')
 
 -- utils
 Plug('editorconfig/editorconfig-vim')
