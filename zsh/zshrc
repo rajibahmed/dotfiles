@@ -28,6 +28,7 @@ eval "$(rbenv init -)"
 alias gs='git status'
 alias gcm='git commit -m'
 alias ga='git add'
+alias gl='git log'
 alias gco='git checkout'
 alias gconflicts='git diff --name-only --diff-filter=U'
 
@@ -46,10 +47,6 @@ alias zl='source ~/.zshrc'
 alias ze='vim ~/.zshrc'
 
 #RAILS
-alias b='bundle'
-alias be='b exec'
-alias rs='rails s'
-alias rc='rails c'
 alias c='clear'
 alias :q='exit'
 alias rmf='rm -rf'
@@ -73,12 +70,12 @@ alias jira='git fetch && git checkout --track $(git branch -r | fzf)'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
+
 alias ls=exa
 alias cat=bat
 
 export EDITOR=nvim
 export PATH=$HOME/dotfiles/bin:$PATH
-
 
 fpath=(~/.zsh/completion $fpath)
 fpath=(/usr/local/share/zsh-completions $fpath)
@@ -89,7 +86,6 @@ source $HOME/dotfiles/zsh/functions
 [ -f $HOME/.zsh_profile ] && source $HOME/.zsh_profile
 
 export HOMEBREW_NO_ANALYTICS=1
-
 
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 

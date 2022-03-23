@@ -1,3 +1,4 @@
+set -x
 echo "1. Setting Up homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -34,3 +35,5 @@ touch ~/.zsh_history
 echo "5. Change default shell"
 chsh
 
+mkdir -p ~/.tmux/plugins/
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
