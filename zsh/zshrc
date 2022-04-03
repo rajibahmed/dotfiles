@@ -73,6 +73,7 @@ alias ....='cd ../../../'
 
 alias ls=exa
 alias cat=bat
+alias man=batman
 
 export EDITOR=nvim
 export PATH=$HOME/dotfiles/bin:$PATH
