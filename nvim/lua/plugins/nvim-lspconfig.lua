@@ -30,7 +30,6 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
   -- Highlighting references
   if client.resolved_capabilities.document_highlight then
     vim.api.nvim_exec(
@@ -43,6 +42,7 @@ local on_attach = function(client, bufnr)
     ]], false)
   end
 
+  client.resolved_capabilities.document_formatting = false
   -- Enable completion triggered by <c-x><c-o>
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -99,8 +99,16 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 -- Add your language server below:
 local servers = { 'bashls', 'pyright', 'clangd', 'html', 'tsserver' }
 
+
 -- Call setup
 for _, lsp in ipairs(servers) do
+  if lsp == 'tsserver' then
+     local on_attach = function(client)
+       client.resolved_capabilities.document_formatting = false
+       client.resolved_capabilities.document_range_formatting = false
+     end
+  end
+
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities,
@@ -109,3 +117,4 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+
