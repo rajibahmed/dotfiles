@@ -11,38 +11,36 @@
 --- Note: options under the g: command should be set BEFORE running the
 --- setup function: https://github.com/kyazdani42/nvim-tree.lua#setup
 --- See: `help NvimTree`
-local g = vim.g
-
-g.nvim_tree_indent_markers = 2
-g.nvim_tree_git_hl = 1
-g.nvim_tree_highlight_opened_files = 1
-g.nvim_tree_respect_buf_cwd = 1
-g.nvim_tree_width_allow_resize  = 1
-g.nvim_tree_show_icons = {
-  git = 1,
-  folders = 1,
-  files = 1
-}
-
-g.nvim_tree_icons = {
-	default = "‣ "
-}
 
 require('nvim-tree').setup {
   open_on_setup = true,
   update_cwd = true,
-  filters = {
-    dotfiles = true,
-    custom = { '.git', 'node_modules', '.cache', '.bin' },
+  view = {
+    width = 32,
+    side= 'right'
+  },
+  renderer = {
+    indent_markers = {
+      enable = false,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        none = "  ",
+      },
+    },
+    icons = {
+      webdev_colors = true,
+    },
   },
   git = {
     enable = true,
     ignore = true,
+    timeout = 400,
   },
-  view = {
-    width = 32,
-    auto_resize = true,
-    side= 'right'
+  filters = {
+    dotfiles = false,
+    custom = {},
+    exclude = {},
   },
 }
 
