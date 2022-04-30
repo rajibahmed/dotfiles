@@ -67,5 +67,6 @@ Plug('feline-nvim/feline.nvim')
 Plug('jeffkreeftmeijer/vim-nightfall')
 
 Plug('jose-elias-alvarez/null-ls.nvim')
+Plug('rust-lang/rust.vim')
 
 vim.call('plug#end')
