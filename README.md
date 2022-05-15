@@ -8,47 +8,25 @@ $ cd ~ && git clone https://github.com/rajibahmed/dotfiles.git
 $ sh dotfiles/setup_machine.sh
 ```
 
-Vim plugins used
-================
-
-   * FZF
-   * Ultisinps
-   * YouCompleteMe
-   * NERDTree
-   * editorconfig
-   * lightline
-   * Few more
 
 
-Vim Important Mapping
-======================
+LSP Mapping
+============================
 
-  | keys      |  Informations                             |
-  |-----------|:------------------------------------------|
-  | jk        | esc key                                   |
-  | ;         | : in insert mode                          |
-  | ,         | leader key                                |
-  | Space     | to toggle fold                            |
-  | K         | to Ag / :Find on a word in normal mode    |
-  | \         | maps to :Find                             |
-  | ,TAB      | :NerdTreeToggle														|
-  | ,t        | :FZF                                      |
-  | ,b        | :Buffers                                  |
-  | ,s        | :GitStatus                                |
-  | ,w        | :Gw                                       |
-  | ,ww       | :Gcommit												          |
-  | ,r        | :%s live search on word                   |
-  | ,m        | :bprev                                    |
-  | ,n        | :bnext                                    |
-  | > / <     | indent on visual mode                     |
-
-
-
-Tmux Mapping
-======================
-
-  | keys      |  Informations                             |
-  |-----------|:------------------------------------------|
-  | jk        | esc key                                   |
-  | ;         | : in insert mode                          |
-  | ,         | leader key                                |
+'gD',   '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+'gd',   '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+'K',    '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+'gi',   '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+'<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+'<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+'<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+'<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+'<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+'<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+'<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+'<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+'[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+'<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+'<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
