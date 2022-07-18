@@ -12,7 +12,7 @@ $ sh dotfiles/setup_machine.sh
 
 LSP Mapping
 ============================
-
+```
 'gD',   '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
 'gd',   '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 'K',    '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
@@ -30,3 +30,4 @@ LSP Mapping
 ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
 '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+```
