@@ -9,7 +9,7 @@ local nvim_lsp = require 'lspconfig'
 
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
+capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext', }
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.preselectSupport = true
 capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
@@ -31,7 +31,7 @@ local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
   -- Highlighting references
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.DocumentHighlight then
     vim.api.nvim_exec(
       [[
       augroup lsp_document_highlight
@@ -42,7 +42,7 @@ local on_attach = function(client, bufnr)
     ]], false)
   end
 
-  client.resolved_capabilities.document_formatting = false
+  client.server_capabilities.documentFormattingProvider = false
   -- Enable completion triggered by <c-x><c-o>
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -92,20 +92,21 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 JavaScript/TypeScript --> tsserver
 https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
 
+Go Lang Server
+go install golang.org/x/tools/gopls@latest
+
 --]]
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches.
 -- Add your language server below:
-local servers = { 'pyright', 'tsserver' }
-
+local servers = { 'pyright', 'tsserver', 'gopls' }
 
 -- Call setup
 for _, lsp in ipairs(servers) do
   if lsp == 'tsserver' then
      local on_attach = function(client)
-       client.resolved_capabilities.document_formatting = false
-       client.resolved_capabilities.document_range_formatting = false
+        client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
      end
   end
 

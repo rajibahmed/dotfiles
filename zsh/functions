@@ -4,11 +4,11 @@ mkdirc() {
 
 
 change_background() {
-  _alacritty one-light
+  _alacritty one-dark
 
   if [[ -z $DARKMODE && DARKMODE="1" ]]
   then
-    _alacritty one-dark
+    _alacritty one-light
   fi
 }
 
