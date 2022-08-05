@@ -101,6 +101,7 @@ alias java11='export JAVA_HOME=$JAVA_11_HOME'
 java8
 
 eval "$(starship init zsh)"
+eval "$(goenv init -)"
 
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
@@ -133,4 +134,3 @@ source $HOME/.cargo/env
 export PATH="$HOME/.cargo/bin:$PATH"
 
 source ~/.alacritty.sh
-

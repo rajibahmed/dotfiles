@@ -16,13 +16,14 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 -- language server
 Plug('neovim/nvim-lspconfig')
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
+Plug('fatih/vim-go', { ['do'] = ':GoUpdateBinaries' })
+
+Plug('neovim/nvim-lspconfig')
 Plug('hrsh7th/cmp-nvim-lsp')
 Plug('hrsh7th/cmp-buffer')
 Plug('hrsh7th/cmp-path')
-
 Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/nvim-cmp')
-Plug('glepnir/lspsaga.nvim')
 
 -- laguage support
 Plug('klen/python-mode')
@@ -35,6 +36,8 @@ Plug('rafamadriz/friendly-snippets')
 -- utils
 Plug('editorconfig/editorconfig-vim')
 Plug('christoomey/vim-tmux-navigator')
+Plug('numToStr/Comment.nvim')
+
 
 -- colors
 Plug('morhetz/gruvbox')

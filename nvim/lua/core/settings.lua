@@ -10,6 +10,7 @@ local cmd = vim.cmd     				-- Execute Vim commands
 local exec = vim.api.nvim_exec 	-- Execute Vimscript
 local g = vim.g         				-- Global variables
 local opt = vim.opt         		-- Set options (global/buffer/windows-scoped)
+local nvim_set_option = vim.api.nvim_set_option
 
 -----------------------------------------------------------
 -- General
@@ -19,6 +20,13 @@ g.mapleader = ','               -- Change leader to a comma
 opt.mouse = 'a'                 -- Enable mouse support
 opt.clipboard = 'unnamedplus'   -- Copy/paste to system clipboard
 opt.swapfile = false            -- Don't use swapfile
+
+-----------------------------------------------------------
+-- Undo
+-----------------------------------------------------------
+
+opt.undodir='~/.config/nvim/undo/'
+nvim_set_option('undofile', true)
 
 -----------------------------------------------------------
 -- Neovim UI
