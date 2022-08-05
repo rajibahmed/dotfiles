@@ -31,11 +31,11 @@ Plug('puremourning/vimspector')
 
 -- snippets
 Plug('L3MON4D3/LuaSnip')
+-- Plug('saadparwaiz1/cmp_luasnip')
 Plug('rafamadriz/friendly-snippets')
 
 -- utils
 Plug('editorconfig/editorconfig-vim')
-Plug('christoomey/vim-tmux-navigator')
 Plug('numToStr/Comment.nvim')
 
 -- colors
@@ -47,7 +47,6 @@ Plug('reedes/vim-colors-pencil')
 
 -- fuzzy finder
 Plug('junegunn/fzf', { ['do'] = '-> fzf#install()' })
---Plug('junegunn/fzf.vim')
 Plug('ibhagwan/fzf-lua')
 Plug('stsewd/fzf-checkout.vim')
 
@@ -67,7 +66,6 @@ Plug('kyazdani42/nvim-tree.lua')
 -- status line
 Plug('feline-nvim/feline.nvim')
 Plug('jeffkreeftmeijer/vim-nightfall')
-
 Plug('jose-elias-alvarez/null-ls.nvim')
 Plug('rust-lang/rust.vim')
 

@@ -24,7 +24,6 @@ opt.swapfile = false            -- Don't use swapfile
 -----------------------------------------------------------
 -- Undo
 -----------------------------------------------------------
-
 opt.undodir='~/.config/nvim/undo/'
 nvim_set_option('undofile', true)
 
@@ -87,13 +86,12 @@ cmd [[
   autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml setlocal shiftwidth=2 tabstop=2
 ]]
 
-
 -----------------------------------------------------------
 -- Autocompletion
 -----------------------------------------------------------
 
 -- Insert mode completion options
-opt.completeopt = 'menuone,noselect'
+opt.completeopt = 'menu,menuone,noselect'
 
 -----------------------------------------------------------
 -- Terminal
