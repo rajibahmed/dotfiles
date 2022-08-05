@@ -38,7 +38,6 @@ Plug('editorconfig/editorconfig-vim')
 Plug('christoomey/vim-tmux-navigator')
 Plug('numToStr/Comment.nvim')
 
-
 -- colors
 Plug('morhetz/gruvbox')
 Plug('navarasu/onedark.nvim')
