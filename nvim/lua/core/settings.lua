@@ -5,7 +5,7 @@
 -----------------------------------------------------------
 -- Neovim API aliases
 -----------------------------------------------------------
---local fn = vim.fn       				-- Call Vim functions
+local fn = vim.fn       				-- Call Vim functions
 local cmd = vim.cmd     				-- Execute Vim commands
 local exec = vim.api.nvim_exec 	-- Execute Vimscript
 local g = vim.g         				-- Global variables
@@ -19,12 +19,15 @@ g.vimspector_enable_mappings = 'HUMAN'
 g.mapleader = ','               -- Change leader to a comma
 opt.mouse = 'a'                 -- Enable mouse support
 opt.clipboard = 'unnamedplus'   -- Copy/paste to system clipboard
-opt.swapfile = false            -- Don't use swapfile
+opt.swapfile = true            -- Don't use swapfile
 
 -----------------------------------------------------------
--- Undo
+-- Undo n Backup
 -----------------------------------------------------------
-opt.undodir='~/.config/nvim/undo/'
+opt.backupdir = fn.stdpath('config') .. '/backup'
+opt.directory = fn.stdpath('config') .. '/temp'
+
+opt.undodir = fn.stdpath('config') .. '/undo'
 nvim_set_option('undofile', true)
 
 -----------------------------------------------------------

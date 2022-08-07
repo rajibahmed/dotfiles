@@ -621,7 +621,7 @@ schemes:
 # *TomorrowNight
 
 
-colors: *one-dark
+colors: *one-light
 
 
 #######################################
