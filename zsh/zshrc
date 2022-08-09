@@ -133,4 +133,8 @@ export PATH="$HOME/.poetry/bin:$PATH"
 source $HOME/.cargo/env
 export PATH="$HOME/.cargo/bin:$PATH"
 
-source ~/.alacritty.sh
+ALACRITTY_SHELL="${HOME}/.alacritty-shell"
+
+[ -n "$PS1" ] \
+  && [ -s "${ALACRITTY_SHELL}/profile_helper.sh" ] \
+  && eval "$("${ALACRITTY_SHELL}/profile_helper.sh")"

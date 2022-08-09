@@ -31,7 +31,7 @@ Plug('puremourning/vimspector')
 
 -- snippets
 Plug('L3MON4D3/LuaSnip')
--- Plug('saadparwaiz1/cmp_luasnip')
+Plug('saadparwaiz1/cmp_luasnip')
 Plug('rafamadriz/friendly-snippets')
 
 -- utils

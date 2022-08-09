@@ -22,7 +22,7 @@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 cd ~/.config && \
 ln -s ~/dotfiles/nvim nvim && \
-ln -s ~/dotfiles/alacritty alacritty && \
+ln -s ~/dotfiles/alacritty alacritty
 
 nvim +PlugInstall +qall
 
@@ -35,5 +35,13 @@ touch ~/.zsh_history
 echo "5. Change default shell"
 chsh
 
-mkdir -p ~/.tmux/plugins/
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+cd ~
+
+if [ ! -d "${HOME}/.alacritty-shell" ]; then
+  git clone https://github.com/casonadams/alacritty-shell.git "${HOME}/.alacritty-shell"
+fi
+
+if [ ! -d "${HOME}/.tmux/plugins/" ]; then
+  mkdir -p ~/.tmux/plugins/
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
