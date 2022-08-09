@@ -1,12 +1,12 @@
 set -x
 echo "1. Setting Up homebrew"
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "setting up symlinks"
 cd ~
 ln -fs  ~/dotfiles/Brewfile
 ln -fs  ~/dotfiles/zsh/zshrc .zshrc
-ln -fs  ~/dotfiles/tmux.config .tmux.config
+ln -fs  ~/dotfiles/tmux.config .tmux.conf
 ln -fs  ~/dotfiles/irbrc .irbrc
 ln -fs  ~/dotfiles/ctags/ctags .ctags
 ln -fs  ~/dotfiles/gitconfig .gitconfig
@@ -22,7 +22,7 @@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 cd ~/.config && \
 ln -s ~/dotfiles/nvim nvim && \
-ln -s ~/dotfiles/alacritty alacritty
+ln -s ~/dotfiles/alacritty alacritty && \
 
 nvim +PlugInstall +qall
 
