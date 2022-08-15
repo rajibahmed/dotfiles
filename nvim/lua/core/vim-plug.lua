@@ -3,20 +3,13 @@
 -----------------------------------------------------------
 
 -- Plugin manager: vim-plug
--- url: https://github.com/wbthomason/packer.nvim
-
--- For information about installed plugins see the README
---- neovim-lua/README.md
---- https://github.com/brainfucksec/neovim-lua#readme
 
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
 -- language server
-Plug('neovim/nvim-lspconfig')
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
-Plug('fatih/vim-go', { ['do'] = ':GoUpdateBinaries' })
 
 Plug('neovim/nvim-lspconfig')
 Plug('hrsh7th/cmp-nvim-lsp')
@@ -68,5 +61,6 @@ Plug('feline-nvim/feline.nvim')
 Plug('jeffkreeftmeijer/vim-nightfall')
 Plug('jose-elias-alvarez/null-ls.nvim')
 Plug('rust-lang/rust.vim')
+Plug('fatih/vim-go', { ['do'] = ':GoUpdateBinaries' })
 
 vim.call('plug#end')
