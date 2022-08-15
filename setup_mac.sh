@@ -6,7 +6,7 @@ echo "setting up symlinks"
 cd ~
 ln -fs  ~/dotfiles/Brewfile
 ln -fs  ~/dotfiles/zsh/zshrc .zshrc
-ln -fs  ~/dotfiles/tmux.config .tmux.conf
+ln -fs  ~/dotfiles/tmux.conf .tmux.conf
 ln -fs  ~/dotfiles/irbrc .irbrc
 ln -fs  ~/dotfiles/ctags/ctags .ctags
 ln -fs  ~/dotfiles/gitconfig .gitconfig
