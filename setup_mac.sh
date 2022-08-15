@@ -27,13 +27,10 @@ ln -s ~/dotfiles/alacritty alacritty
 nvim +PlugInstall +qall
 
 echo "4. install prompt with nvm"
-npm install -g typescript
-npm install -g lighthouse
+npm install -g typescript lighthouse typescript-language-server prettier eslint
 
 touch ~/.zsh_history
 
-echo "5. Change default shell"
-chsh
 
 cd ~
 
@@ -45,3 +42,7 @@ if [ ! -d "${HOME}/.tmux/plugins/" ]; then
   mkdir -p ~/.tmux/plugins/
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
+
+
+echo "5. Change default shell"
+chsh
