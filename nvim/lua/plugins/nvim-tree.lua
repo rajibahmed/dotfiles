@@ -12,6 +12,9 @@
 --- setup function: https://github.com/kyazdani42/nvim-tree.lua#setup
 --- See: `help NvimTree`
 
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
 require('nvim-tree').setup {
   open_on_setup = true,
   update_cwd = true,
