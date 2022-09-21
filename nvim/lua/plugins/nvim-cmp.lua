@@ -52,6 +52,25 @@ cmp.setup({
       "s",
     }),
   },
+
+  formatting = {
+    format = function(entry, vim_item)
+      vim_item.menu = ({
+        nvim_lsp = '[L]',
+        emoji    = '[E]',
+        path     = '[F]',
+        calc     = '[C]',
+        luasnip    = '[S]',
+        buffer   = '[B]',
+      })[entry.source.name]
+      vim_item.dup = ({
+        buffer = 1,
+        path = 1,
+        nvim_lsp = 0,
+      })[entry.source.name] or 0
+      return vim_item
+    end
+  },
   sources = {
     { name = "luasnip" },
     { name = "nvim_lsp" },

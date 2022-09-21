@@ -30,6 +30,7 @@ Plug('rafamadriz/friendly-snippets')
 -- utils
 Plug('editorconfig/editorconfig-vim')
 Plug('numToStr/Comment.nvim')
+Plug('alexghergh/nvim-tmux-navigation')
 
 -- colors
 Plug('morhetz/gruvbox')

@@ -98,7 +98,7 @@ export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Conten
 #Java
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
-java8
+java11
 
 eval "$(starship init zsh)"
 
