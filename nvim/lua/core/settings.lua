@@ -19,7 +19,7 @@ g.vimspector_enable_mappings = 'HUMAN'
 g.mapleader = ','               -- Change leader to a comma
 opt.mouse = 'a'                 -- Enable mouse support
 opt.clipboard = 'unnamedplus'   -- Copy/paste to system clipboard
-opt.swapfile = true            -- Don't use swapfile
+opt.swapfile = false            -- Don't use swapfile
 
 -----------------------------------------------------------
 -- Undo n Backup
