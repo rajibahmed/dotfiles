@@ -38,6 +38,7 @@ brew 'starship'
 brew 'gh'
 brew 'spotify-tui'
 brew 'spotifyd'
+brew 'procs'
 
 cask '1password'
 cask 'firefox'

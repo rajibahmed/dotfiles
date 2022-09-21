@@ -43,7 +43,8 @@ map('n', '<leader>n',     ':NvimTreeFindFile<CR>',default_opts) -- search file
 
 -- FZF
 map('n', '<C-p>', "<cmd>lua require('fzf-lua').files()<CR>",    default_opts)
-map('n', '<C-f>', "<cmd>lua require('fzf-lua').grep_cword()<CR>",default_opts)
+map('n', '<C-f>', "<cmd>lua require('fzf-lua').args()<CR>",default_opts)
+map('n', '<leader>f', "<cmd>lua require('fzf-lua').grep_cword()<CR>",default_opts)
 map('n', ';',     "<cmd>lua require('fzf-lua').buffers()<CR>",  default_opts)
 
 

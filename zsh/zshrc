@@ -72,7 +72,7 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 
 alias ls=exa
-alias cat=bat
+alias cat="bat --theme=OneHalfLight"
 alias man=batman
 
 export EDITOR=nvim
@@ -101,7 +101,6 @@ alias java11='export JAVA_HOME=$JAVA_11_HOME'
 java8
 
 eval "$(starship init zsh)"
-eval "$(goenv init -)"
 
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
@@ -138,3 +137,17 @@ ALACRITTY_SHELL="${HOME}/.alacritty-shell"
 [ -n "$PS1" ] \
   && [ -s "${ALACRITTY_SHELL}/profile_helper.sh" ] \
   && eval "$("${ALACRITTY_SHELL}/profile_helper.sh")"
+
+
+# Goenv setup
+if command -v goenv &>/dev/null; then
+    export GOENV_ROOT="$HOME/.goenv"
+    export PATH="$GOENV_ROOT/bin:$PATH"
+    eval "$(goenv init -)"
+    export PATH="$GOROOT/bin:$PATH"
+    export PATH="$PATH:$GOPATH/bin"
+fi
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
