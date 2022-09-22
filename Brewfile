@@ -39,6 +39,7 @@ brew 'gh'
 brew 'spotify-tui'
 brew 'spotifyd'
 brew 'procs'
+brew 'stylua'
 
 cask '1password'
 cask 'firefox'

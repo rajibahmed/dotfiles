@@ -38,7 +38,7 @@ alias push='git push'
 #SYSTEM
 alias python=python3
 alias pip=pip3
-alias vim=nvim
+alias v=nvim
 alias _=sudo
 alias gz='tar -zcvf' #tar a folder
 alias ll='exa -lah'
@@ -74,6 +74,7 @@ alias ....='cd ../../../'
 alias ls=exa
 alias cat="bat --theme=OneHalfLight"
 alias man=batman
+alias ps=procs
 
 export EDITOR=nvim
 export PATH=$HOME/dotfiles/bin:$PATH
