@@ -63,5 +63,9 @@ Plug('jeffkreeftmeijer/vim-nightfall')
 Plug('jose-elias-alvarez/null-ls.nvim')
 Plug('rust-lang/rust.vim')
 Plug('fatih/vim-go', { ['do'] = ':GoUpdateBinaries' })
+Plug('NTBBloodbath/rest.nvim')
+Plug('windwp/nvim-autopairs')
 
 vim.call('plug#end')
+
+require("nvim-autopairs").setup {}
