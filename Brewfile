@@ -40,6 +40,7 @@ brew 'spotify-tui'
 brew 'spotifyd'
 brew 'procs'
 brew 'stylua'
+brew 'hashicorp/tap/terraform-ls'
 
 cask '1password'
 cask 'firefox'
