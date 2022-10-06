@@ -16,8 +16,6 @@ vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
 require('nvim-tree').setup {
-  open_on_setup = true,
-  update_cwd = true,
   view = {
     width = 32,
     side= 'right'
