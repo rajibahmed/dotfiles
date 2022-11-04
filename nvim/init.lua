@@ -30,6 +30,8 @@ require("plugins/null-ls")
 require("plugins/nvim-lspconfig")
 require("plugins/comment")
 
+-- simple plugin setups
+require("nvim-autopairs").setup({})
 require("nvim-tmux-navigation").setup({
 	disable_when_zoomed = true, -- defaults to false
 	keybindings = {
