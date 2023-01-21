@@ -29,6 +29,7 @@ require("plugins/feline")
 require("plugins/null-ls")
 require("plugins/nvim-lspconfig")
 require("plugins/comment")
+require("plugins/rest-client")
 
 -- simple plugin setups
 require("nvim-autopairs").setup({})

@@ -105,7 +105,7 @@ go install golang.org/x/tools/gopls@latest
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches.
 -- Add your language server below:
-local servers = { "pyright", "tsserver", "gopls", "terraformls", "tflint" }
+local servers = { "pyright", "tsserver", "gopls", "tflint" }
 
 -- Call setup
 for _, lsp in ipairs(servers) do
@@ -144,4 +144,16 @@ nvim_lsp.rust_analyzer.setup({
 			},
 		},
 	},
+})
+
+nvim_lsp.terraformls.setup({
+	on_attach = on_attach,
+	flags = { debounce_text_changes = 150 },
+	capabilities = vim.lsp.protocol.make_client_capabilities(),
+})
+
+nvim_lsp.tflint.setup({
+	on_attach = on_attach,
+	flags = { debounce_text_changes = 150 },
+	capabilities = vim.lsp.protocol.make_client_capabilities(),
 })
