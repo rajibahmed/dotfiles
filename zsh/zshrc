@@ -70,6 +70,7 @@ alias jira='git fetch && git checkout --track $(git branch -r | fzf)'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
+alias pr_open='gh pr view -w'
 
 alias ls=exa
 alias cat="bat --theme=OneHalfLight"

@@ -65,5 +65,6 @@ Plug("rust-lang/rust.vim")
 Plug("fatih/vim-go", { ["do"] = ":GoUpdateBinaries" })
 Plug("windwp/nvim-autopairs")
 Plug("kylechui/nvim-surround")
+Plug("thoughtbot/vim-rspec")
 
 vim.call("plug#end")
