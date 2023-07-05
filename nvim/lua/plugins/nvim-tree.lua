@@ -15,10 +15,10 @@
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
-require('nvim-tree').setup {
+require("nvim-tree").setup({
   view = {
     width = 32,
-    side= 'right'
+    side = "right",
   },
   renderer = {
     indent_markers = {
@@ -43,7 +43,4 @@ require('nvim-tree').setup {
     custom = {},
     exclude = {},
   },
-}
-
-
-
+})

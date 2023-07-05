@@ -65,6 +65,10 @@ Plug("rust-lang/rust.vim")
 Plug("fatih/vim-go", { ["do"] = ":GoUpdateBinaries" })
 Plug("windwp/nvim-autopairs")
 Plug("kylechui/nvim-surround")
-Plug("thoughtbot/vim-rspec")
+
+-- auto tests
+Plug("nvim-neotest/neotest")
+Plug("olimorris/neotest-rspec")
+Plug("nvim-neotest/neotest-jest")
 
 vim.call("plug#end")

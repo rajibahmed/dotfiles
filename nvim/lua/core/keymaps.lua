@@ -57,3 +57,6 @@ map("v", "<space>y", "+y", default_opts)
 map("v", "<space>yy", "+yy", default_opts)
 map("v", "<space>p", "+p", default_opts)
 map("v", "<space>P", "+P", default_opts)
+
+--- testing
+map("n", "<leader>rr", "<cmd>lua require('neotest').run.run()<CR>", default_opts)

@@ -5,8 +5,7 @@
 -- Plugin: nvim-cmp
 -- url: https://github.com/hrsh7th/nvim-cmpa
 
-local cmp = require'cmp'
-
+local cmp = require("cmp")
 
 cmp.setup({
   history = true,
@@ -23,10 +22,10 @@ cmp.setup({
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.close(),
-    ["<CR>"] = cmp.mapping.confirm {
+    ["<CR>"] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = false,
-    },
+    }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -56,12 +55,12 @@ cmp.setup({
   formatting = {
     format = function(entry, vim_item)
       vim_item.menu = ({
-        nvim_lsp = '[L]',
-        emoji    = '[E]',
-        path     = '[F]',
-        calc     = '[C]',
-        luasnip    = '[S]',
-        buffer   = '[B]',
+        nvim_lsp = "[L]",
+        emoji = "[E]",
+        path = "[F]",
+        calc = "[C]",
+        luasnip = "[S]",
+        buffer = "[B]",
       })[entry.source.name]
       vim_item.dup = ({
         buffer = 1,
@@ -69,7 +68,7 @@ cmp.setup({
         nvim_lsp = 0,
       })[entry.source.name] or 0
       return vim_item
-    end
+    end,
   },
   sources = {
     { name = "luasnip" },
@@ -77,8 +76,7 @@ cmp.setup({
     { name = "buffer" },
     { name = "nvim_lua" },
     { name = "path" },
-  }
+  },
 })
-
 
 require("luasnip.loaders.from_vscode").lazy_load()
