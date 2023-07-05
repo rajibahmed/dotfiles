@@ -60,3 +60,4 @@ map("v", "<space>P", "+P", default_opts)
 
 --- testing
 map("n", "<leader>rr", "<cmd>lua require('neotest').run.run()<CR>", default_opts)
+map("n", "<leader>rf", "<cmd>lua require('neotest').run.run(vim.fn.expand(" % "))<CR>", default_opts)
