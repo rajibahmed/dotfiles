@@ -49,4 +49,5 @@ cask 'alacritty'
 cask 'spotify'
 cask 'visual-studio-code'
 cask 'font-hack-nerd-font'
-cask 'amethyst'
+cask 'amethyst' # tiling window manager
+cask 'scoot' # keyboard mouse emulator
