@@ -40,12 +40,12 @@ map("n", "<leader><TAB>", ":NvimTreeFindFileToggle!<CR>", default_opts) -- open/
 
 -- FZF
 map("n", "<C-p>", "<cmd>lua require('fzf-lua').files()<CR>", default_opts)
-map("n", "<leader>fb", "<cmd>lua require('fzf-lua').git_branches()<CR>", default_opts)
+map("n", "<leader>fc", "<cmd>lua require('fzf-lua').git_branches()<CR>", default_opts)
 map("n", "<leader>ff", "<cmd>lua require('fzf-lua').live_grep_native()<CR>", default_opts)
 map("n", "<leader>fg", "<cmd>lua require('fzf-lua').grep_cword()<CR>", default_opts)
 map("n", "<leader>fm", "<cmd>lua require('fzf-lua').marks()<CR>", default_opts)
 map("n", "<leader>fj", "<cmd>lua require('fzf-lua').jumps()<CR>", default_opts)
-map("n", ";", "<cmd>lua require('fzf-lua').buffers()<CR>", default_opts)
+map("n", "<leader>fb", "<cmd>lua require('fzf-lua').buffers()<CR>", default_opts)
 
 -- Splitting
 map("n", "<esc>", ":noh<CR>", default_opts)

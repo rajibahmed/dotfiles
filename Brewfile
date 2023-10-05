@@ -30,7 +30,7 @@ brew 'git-crypt'
 brew 'git-delta'
 brew 'jq'
 brew 'yq'
-brew 'exa'
+brew 'eza'
 brew 'bat'
 brew 'bat-extras'
 brew 'urlview'
@@ -50,4 +50,3 @@ cask 'spotify'
 cask 'visual-studio-code'
 cask 'font-hack-nerd-font'
 cask 'amethyst' # tiling window manager
-cask 'scoot' # keyboard mouse emulator

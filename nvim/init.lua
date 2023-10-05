@@ -32,8 +32,8 @@ require("plugins/comment")
 require("plugins/neotest")
 
 -- simple plugin setups
-require("nvim-autopairs").setup({})
 require("nvim-surround").setup({})
+require("nvim-autopairs").setup({})
 require("nvim-tmux-navigation").setup({
   disable_when_zoomed = true, -- defaults to false
   keybindings = {

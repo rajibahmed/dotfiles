@@ -36,12 +36,12 @@ alias pull='git pull --rebase'
 alias push='git push'
 
 #SYSTEM
-alias python=python3
+#alias python=python3
 alias pip=pip3
 alias v=nvim
 alias _=sudo
 alias gz='tar -zcvf' #tar a folder
-alias ll='exa -lah'
+alias ll='eza -lah'
 
 alias zl='source ~/.zshrc'
 alias ze='vim ~/.zshrc'
@@ -64,15 +64,16 @@ alias sd='fasd -sid'     # interactive directory selection
 alias sf='fasd -sif'     # interactive file selection
 alias j='fasd_cd -d'     # cd, same functionality as j in autojump
 alias jj='fasd_cd -d -i' # cd with interactive selection
+alias be='bundle exec'
 
 #OFFICE
-alias jira='git fetch && git checkout --track $(git branch -r | fzf)'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 alias pr_open='gh pr view -w'
+alias jira='git fetch && git checkout --track $(git branch -r | fzf)'
 
-alias ls=exa
+alias ls=eza
 alias cat="bat --theme=OneHalfLight"
 alias man=batman
 alias ps=procs
