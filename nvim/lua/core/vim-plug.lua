@@ -68,6 +68,7 @@ Plug("kylechui/nvim-surround")
 
 -- auto tests
 Plug("nvim-neotest/neotest")
+Plug("nvim-neotest/nvim-nio")
 Plug("olimorris/neotest-rspec")
 Plug("nvim-neotest/neotest-jest")
 

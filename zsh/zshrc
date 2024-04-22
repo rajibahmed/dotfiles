@@ -21,7 +21,6 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history # share command history data
 
-eval "$(fasd --init auto )"
 eval "$(rbenv init -)"
 
 #GIT
@@ -52,18 +51,6 @@ alias :q='exit'
 alias rmf='rm -rf'
 alias tailf='tail -f'
 
-#FASD
-unalias z
-unalias zz
-
-alias a='fasd -a'        # any
-alias s='fasd -si'       # show / search / select
-alias d='fasd -d'        # directory
-alias f='fasd -f'        # file
-alias sd='fasd -sid'     # interactive directory selection
-alias sf='fasd -sif'     # interactive file selection
-alias j='fasd_cd -d'     # cd, same functionality as j in autojump
-alias jj='fasd_cd -d -i' # cd with interactive selection
 alias be='bundle exec'
 
 #OFFICE
@@ -135,13 +122,6 @@ export PATH="$HOME/.poetry/bin:$PATH"
 source $HOME/.cargo/env
 export PATH="$HOME/.cargo/bin:$PATH"
 
-ALACRITTY_SHELL="${HOME}/.alacritty-shell"
-
-[ -n "$PS1" ] \
-  && [ -s "${ALACRITTY_SHELL}/profile_helper.sh" ] \
-  && eval "$("${ALACRITTY_SHELL}/profile_helper.sh")"
-
-
 # Goenv setup
 if command -v goenv &>/dev/null; then
     export GOENV_ROOT="$HOME/.goenv"
@@ -154,14 +134,3 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
-
-# pnpm
-export PNPM_HOME="/Users/rajib/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-#. /opt/homebrew/opt/asdf/libexec/asdf.sh

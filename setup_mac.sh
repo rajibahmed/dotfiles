@@ -20,6 +20,7 @@ echo "3. setup neovim"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
+mkdir ~/.config
 cd ~/.config && \
 ln -s ~/dotfiles/nvim nvim && \
 ln -s ~/dotfiles/alacritty alacritty
