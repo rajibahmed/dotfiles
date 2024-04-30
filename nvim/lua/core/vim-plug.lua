@@ -41,7 +41,7 @@ Plug("reedes/vim-colors-pencil")
 
 -- fuzzy finder
 Plug("junegunn/fzf", { ["do"] = "-> fzf#install()" })
-Plug("ibhagwan/fzf-lua")
+Plug("ibhagwan/fzf-lua", {["branch"] = "main"})
 Plug("stsewd/fzf-checkout.vim")
 
 -- git

@@ -1,41 +1,4 @@
-[colors]
-draw_bold_text_with_bright_colors = true
-
-[[colors.indexed_colors]]
-color = "0xd75f00"
-index = 208
-
-[[colors.indexed_colors]]
-color = "0xf0f0f1"
-index = 247
-
-[colors.bright]
-black = "0xa0a1a7"
-blue = "0x4078f2"
-cyan = "0x0184bc"
-green = "0x50a14f"
-magenta = "0xa626a4"
-red = "0xca1243"
-white = "0x090a0b"
-yellow = "0xc18401"
-
-[colors.cursor]
-cursor = "0x383a42"
-text = "0xfafafa"
-
-[colors.normal]
-black = "0xfafafa"
-blue = "0x4078f2"
-cyan = "0x0184bc"
-green = "0x50a14f"
-magenta = "0xa626a4"
-red = "0xca1243"
-white = "0x383a42"
-yellow = "0xc18401"
-
-[colors.primary]
-background = "0xfafafa"
-foreground = "0x383a42"
+import = ["/Users/rajibahmed/.config/alacritty/themes/themes/ayu_dark.toml"]
 
 [font]
 size = 16.0
@@ -160,3 +123,4 @@ instance = "Alacritty"
 [window.padding]
 x = 6
 y = 6
+

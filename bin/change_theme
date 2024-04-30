@@ -1,0 +1,7 @@
+
+THEME_PATH=~/.config/alacritty/themes/themes
+SELECTED_THEME=`ls $THEME_PATH | fzf`
+echo $SELECTED_THEME
+sed -i.bak -r "s#^(import =).*#\1 [\"$THEME_PATH/$SELECTED_THEME\"]#" ~/.config/alacritty/alacritty.toml
+
+
