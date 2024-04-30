@@ -25,6 +25,7 @@ cd ~/.config && \
 ln -s ~/dotfiles/nvim nvim && \
 ln -s ~/dotfiles/alacritty alacritty
 
+
 nvim +PlugInstall +qall
 
 echo "4. install prompt with nvm"
@@ -35,9 +36,11 @@ touch ~/.zsh_history
 
 cd ~
 
-if [ ! -d "${HOME}/.alacritty-shell" ]; then
-  git clone https://github.com/casonadams/alacritty-shell.git "${HOME}/.alacritty-shell"
+if [ ! -d "${HOME}/.config/alacritty/themes" ]; then
+  mkdir -p ~/.config/alacritty/themes
+  git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 fi
+
 
 if [ ! -d "${HOME}/.tmux/plugins/" ]; then
   mkdir -p ~/.tmux/plugins/
