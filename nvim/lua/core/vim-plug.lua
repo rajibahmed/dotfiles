@@ -20,7 +20,7 @@ Plug("hrsh7th/nvim-cmp")
 
 -- laguage support
 Plug("klen/python-mode")
-Plug("puremourning/vimspector")
+Plug("ziglang/zig.vim")
 
 -- snippets
 Plug("L3MON4D3/LuaSnip")
@@ -41,7 +41,7 @@ Plug("reedes/vim-colors-pencil")
 
 -- fuzzy finder
 Plug("junegunn/fzf", { ["do"] = "-> fzf#install()" })
-Plug("ibhagwan/fzf-lua", {["branch"] = "main"})
+Plug("ibhagwan/fzf-lua", { ["branch"] = "main" })
 Plug("stsewd/fzf-checkout.vim")
 
 -- git
@@ -58,9 +58,9 @@ Plug("kyazdani42/nvim-web-devicons")
 Plug("kyazdani42/nvim-tree.lua")
 
 -- status line
-Plug("feline-nvim/feline.nvim")
+Plug("nvim-lualine/lualine.nvim")
 Plug("jeffkreeftmeijer/vim-nightfall")
-Plug("jose-elias-alvarez/null-ls.nvim")
+Plug("nvimtools/none-ls.nvim")
 Plug("rust-lang/rust.vim")
 Plug("fatih/vim-go", { ["do"] = ":GoUpdateBinaries" })
 Plug("windwp/nvim-autopairs")
@@ -71,5 +71,9 @@ Plug("nvim-neotest/neotest")
 Plug("nvim-neotest/nvim-nio")
 Plug("olimorris/neotest-rspec")
 Plug("nvim-neotest/neotest-jest")
+
+-- debug
+Plug("mfussenegger/nvim-dap")
+Plug("rcarriga/nvim-dap-ui")
 
 vim.call("plug#end")

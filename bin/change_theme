@@ -1,7 +1,47 @@
+#!/usr/bin/env bash
 
+
+#############################################
+# @authors: Rajib Ahmed
+# @version: 1.0.0.dev
+#############################################
+
+#default variables
+VERSION="1.0.0.dev"
 THEME_PATH=~/.config/alacritty/themes/themes
-SELECTED_THEME=`ls $THEME_PATH | fzf`
-echo $SELECTED_THEME
-sed -i.bak -r "s#^(import =).*#\1 [\"$THEME_PATH/$SELECTED_THEME\"]#" ~/.config/alacritty/alacritty.toml
+
+output_help(){
+  echo "*============================================================="
+  echo "  This is how you use this application  :"
+  echo "  params sequence is important to run the application properly "
+  echo "  script_name -f [FILENAME] -[n|h|d] -[c|r|2|t|F] "
+  echo -e "  the last argument is ignored .... file name should be \n passed as value to f flag"
+  echo "============================================================="
+  exit ${1}
+}
 
 
+version(){
+  echo "${0} is now at ${VERSION}"
+  exit 0
+}
+
+main(){
+  SELECTED_THEME=`ls $THEME_PATH | fzf`
+  echo $SELECTED_THEME
+  sed -i.bak -r "s#^(import =).*#\1 [\"$THEME_PATH/$SELECTED_THEME\"]#" ~/.config/alacritty/alacritty.toml
+}
+
+while [ $# -gt 0 ]
+do
+  case ${1} in
+    -t | --theme)   shift ; SELECTED_THEME=${1} ;;
+    -h | --help )    output_help   ;;
+    -v | --version)   version  ;;
+    -r )              main  ;;
+    *)break ;;
+  esac
+  shift
+done
+
+exit 0

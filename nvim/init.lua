@@ -25,7 +25,6 @@ require("plugins/nvim-cmp")
 require("plugins/nvim-treesitter")
 require("plugins/nvim-tree")
 require("plugins/git-signs")
-require("plugins/feline")
 require("plugins/null-ls")
 require("plugins/nvim-lspconfig")
 require("plugins/comment")
@@ -43,5 +42,11 @@ require("nvim-tmux-navigation").setup({
     right = "<C-l>",
     last_active = "<C-\\>",
     next = "<C-Space>",
+  },
+})
+
+require("lualine").setup({
+  options = {
+    theme = "onelight",
   },
 })

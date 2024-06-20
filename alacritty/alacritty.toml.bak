@@ -1,4 +1,4 @@
-import = ["/Users/rajibahmed/.config/alacritty/themes/themes/ayu_light.toml"]
+import = ["/Users/rajibahmed/.config/alacritty/themes/themes/gruvbox_light.toml"]
 
 [font]
 size = 16.0
