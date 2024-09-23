@@ -29,6 +29,7 @@ require("plugins/null-ls")
 require("plugins/nvim-lspconfig")
 require("plugins/comment")
 require("plugins/neotest")
+require("plugins/nvim-dap")
 
 -- simple plugin setups
 require("nvim-surround").setup({})
@@ -45,8 +46,4 @@ require("nvim-tmux-navigation").setup({
   },
 })
 
-require("lualine").setup({
-  options = {
-    theme = "onelight",
-  },
-})
+require("lualine").setup({})

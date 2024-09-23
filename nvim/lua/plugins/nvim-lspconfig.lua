@@ -105,7 +105,7 @@ go install golang.org/x/tools/gopls@latest
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches.
 -- Add your language server below:
-local servers = { "pyright", "tsserver", "gopls", "tflint", "solargraph" }
+local servers = { "pyright", "ts_ls", "gopls", "tflint", "solargraph" }
 
 -- Call setup
 for _, lsp in ipairs(servers) do

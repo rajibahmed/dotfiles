@@ -8,8 +8,9 @@ require("null-ls").setup({
     require("null-ls").builtins.formatting.stylua,
     require("null-ls").builtins.formatting.isort,
     require("null-ls").builtins.formatting.black,
-    require("null-ls").builtins.diagnostics.eslint,
+    require("none-ls.diagnostics.eslint"),
     require("null-ls").builtins.completion.luasnip,
+    require("null-ls").builtins.completion.spell,
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
