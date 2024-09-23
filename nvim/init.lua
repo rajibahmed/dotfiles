@@ -30,6 +30,7 @@ require("plugins/nvim-lspconfig")
 require("plugins/comment")
 require("plugins/neotest")
 require("plugins/nvim-dap")
+require("plugins/feline")
 
 -- simple plugin setups
 require("nvim-surround").setup({})
@@ -45,5 +46,3 @@ require("nvim-tmux-navigation").setup({
     next = "<C-Space>",
   },
 })
-
-require("lualine").setup({})

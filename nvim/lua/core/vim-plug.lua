@@ -58,7 +58,7 @@ Plug("kyazdani42/nvim-web-devicons")
 Plug("kyazdani42/nvim-tree.lua")
 
 -- status line
-Plug("nvim-lualine/lualine.nvim")
+Plug("freddiehaddad/feline.nvim")
 Plug("jeffkreeftmeijer/vim-nightfall")
 Plug("nvimtools/none-ls.nvim")
 Plug("nvimtools/none-ls-extras.nvim")
@@ -69,12 +69,13 @@ Plug("kylechui/nvim-surround")
 
 -- auto tests
 Plug("nvim-neotest/neotest")
-Plug("nvim-neotest/nvim-nio")
 Plug("olimorris/neotest-rspec")
 Plug("nvim-neotest/neotest-jest")
 
 -- debug
 Plug("mfussenegger/nvim-dap")
 Plug("rcarriga/nvim-dap-ui")
+Plug("nvim-neotest/nvim-nio")
+Plug("mxsdev/nvim-dap-vscode-js")
 
 vim.call("plug#end")
