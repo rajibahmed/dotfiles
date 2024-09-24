@@ -31,6 +31,7 @@ require("plugins/comment")
 require("plugins/neotest")
 require("plugins/nvim-dap")
 require("plugins/feline")
+require("plugins/mason")
 
 -- simple plugin setups
 require("nvim-surround").setup({})

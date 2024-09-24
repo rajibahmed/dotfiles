@@ -10,9 +10,7 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
-
 require("dap-vscode-js").setup({
-  debugger_path = "(runtimedir)/site/pack/packer/opt/vscode-js-debug", -- Path to vscode-js-debug installation.
   adapters = {
     "chrome",
     "pwa-node",
@@ -53,5 +51,7 @@ for _, language in ipairs(js_based_languages) do
     },
   }
 end
+
+require("dap-python").setup("/Users/rajibahmed/.virtualenvs/debugpy/bin/python")
 
 vim.keymap.set("n", "<leader>ui", require("dapui").toggle)
