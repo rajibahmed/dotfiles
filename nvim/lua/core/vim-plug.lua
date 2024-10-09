@@ -79,5 +79,6 @@ Plug("nvim-neotest/nvim-nio")
 Plug("mxsdev/nvim-dap-vscode-js")
 Plug("mfussenegger/nvim-dap-python")
 Plug("williamboman/mason.nvim")
+Plug("theHamsta/nvim-dap-virtual-text")
 
 vim.call("plug#end")
