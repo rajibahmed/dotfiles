@@ -102,7 +102,7 @@ fi
 export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore'
 export FZF_COMPLETION_TRIGGER='~~'
 
-eval "$(fzf --zsh)"
+source <(fzf --zsh)
 
 # Node version manager
 source nvm_settings.sh
