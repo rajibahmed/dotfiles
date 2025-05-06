@@ -58,7 +58,7 @@ Plug("kyazdani42/nvim-web-devicons")
 Plug("kyazdani42/nvim-tree.lua")
 
 -- status line
-Plug("freddiehaddad/feline.nvim")
+Plug("nvim-lualine/lualine.nvim")
 Plug("jeffkreeftmeijer/vim-nightfall")
 Plug("nvimtools/none-ls.nvim")
 Plug("nvimtools/none-ls-extras.nvim")
@@ -74,6 +74,7 @@ Plug("nvim-neotest/neotest-jest")
 
 -- debug
 Plug("mfussenegger/nvim-dap")
+Plug("mxsdev/nvim-dap-vscode-js")
 Plug("rcarriga/nvim-dap-ui")
 Plug("nvim-neotest/nvim-nio")
 Plug("mxsdev/nvim-dap-vscode-js")

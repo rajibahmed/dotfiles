@@ -124,7 +124,7 @@ x = 6
 y = 6
 
 [general]
-import = ["/Users/rajibahmed/.config/alacritty/themes/themes/ayu_light.toml"]
+import = ["/Users/rajibahmed/.config/alacritty/themes/themes/github_light.toml"]
 
 [terminal]
 

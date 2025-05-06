@@ -45,7 +45,9 @@ fi
 if [ ! -d "${HOME}/.tmux/plugins/" ]; then
   mkdir -p ~/.tmux/plugins/
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  git clone https://github.com/junegunn/fzf-git.sh.git ~/.tmux/plugins/fzf-git.sh
 fi
+
 
 
 echo "5. Change default shell"

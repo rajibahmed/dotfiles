@@ -13,24 +13,13 @@ end
 
 local js_based_languages = { "typescript", "javascript", "typescriptreact" }
 
-for _, language in ipairs(js_based_languages) do
-  dap.configurations[language] = {
-    {
-      type = "node-terminal",
-      request = "launch",
-      name = "Launch file",
-      program = "${file}",
-      cwd = "${workspaceFolder}",
-    },
-    {
-      type = "node-terminal",
-      request = "attach",
-      name = "Attach",
-      processId = require("dap.utils").pick_process,
-      cwd = "${workspaceFolder}",
-    },
-  }
-end
+require("dap.ext.vscode").load_launchjs(nil, {
+  ["pwa-node"] = js_based_languages,
+  ["node"] = js_based_languages,
+  ["node-terminal"] = js_based_languages,
+  ["chrome"] = js_based_languages,
+  ["pwa-chrome"] = js_based_languages,
+})
 
 require("dap-vscode-js").setup({
   -- node_path = "node", -- Path of node executable. Defaults to $NODE_PATH, and then "node"
@@ -50,3 +39,22 @@ require("dap-vscode-js").setup({
   -- log_file_level = false -- Logging level for output to file. Set to false to disable file logging.
   -- log_console_level = vim.log.levels.ERROR -- Logging level for output to console. Set to false to disable console output.
 })
+
+for _, language in ipairs(js_based_languages) do
+  require("dap").configurations[language] = {
+    {
+      type = "pwa-node",
+      request = "launch",
+      name = "Launch file",
+      program = "${file}",
+      cwd = "${workspaceFolder}",
+    },
+    {
+      type = "pwa-node",
+      request = "attach",
+      name = "Attach",
+      processId = require("dap.utils").pick_process,
+      cwd = "${workspaceFolder}",
+    },
+  }
+end
