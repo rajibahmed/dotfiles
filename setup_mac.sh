@@ -50,5 +50,17 @@ fi
 
 
 
-echo "5. Change default shell"
+echo "5. Setup automatic Alacritty light/dark theme switching"
+ALACRITTY_AGENT="com.rajibahmed.alacritty-theme"
+mkdir -p "$HOME/.local/state/alacritty" "$HOME/Library/LaunchAgents"
+chmod +x "$HOME/dotfiles/bin/alacritty-theme-sync"
+sed "s|__HOME__|$HOME|g" \
+  "$HOME/dotfiles/launchd/$ALACRITTY_AGENT.plist" \
+  > "$HOME/Library/LaunchAgents/$ALACRITTY_AGENT.plist"
+launchctl bootout "gui/$(id -u)/$ALACRITTY_AGENT" 2>/dev/null || true
+launchctl bootstrap "gui/$(id -u)" "$HOME/Library/LaunchAgents/$ALACRITTY_AGENT.plist"
+launchctl enable "gui/$(id -u)/$ALACRITTY_AGENT"
+"$HOME/dotfiles/bin/alacritty-theme-sync"
+
+echo "6. Change default shell"
 chsh

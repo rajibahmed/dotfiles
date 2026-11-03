@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# Sync Alacritty's theme with the macOS light/dark appearance.
+#
+# The Alacritty config imports ~/.local/state/alacritty/theme.toml, and this
+# script keeps that file pointed at the matching theme. Alacritty's live reload
+# picks up the change (the main config is touched because Alacritty does not
+# necessarily watch imported files).
+set -euo pipefail
+
+THEME_DIR="$HOME/.config/alacritty/themes/themes"
+STATE_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/alacritty"
+STATE_FILE="$STATE_DIR/theme.toml"
+ALACRITTY_CONFIG="$HOME/.config/alacritty/alacritty.toml"
+
+if defaults read -g AppleInterfaceStyle 2>/dev/null | grep -qi dark; then
+	SOURCE="$THEME_DIR/one_dark.toml"
+else
+	SOURCE="$THEME_DIR/atom_one_light.toml"
+fi
+
+if [[ ! -f "$SOURCE" ]]; then
+	echo "missing theme: $SOURCE" >&2
+	exit 1
+fi
+
+mkdir -p "$STATE_DIR"
+
+# Nothing to do when the theme file is already correct.
+if [[ -f "$STATE_FILE" ]] && cmp -s "$SOURCE" "$STATE_FILE"; then
+	exit 0
+fi
+
+cp "$SOURCE" "$STATE_FILE"
+if [[ -f "$ALACRITTY_CONFIG" ]]; then
+	touch "$ALACRITTY_CONFIG"
+fi
+echo "$(date '+%Y-%m-%d %H:%M:%S') -> $(basename "$SOURCE")"
