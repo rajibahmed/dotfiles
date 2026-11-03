@@ -53,3 +53,5 @@
 [alias]
 	last = log -1 HEAD --stat
 	undo = reset --soft HEAD^
+  wip = commit -m '[skip ci] WIP'
+  amend = commit --amend --no-edit

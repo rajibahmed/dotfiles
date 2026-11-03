@@ -12,10 +12,30 @@ change_background() {
   fi
 }
 
+# Alacritty follows the macOS appearance (dotfiles/bin/alacritty-theme-sync):
+# one_dark for dark mode, atom_one_light for light mode.
+_is_dark_mode() {
+  [[ $(defaults read -g AppleInterfaceStyle 2>/dev/null) == "Dark" ]]
+}
+
+# fzf colors matching the active Alacritty theme.
+_fzf_theme() {
+  if _is_dark_mode; then
+    print -r -- 'fg:#abb2bf,bg:#282c34,hl:#61afef,hl+:#98c379,fg+:#ffffff,bg+:#3a3f4b,info:#d19a66,prompt:#61afef,pointer:#e06c75,marker:#98c379,spinner:#56b6c2,header:#5c6370,border:#5c6370,label:#98c379,query:#abb2bf,disabled:#5c6370,preview-bg:#21252b,preview-fg:#abb2bf'
+  else
+    print -r -- 'fg:#2a2b33,bg:#f8f8f8,hl:#2f5af3,hl+:#3e953a,fg+:#000000,bg+:#e5e5e6,info:#a00095,prompt:#2f5af3,pointer:#de3d35,marker:#3e953a,spinner:#2f5af3,header:#6b6b6b,border:#bbbbbb,label:#3e953a,query:#2a2b33,disabled:#bbbbbb,preview-bg:#f0f0f0,preview-fg:#2a2b33'
+  fi
+}
+
 gco() {
-  _fzf_git_each_ref --no-multi | xargs git checkout
+  _fzf_git_each_ref --no-multi --color="$(_fzf_theme)" | xargs git checkout
 }
 
 gswt() {
   cd "$(_fzf_git_worktrees --no-multi)"
+}
+
+# Reopen (or jump back to) the opencode + nvim + terminal tmux window.
+dev() {
+  "$HOME/dotfiles/bin/tmux-dev-layout" "$@"
 }
