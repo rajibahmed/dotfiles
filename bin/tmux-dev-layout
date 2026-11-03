@@ -73,3 +73,17 @@ tmux set-option -w -t "$win" automatic-rename off
 tmux send-keys -l -t "$left" 'opencode' \; send-keys -t "$left" Enter
 tmux send-keys -l -t "$right" 'nvim' \; send-keys -t "$right" Enter
 tmux select-pane -t "$right"
+
+# tmux may still be reporting the palette from when the server started. Once
+# opencode is up, push the current background so it picks the right mode now
+# instead of waiting for the next Alacritty sync.
+(
+	for _ in {1..40}; do
+		if [[ $(tmux display-message -p -t "$left" '#{pane_current_command}') == opencode ]]; then
+			sleep 0.5
+			"$HOME/dotfiles/bin/opencode-theme-notify" >/dev/null 2>&1
+			break
+		fi
+		sleep 0.25
+	done
+) >/dev/null 2>&1 &

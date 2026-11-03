@@ -7,6 +7,8 @@
 # necessarily watch imported files).
 set -euo pipefail
 
+BIN_DIR=$(cd -- "$(dirname -- "$0")" && pwd)
+
 THEME_DIR="$HOME/.config/alacritty/themes/themes"
 STATE_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/alacritty"
 STATE_FILE="$STATE_DIR/theme.toml"
@@ -25,13 +27,14 @@ fi
 
 mkdir -p "$STATE_DIR"
 
-# Nothing to do when the theme file is already correct.
-if [[ -f "$STATE_FILE" ]] && cmp -s "$SOURCE" "$STATE_FILE"; then
-	exit 0
+if [[ ! -f "$STATE_FILE" ]] || ! cmp -s "$SOURCE" "$STATE_FILE"; then
+	cp "$SOURCE" "$STATE_FILE"
+	if [[ -f "$ALACRITTY_CONFIG" ]]; then
+		touch "$ALACRITTY_CONFIG"
+	fi
+	echo "$(date '+%Y-%m-%d %H:%M:%S') -> $(basename "$SOURCE")"
 fi
 
-cp "$SOURCE" "$STATE_FILE"
-if [[ -f "$ALACRITTY_CONFIG" ]]; then
-	touch "$ALACRITTY_CONFIG"
-fi
-echo "$(date '+%Y-%m-%d %H:%M:%S') -> $(basename "$SOURCE")"
+# Notify OpenCode even when the theme file was already correct: a pane may
+# have started while tmux was still reporting the previous background.
+"$BIN_DIR/opencode-theme-notify" >/dev/null 2>&1 || true

@@ -12,6 +12,9 @@ ln -fs  ~/dotfiles/ctags/ctags .ctags
 ln -fs  ~/dotfiles/gitconfig .gitconfig
 ln -fs  ~/dotfiles/gitignore .gitignore
 
+mkdir -p ~/.config/opencode
+ln -fs  ~/dotfiles/opencode/cli.json ~/.config/opencode/cli.json
+
 echo "2. Installing some useful things using brew"
 brew bundle
 

@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Push the current Alacritty background color into running OpenCode TUIs.
+#
+# OpenCode follows the terminal's light/dark appearance, but it only re-checks
+# when the terminal sends a color-scheme notification. Alacritty does not send
+# those, and tmux answers color queries from its startup cache, so a running
+# OpenCode keeps the old mode. OpenCode's input parser understands an OSC 11
+# background response, so feed it one directly.
+set -euo pipefail
+
+STATE_FILE="${XDG_STATE_HOME:-$HOME/.local/state}/alacritty/theme.toml"
+
+bg="${1:-}"
+if [[ -z $bg ]]; then
+	bg=$(sed -n "s/^background = '\(#[0-9a-fA-F]\{6\}\)'/\1/p" "$STATE_FILE" | head -n 1)
+fi
+[[ -n $bg ]] || exit 0
+
+# launchd runs with a minimal PATH.
+tmux_bin=$(command -v tmux 2>/dev/null || true)
+if [[ -z $tmux_bin ]]; then
+	for candidate in /opt/homebrew/bin/tmux /usr/local/bin/tmux; do
+		if [[ -x $candidate ]]; then
+			tmux_bin=$candidate
+			break
+		fi
+	done
+fi
+[[ -n $tmux_bin ]] || exit 0
+
+response=$'\e]11;'"$bg"$'\e\\'
+
+"$tmux_bin" list-panes -a -F '#{pane_id} #{pane_current_command}' 2>/dev/null |
+	while read -r pane command; do
+		case "$command" in
+		opencode*) "$tmux_bin" send-keys -l -t "$pane" "$response" || true ;;
+		esac
+	done || true
