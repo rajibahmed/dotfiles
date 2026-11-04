@@ -1,153 +1,79 @@
-# JavaScript/TypeScript Debugging in Neovim
+# Debugging in Neovim
 
-This Neovim configuration includes debugger support for JavaScript and TypeScript projects using `nvim-dap`.
+Debugging uses LazyVim's `dap.core` extra plus the TypeScript and Python
+language extras.
 
-## Installation
+## Adapters
 
-The necessary plugins and adapters are configured in:
+- **JavaScript/TypeScript**: `js-debug-adapter` via the `pwa-node`,
+  `pwa-chrome`, and `pwa-msedge` adapters, configured by LazyVim's
+  `lang.typescript` extra.
+- **Python**: `debugpy` via `nvim-dap-python`, configured by LazyVim's
+  `lang.python` extra.
 
-- `lua/plugins/debugger.lua` - DAP configuration and UI
-- `lua/plugins/mason.lua` - Automatic installation of debug adapters
+Install or repair them with:
 
-When you start Neovim, Mason will automatically install:
-
-- `node-debug2-adapter` - Node.js debugging
-- `typescript-language-server` - TypeScript support
-
-## Quick Start
-
-### 1. Set Breakpoints
-
-```
-<leader>db  - Toggle breakpoint at current line
+```vim
+:MasonInstall js-debug-adapter
+:MasonInstall debugpy
 ```
 
-### 2. Start Debugging
+## Keymaps
 
-```
-<leader>dc  - Start/continue debugging
-```
+| Keys | Action |
+|---|---|
+| `<leader>db` | Toggle breakpoint |
+| `<leader>dc` | Run/continue (loads `.vscode/launch.json` when present) |
+| `<leader>di` | Step into |
+| `<leader>dO` | Step over |
+| `<leader>do` | Step out |
+| `<leader>dr` | Toggle REPL |
+| `<leader>dt` | Terminate |
+| `<leader>du` | Toggle DAP UI |
+| `<leader>de` | Evaluate expression |
+| `<leader>dPt` | Debug Python test method |
+| `<leader>dPc` | Debug Python test class |
+| `<leader>cv` | Select Python virtualenv |
 
-### 3. Navigation
+## JavaScript/TypeScript
 
-```
-<leader>di  - Step into function
-<leader>do  - Step over line
-<leader>du  - Step out of function
-<leader>dt  - Terminate debugger
-```
+`<leader>dc` loads `.vscode/launch.json` from the current working directory when
+it exists. If there is no `launch.json`, LazyVim's default "Launch file" and
+"Attach" configurations are used.
 
-### 4. REPL
+Example `.vscode/launch.json`:
 
-```
-<leader>dr  - Toggle Debug REPL for expressions
-```
-
-## Debug Configurations
-
-The debugger supports multiple configurations:
-
-### Launch Mode
-
-Starts your Node.js application from the specified entry point.
-
-```lua
+```json
 {
-  type = "node2",
-  request = "launch",
-  program = "${workspaceFolder}/dist/index.js",
-  cwd = vim.fn.getcwd(),
-  sourceMaps = true,
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Launch program",
+      "program": "${workspaceFolder}/dist/index.js",
+      "cwd": "${workspaceFolder}",
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**", "node_modules/**"]
+    }
+  ]
 }
 ```
 
-### Attach Mode
+Save the file before debugging. OpenCode and debuggers read from disk.
 
-Attaches to an already-running Node.js process.
+## Python
 
-```lua
-{
-  type = "node2",
-  request = "attach",
-  program = "${workspaceFolder}/dist/index.js",
-  sourceMaps = true,
-}
-```
-
-## Supported Languages
-
-- JavaScript (.js)
-- TypeScript (.ts)
-- React/JSX (.jsx, .tsx)
-
-## Configuration Customization
-
-To customize debug configurations for your specific project, edit `lua/plugins/debugger.lua`:
-
-### Example: Debugging a Next.js Project
-
-```lua
-dap.configurations.javascript = {
-  {
-    type = "node2",
-    request = "launch",
-    program = "${workspaceFolder}/node_modules/.bin/next",
-    args = { "dev" },
-    cwd = vim.fn.getcwd(),
-    sourceMaps = true,
-    console = "integratedTerminal",
-  },
-}
-```
-
-### Example: Debugging a Jest Test
-
-```lua
-{
-  type = "node2",
-  request = "launch",
-  program = "${workspaceFolder}/node_modules/.bin/jest",
-  args = { "${file}", "--runInBand" },
-  cwd = vim.fn.getcwd(),
-  sourceMaps = true,
-  console = "integratedTerminal",
-}
-```
+Install `debugpy` once, select the interpreter/venv with `<leader>cv`, then set
+breakpoints and press `<leader>dc`.
 
 ## Troubleshooting
 
-### Breakpoints not hitting
-
-- Ensure source maps are enabled in your build process
-- Check that `sourceMaps = true` in your debug configuration
-- For compiled projects, debug the compiled code in `dist/` or `build/`
-
-### "Adapter executable not found"
-
-- Run `:MasonInstall node-debug2-adapter` manually
-- Check `~/.local/share/nvim/mason/packages/` to see installed adapters
-
-### Debug adapter won't start
-
-- Ensure you're running a supported Node.js version (14+)
-- Check the debug console output for error messages using `<leader>dr`
-
-## UI Navigation (DAP UI)
-
-The debug UI opens automatically when debugging starts:
-
-- Press `q` to close/toggle the UI
-- Use arrow keys to navigate through watches, breakpoints, and stack
-- Press Enter to expand/collapse items
-
-## Mason Integration
-
-To install or update debug adapters manually:
-
-```vim
-:Mason
-```
-
-Then search for and install:
-
-- `node-debug2-adapter` - Node.js debugging support
+- **Adapter executable not found**: run `:MasonInstall js-debug-adapter` or
+  `:MasonInstall debugpy`, then restart Neovim.
+- **Breakpoints not hit**: enable source maps in the build, and make sure the
+  debug config points at the compiled output.
+- **No configurations**: LazyVim's defaults are kept when `.vscode/launch.json`
+  is absent. If a `launch.json` exists but is invalid, fix its JSON.
+- **DAP UI does not open**: `:checkhealth` and confirm the `dap.core` extra is
+  enabled in `lazyvim.json`.

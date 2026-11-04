@@ -3,9 +3,10 @@ return {
     "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
-        -- used by the pwa-node adapter in lua/plugins/debugger.lua
+        -- used by LazyVim's pwa-node adapter
         "js-debug-adapter",
-        "node-debug2-adapter",
+        -- Python debugger used by nvim-dap-python (lang.python extra)
+        "debugpy",
         -- TypeScript/JavaScript LSP. LazyVim disables ts_ls in favor of vtsls.
         "vtsls",
       },

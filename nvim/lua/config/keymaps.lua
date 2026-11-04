@@ -9,13 +9,7 @@ vim.keymap.set("n", "<leader><tab>", "<leader>fe", { desc = "Toggle Explorer", r
 -- Project-wide search for the word under the cursor, or the visual selection.
 vim.keymap.set("n", "<leader>*", LazyVim.pick("grep_cword"), { desc = "Grep word (root)" })
 vim.keymap.set("x", "<leader>*", LazyVim.pick("grep_visual"), { desc = "Grep selection (root)" })
-vim.keymap.set("n", "<leader>8", LazyVim.pick("grep_cword"), { desc = "Grep word (root)" })
 
--- Debugging keymaps (nvim-dap)
--- <leader>db - Toggle breakpoint
--- <leader>dc - Continue execution
--- <leader>di - Step into
--- <leader>do - Step over
--- <leader>du - Step out
--- <leader>dr - Toggle REPL
--- <leader>dt - Terminate debugger
+-- Debugging keymaps come from LazyVim's dap.core extra.
+-- <leader>dc is overridden in lua/plugins/debugger.lua to load launch.json.
+-- See DEBUGGING.md for the full list.
