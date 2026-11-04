@@ -20,19 +20,16 @@ brew bundle
 
 
 echo "3. setup neovim"
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+mkdir -p ~/.config
+ln -sfn ~/dotfiles/nvim ~/.config/nvim
+ln -sfn ~/dotfiles/alacritty ~/.config/alacritty
 
-mkdir ~/.config
-cd ~/.config && \
-ln -s ~/dotfiles/nvim nvim && \
-ln -s ~/dotfiles/alacritty alacritty
-
-
-nvim +PlugInstall +qall
+# LazyVim bootstraps lazy.nvim on first launch and installs missing plugins.
+nvim --headless "+Lazy! sync" +qa
 
 echo "4. install prompt with nvm"
-npm install -g typescript lighthouse typescript-language-server prettier eslint
+# TypeScript/JavaScript LSP (vtsls) is installed by Mason on first launch.
+npm install -g typescript lighthouse prettier eslint
 
 touch ~/.zsh_history
 

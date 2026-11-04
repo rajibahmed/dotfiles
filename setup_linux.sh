@@ -13,20 +13,13 @@ ln -fs  ~/dotfiles/irbrc .irbrc
 ln -fs  ~/dotfiles/ctags/ctags .ctags
 
 
-mkdir -p ~/.config/nvim/
-ln -fs  ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
-cd .config/nvim && \
-	ln -s ~/dotfiles/nvim/init.vim  init.vim
-  
-nvim +PlugInstall +qall
+mkdir -p ~/.config
+ln -sfn ~/dotfiles/nvim ~/.config/nvim
+
+# LazyVim bootstraps lazy.nvim on first launch and installs missing plugins.
+nvim --headless "+Lazy! sync" +qa
 echo -n '. $HOME/.nix-profile/' >> ~/.profile
 echo -n 'export PATH="$PATH:~/dotfiles/bin/"' >> ~/.profile
-
-
-echo "Setting up vim"
-
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 echo "Setup home-manager"
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager

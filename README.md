@@ -1,12 +1,17 @@
-My Zsh and Vim configs
-======================
+My Zsh, Neovim, and tmux configs
+================================
 
 Installation
 
 ```sh
 cd ~ && git clone https://github.com/rajibahmed/dotfiles.git
-sh dotfiles/setup_machine.sh
+sh dotfiles/setup_mac.sh    # macOS
+# or
+sh dotfiles/setup_linux.sh  # Linux
 ```
+
+The Neovim config lives in `nvim/` (LazyVim) and is symlinked to
+`~/.config/nvim` by the setup scripts.
 
 
 
