@@ -2,6 +2,10 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- File explorer: use <leader><tab> instead of the default <leader>e.
+pcall(vim.keymap.del, "n", "<leader>e")
+vim.keymap.set("n", "<leader><tab>", "<leader>fe", { desc = "Toggle Explorer", remap = true })
+
 -- Project-wide search for the word under the cursor, or the visual selection.
 vim.keymap.set("n", "<leader>*", LazyVim.pick("grep_cword"), { desc = "Grep word (root)" })
 vim.keymap.set("x", "<leader>*", LazyVim.pick("grep_visual"), { desc = "Grep selection (root)" })
