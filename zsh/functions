@@ -39,3 +39,8 @@ gswt() {
 dev() {
   "$HOME/dotfiles/bin/tmux-dev-layout" "$@"
 }
+
+# Start (or jump back to) the stg SSO login + VPN connect tmux window.
+vpn() {
+  "$HOME/dotfiles/bin/tmux-vpn" "$@"
+}

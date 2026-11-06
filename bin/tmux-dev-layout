@@ -3,7 +3,7 @@
 #
 #   ┌───────────┬───────────────────────────┐
 #   │           │           nvim            │
-#   │ opencode  ├───────────────────────────┤
+#   │ omp       ├───────────────────────────┤
 #   │           │         terminal          │
 #   └───────────┴───────────────────────────┘
 #
@@ -18,44 +18,44 @@ FORCE_NEW=0
 DIR=""
 
 while [[ $# -gt 0 ]]; do
-	case "$1" in
-	-n | --new)
-		FORCE_NEW=1
-		;;
-	-d | --dir)
-		DIR="${2:?--dir needs a path}"
-		shift
-		;;
-	-h | --help)
-		sed -n '2,13p' "$0" | sed 's/^# \{0,1\}//'
-		exit 0
-		;;
-	*)
-		echo "tmux-dev-layout: unknown argument: $1" >&2
-		exit 2
-		;;
-	esac
-	shift
+  case "$1" in
+  -n | --new)
+    FORCE_NEW=1
+    ;;
+  -d | --dir)
+    DIR="${2:?--dir needs a path}"
+    shift
+    ;;
+  -h | --help)
+    sed -n '2,13p' "$0" | sed 's/^# \{0,1\}//'
+    exit 0
+    ;;
+  *)
+    echo "tmux-dev-layout: unknown argument: $1" >&2
+    exit 2
+    ;;
+  esac
+  shift
 done
 
 if [[ -z ${TMUX:-} ]]; then
-	echo "tmux-dev-layout: run this inside tmux" >&2
-	exit 1
+  echo "tmux-dev-layout: run this inside tmux" >&2
+  exit 1
 fi
 
 # run-shell starts in the tmux server's cwd, so default to the active pane's.
 if [[ -z $DIR ]]; then
-	DIR=$(tmux display-message -p '#{pane_current_path}')
+  DIR=$(tmux display-message -p '#{pane_current_path}')
 fi
 
 # Reuse the existing workspace instead of piling up duplicate windows.
 if ((!FORCE_NEW)); then
-	existing=$(tmux list-windows -F '#{window_name}	#{window_index}' |
-		awk -F '\t' -v name="$WINDOW_NAME" '$1 == name { print $2; exit }')
-	if [[ -n $existing ]]; then
-		tmux select-window -t "$existing"
-		exit 0
-	fi
+  existing=$(tmux list-windows -F '#{window_name}	#{window_index}' |
+    awk -F '\t' -v name="$WINDOW_NAME" '$1 == name { print $2; exit }')
+  if [[ -n $existing ]]; then
+    tmux select-window -t "$existing"
+    exit 0
+  fi
 fi
 
 # 70% / 22% reproduce the existing layout: a full-height left column and a
@@ -65,25 +65,25 @@ left=$(tmux display-message -p -t "$win" '#{pane_id}')
 right=$(tmux split-window -h -l 70% -P -F '#{pane_id}' -t "$left" -c "$DIR")
 tmux split-window -v -l 22% -t "$right" -c "$DIR" >/dev/null
 
-# Keep the stable name; automatic-rename would replace it with "opencode".
+# Keep the stable name; automatic-rename would replace it with "omp".
 tmux set-option -w -t "$win" automatic-rename off
 
 # Type the commands into the fresh shells. tmux buffers the input until zsh has
 # finished sourcing .zshrc, so this is safe despite the slow startup.
-tmux send-keys -l -t "$left" 'opencode' \; send-keys -t "$left" Enter
+tmux send-keys -l -t "$left" 'omp' \; send-keys -t "$left" Enter
 tmux send-keys -l -t "$right" 'nvim' \; send-keys -t "$right" Enter
 tmux select-pane -t "$right"
 
 # tmux may still be reporting the palette from when the server started. Once
-# opencode is up, push the current background so it picks the right mode now
+# omp is up, push the current background so it picks the right mode now
 # instead of waiting for the next Alacritty sync.
 (
-	for _ in {1..40}; do
-		if [[ $(tmux display-message -p -t "$left" '#{pane_current_command}') == opencode ]]; then
-			sleep 0.5
-			"$HOME/dotfiles/bin/opencode-theme-notify" >/dev/null 2>&1
-			break
-		fi
-		sleep 0.25
-	done
+  for _ in {1..40}; do
+    if [[ $(tmux display-message -p -t "$left" '#{pane_current_command}') == omp ]]; then
+      sleep 0.5
+      "$HOME/dotfiles/bin/opencode-theme-notify" >/dev/null 2>&1
+      break
+    fi
+    sleep 0.25
+  done
 ) >/dev/null 2>&1 &
